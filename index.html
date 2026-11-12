@@ -50,12 +50,17 @@ h1,h2,h3,p{margin:0}
 .dots a.on i{width:9px;height:9px;background:var(--acc);opacity:1;margin-right:0}
 
 /* portada */
-#hero{position:relative;min-height:100vh;min-height:100svh;overflow:hidden;display:flex}
+#hero{position:relative}
+.hbg{position:sticky;top:0;height:100vh;height:100svh;overflow:hidden}
+.hsp{height:330vh}#hero.solo .hsp{display:none}
+.tl{position:absolute;z-index:2;left:22px;right:22px;bottom:34px;opacity:0;transition:opacity .4s;display:flex;flex-direction:column;gap:8px;pointer-events:none;text-shadow:0 1px 14px rgba(11,15,12,.7)}
+.tl b{font-family:var(--serif);font-style:italic;font-weight:400;font-size:60px;line-height:.95;letter-spacing:-.01em}
+#hscrim{transition:opacity .3s}
 .sky{position:absolute;inset:0;width:100%;height:100%;display:block}
 .ph{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 45%;opacity:0;transition:opacity 1.4s ease}
 @media (min-aspect-ratio:1/1){.ph{object-position:62% 50%;transform:scale(1.1);transform-origin:62% 100%}}
 .scrim{position:absolute;inset:0;pointer-events:none;background:linear-gradient(180deg,rgba(11,15,12,.5) 0,rgba(11,15,12,0) 30%,rgba(11,15,12,0) 52%,rgba(11,15,12,.82) 76%,rgba(11,15,12,.97) 100%)}
-.hero-in{position:relative;z-index:2;width:100%;padding:86px 22px 26px;display:flex;flex-direction:column;justify-content:space-between;gap:34px}
+.hero-in{position:relative;z-index:2;width:100%;margin-top:-100vh;margin-top:-100svh;min-height:100vh;min-height:100svh;padding:86px 22px 26px;display:flex;flex-direction:column;justify-content:space-between;gap:34px}
 .hero-in h1{font-family:var(--serif);font-style:italic;font-weight:400;font-size:clamp(72px,21vw,96px);line-height:.9;letter-spacing:-.01em;margin-top:14px}
 .hero-b{display:flex;flex-direction:column;gap:20px;max-width:460px}
 .live{display:flex;align-items:center;gap:8px;margin-bottom:6px}
@@ -80,7 +85,7 @@ h1,h2,h3,p{margin:0}
 .err{color:#FFB199;font-size:14px;min-height:20px}
 
 /* la finca desde el aire (vídeo) */
-#vuelo{position:relative;height:440vh}
+#vuelo{position:relative;height:230vh}
 .vst{position:sticky;top:0;height:100vh;height:100svh;overflow:hidden;background:#0B0F0C}
 .vst canvas{position:absolute;inset:0;width:100%;height:100%;display:block}
 .vpb{height:3px;border-radius:2px;background:rgba(236,231,218,.22);max-width:240px;margin-top:8px}.vpb i{display:block;height:3px;border-radius:2px;background:var(--acc);width:0}
@@ -196,6 +201,7 @@ footer .serif{font-size:44px;font-style:italic}
   .pill.cta{display:flex}
   .dots{right:26px}
   .hero-in{padding:120px 64px 56px;flex-direction:row;align-items:flex-end;justify-content:space-between}
+  .tl{left:64px;bottom:56px}.tl b{font-size:104px}
   .hero-in h1{font-size:clamp(120px,12vw,188px)}
   .hero-b{width:420px;flex:none}
   .stops{left:64px;top:110px}
@@ -223,10 +229,13 @@ footer .serif{font-size:44px;font-style:italic}
 </header>
 <nav class="dots" id="dots" aria-label="Seccions" hidden></nav>
 
-<section id="hero">
-  <svg class="sky" id="heroSky" aria-hidden="true" preserveAspectRatio="none"></svg>
-  <img class="ph" id="phA" alt="" decoding="async"><img class="ph" id="phB" alt="" decoding="async">
-  <div class="scrim"></div>
+<section id="hero" class="solo">
+  <div class="hbg">
+    <svg class="sky" id="heroSky" aria-hidden="true" preserveAspectRatio="none"></svg>
+    <img class="ph" id="phA" alt="" decoding="async"><img class="ph" id="phB" alt="" decoding="async"><img class="ph" id="phC" alt="" decoding="async"><img class="ph" id="phD" alt="" decoding="async">
+    <div class="scrim" id="hscrim"></div>
+    <div class="tl" id="tl" aria-hidden="true"></div>
+  </div>
   <div class="hero-in">
     <div>
       <span class="mono acc" id="eyebrow">&nbsp;</span>
@@ -234,6 +243,7 @@ footer .serif{font-size:44px;font-style:italic}
     </div>
     <div class="hero-b" id="heroB"></div>
   </div>
+  <div class="hsp" id="hsp"></div>
 </section>
 
 <main id="app" hidden>
@@ -279,7 +289,7 @@ var T={
 es:{personal:'Invitación personal',nowAt:'Ahora en la finca',ph:{night:'Noche',dawn:'Amanecer',morning:'Mañana',midday:'Mediodía',afternoon:'Tarde',dusk:'Atardecer'},
 date:'Sábado 3 de julio de 2027',left:'Faltan {n} días',left1:'Falta 1 día',today:'Es hoy',thanks:'Gracias por venir',vineNow:'La viña ahora',
 vine:{poda:'Poda de invierno',lloro:'Lloro',brote:'Brotación',flor:'Floración',cuajado:'Cuajado',boda:'Día de boda',envero:'Envero',vendimia:'Vendimia',hoja:'Caída de la hoja'},
-confirm:'Confirmar asistencia',change:'Ver o cambiar mi respuesta',fly:'Desliza para volar por la finca',codeP:'Introduce el código de tu invitación',codeH:'Lo recibiste por WhatsApp',enter:'Entrar',codeBad:'No encontramos ese código. Revísalo e inténtalo de nuevo.',netBad:'No hemos podido conectar. Inténtalo de nuevo.',loading:'Abriendo tu invitación…',
+confirm:'Confirmar asistencia',change:'Ver o cambiar mi respuesta',fly:'Desliza para viajar al 3 de julio',tlTag:'Viaje al 3 de julio de 2027',clubD:'Pantalla para seguir la ceremonia. Por la noche, bar y chill-out a cubierto.',codeP:'Introduce el código de tu invitación',codeH:'Lo recibiste por WhatsApp',enter:'Entrar',codeBad:'No encontramos ese código. Revísalo e inténtalo de nuevo.',netBad:'No hemos podido conectar. Inténtalo de nuevo.',loading:'Abriendo tu invitación…',
 nav:['Portada','El día','Confirmar','La finca','La mesa','Cómo llegar','Alojamiento'],
 stop:'Parada {i} de 06',time:'Hora',keep:'Sigue deslizando',
 stops:[['Llegada','Mas de les Moreres','Aparca en Venta del Pubill y sube en lanzadera. Te esperamos a las 16:30.','Acceso','Lanzadera'],
@@ -287,25 +297,25 @@ stops:[['Llegada','Mas de les Moreres','Aparca en Venta del Pubill y sube en lan
 ['Aperitivo','Piscina y jardín','Dos o tres horas de aperitivo junto a la piscina y en el jardín.','Duración','2–3 h'],
 ['Cena','Camino de las Moreras','Una sola mesa de 115 metros bajo las moreras, entre las viñas.','Vino','De la finca'],
 ['Baile y concierto','Plaça del Molí','Primer baile y concierto en la plaza.','Duración','1–2 h'],
-['Fiesta','La Sala','Discoteca en La Sala hasta que salga el sol. La plaza y el Club quedan como chill-out.','Hasta','El amanecer']],
+['Fiesta','Discoteca','Discoteca hasta que salga el sol. La plaza y el Club quedan como chill-out.','Hasta','El amanecer']],
 rsvpT:'{n}, <em>¿vienes?</em>',rsvpL:'Solo ves los actos a los que te hemos invitado. Responde a cada uno con un toque.',yes:'Sí',no:'No',
 ev:{tiro:['Viernes 2 julio · 16:00','Tiro al plato','Lugar por confirmar'],pre:['Viernes 2 julio · 21:00','Cena preboda','Íntim · por confirmar'],boda:['Sábado 3 julio · 16:30','La boda','Mas de les Moreres'],post:['Domingo 4 julio · 13:00','Fideuà postboda','Piscina · Mas de les Moreres']},
 plus:'Tu acompañante',plusOn:'Vengo con acompañante',plusPh:'Nombre y apellido',plusMenu:'Alergias o menú de tu acompañante',menu:'Menú y alergias',menus:['Sin restricciones','Vegetariano','Sin gluten','Sin lactosa','Otra'],otherPh:'Cuéntanos qué necesitas',
 bus:'Vengo en autobús desde Reus',busS:'Solo para quienes viven en Reus',lod:'Necesito alojamiento',lodS:'Para saber cuántos buscáis dónde dormir',
 msg:'Mensaje para Natalia y Marçal',msgPh:'Si quieres, escríbenos algo',send:'Enviar respuesta',update:'Actualizar respuesta',sending:'Enviando…',saved:'Respuesta guardada',savedS:'Gracias. Puedes cambiarla cuando quieras hasta el 30 de abril.',until:'Puedes cambiarla hasta el 30 de abril',need:'Responde Sí o No a cada acto.',sendBad:'No se ha podido guardar. Inténtalo de nuevo.',closed:'El plazo para responder terminó el 30 de abril. Escríbenos si necesitas cambiar algo.',
 light:'Al confirmar, guardas tu luz en la mesa',
-mapT:'La finca',mapL:'Toca un punto para ver qué pasa allí y a qué hora.',layers:['Actos','Lanzadera'],north:'Norte',see:'Ver en el recorrido',labels:['Capilla','Club','Plaça del Molí','La Sala','Jardín','Piscina','Llegada'],shT:'Venta del Pubill → el mas',shD:'Las lanzaderas te dejan en la zona de llegada y te devuelven al parking al acabar.',shB:'Cómo llegar',
+mapT:'La finca',mapL:'Toca un punto para ver qué pasa allí y a qué hora.',layers:['Actos','Lanzadera'],north:'Norte',see:'Ver en el recorrido',labels:['Capilla','Club','Plaça del Molí','Discoteca','Jardín y piscina','Llegada'],shT:'Venta del Pubill → el mas',shD:'Las lanzaderas te dejan en la zona de llegada y te devuelven al parking al acabar.',shB:'Cómo llegar',
 sealed:'Apartado sellado',mesaT:'La mesa',mesaL:'Una sola mesa de 115 metros bajo las moreras. Tu sitio todavía no se enseña.',revTag:'Se desvela el viernes',revD:'2 de julio · 21:00',revS:'Ese día verás tu sitio y cómo se enciende la mesa entera.',lit:'Tu luz está guardada',litS:'Has confirmado que vienes. Se encenderá ese día.',unlit:'Tu luz aún no está guardada',unlitS:'Confirma tu asistencia y quedará guardada.',cal:'Añadir aviso al calendario',calS:'La mesa se desvela · Natalia & Marçal',
 revd:'La mesa · desvelada',seatT:'Tu sitio, {n}',seat:'Tu puesto',side:'Lado',seatSoon:'Tu sitio aparecerá aquí en breve.',tblAlt:'La mesa a oscuras, con todas las luces apagadas',
 goT:'Aparca abajo, sube en lanzadera',goTag:'Cómo llegar',goL:'Al mas no se sube en coche. El punto de encuentro es el parking del restaurante Venta del Pubill.',
 go:[['Por confirmar','Autobús desde Reus','Solo para quienes viven en Reus. Llega a tiempo para subir al mas antes de las 16:30.'],['Punto de encuentro','Parking Venta del Pubill','Deja aquí el coche: es desde donde volverás a casa. Lanzaderas continuas hasta el mas.'],['16:30','Todos en Mas de les Moreres','La ceremonia empieza a las 16:45.'],['Al acabar','La vuelta','Cuando termine la fiesta: lanzadera al parking y autobús a Reus.']],
 goB:'Ir al parking Venta del Pubill',goN:'Horarios de autobús por confirmar',
 stayTag:'Alojamiento',stayT:'Dónde dormir',stayL:'Una selección cerca del mas. Son pueblos pequeños: reserva pronto.',cats:['Alto standing','Hoteles y habitaciones','Casas enteras para grupos','Camping y bungalows'],pers:'pers.',
-vCh:[['La finca desde el aire','Mas de les Moreres','Viñas, moreras y la Serra de Montsant, tal como estarán en julio.'],['Las viñas','De aquí sale el vino','El vino de la cena es el de la finca.'],['Camino de las Moreras','Aquí cenaremos','Una sola mesa de 115 metros bajo las moreras.'],['Serra de Montsant','Y al fondo, el Montsant','Sigue bajando: el día, parada a parada.']],liveTag:'En directo',hello:'Hola, {n}. Esto es lo que está pasando.',nowL:'Ahora',nextL:'Después',soon:'Empieza a las 16:30',back:'Tu vuelta',backV:'Lanzadera a Venta del Pubill',mapB:'Abrir el mapa',langName:'ES'},
+vCh:['Sábado 3 de julio · 16:30','Mas de les Moreres','Llegamos a la finca.'],liveTag:'En directo',hello:'Hola, {n}. Esto es lo que está pasando.',nowL:'Ahora',nextL:'Después',soon:'Empieza a las 16:30',back:'Tu vuelta',backV:'Lanzadera a Venta del Pubill',mapB:'Abrir el mapa',langName:'ES'},
 ca:{personal:'Invitació personal',nowAt:'Ara a la finca',ph:{night:'Nit',dawn:'Alba',morning:'Matí',midday:'Migdia',afternoon:'Tarda',dusk:'Capvespre'},
 date:'Dissabte 3 de juliol de 2027',left:'Falten {n} dies',left1:'Falta 1 dia',today:'És avui',thanks:'Gràcies per venir',vineNow:'La vinya ara',
 vine:{poda:'Poda d’hivern',lloro:'Plor',brote:'Brotada',flor:'Floració',cuajado:'Quallat',boda:'Dia de casament',envero:'Verol',vendimia:'Verema',hoja:'Caiguda de la fulla'},
-confirm:'Confirmar assistència',change:'Veure o canviar la meva resposta',fly:'Llisca per volar per la finca',codeP:'Introdueix el codi de la teva invitació',codeH:'El vas rebre per WhatsApp',enter:'Entrar',codeBad:'No trobem aquest codi. Revisa’l i torna-ho a provar.',netBad:'No hem pogut connectar. Torna-ho a provar.',loading:'Obrint la teva invitació…',
+confirm:'Confirmar assistència',change:'Veure o canviar la meva resposta',fly:'Llisca per viatjar al 3 de juliol',tlTag:'Viatge al 3 de juliol de 2027',clubD:'Pantalla per seguir la cerimònia. A la nit, bar i chill-out a cobert.',codeP:'Introdueix el codi de la teva invitació',codeH:'El vas rebre per WhatsApp',enter:'Entrar',codeBad:'No trobem aquest codi. Revisa’l i torna-ho a provar.',netBad:'No hem pogut connectar. Torna-ho a provar.',loading:'Obrint la teva invitació…',
 nav:['Portada','El dia','Confirmar','La finca','La taula','Com arribar','Allotjament'],
 stop:'Parada {i} de 06',time:'Hora',keep:'Continua lliscant',
 stops:[['Arribada','Mas de les Moreres','Aparca a la Venta del Pubill i puja amb la llançadora. T’esperem a les 16:30.','Accés','Llançadora'],
@@ -313,25 +323,25 @@ stops:[['Arribada','Mas de les Moreres','Aparca a la Venta del Pubill i puja amb
 ['Aperitiu','Piscina i jardí','Dues o tres hores d’aperitiu al costat de la piscina i al jardí.','Durada','2–3 h'],
 ['Sopar','Camí de les Moreres','Una sola taula de 115 metres sota les moreres, entre les vinyes.','Vi','De la finca'],
 ['Ball i concert','Plaça del Molí','Primer ball i concert a la plaça.','Durada','1–2 h'],
-['Festa','La Sala','Discoteca a La Sala fins que surti el sol. La plaça i el Club queden com a chill-out.','Fins a','La matinada']],
+['Festa','Discoteca','Discoteca fins que surti el sol. La plaça i el Club queden com a chill-out.','Fins a','La matinada']],
 rsvpT:'{n}, <em>vens?</em>',rsvpL:'Només veus els actes als quals t’hem convidat. Respon a cadascun amb un toc.',yes:'Sí',no:'No',
 ev:{tiro:['Divendres 2 juliol · 16:00','Tir al plat','Lloc per confirmar'],pre:['Divendres 2 juliol · 21:00','Sopar preboda','Íntim · per confirmar'],boda:['Dissabte 3 juliol · 16:30','El casament','Mas de les Moreres'],post:['Diumenge 4 juliol · 13:00','Fideuà postboda','Piscina · Mas de les Moreres']},
 plus:'El teu acompanyant',plusOn:'Vinc amb acompanyant',plusPh:'Nom i cognom',plusMenu:'Al·lèrgies o menú del teu acompanyant',menu:'Menú i al·lèrgies',menus:['Sense restriccions','Vegetarià','Sense gluten','Sense lactosa','Una altra'],otherPh:'Explica’ns què necessites',
 bus:'Vinc amb autobús des de Reus',busS:'Només per a qui viu a Reus',lod:'Necessito allotjament',lodS:'Per saber quants busqueu on dormir',
 msg:'Missatge per a la Natalia i en Marçal',msgPh:'Si vols, escriu-nos alguna cosa',send:'Enviar resposta',update:'Actualitzar resposta',sending:'Enviant…',saved:'Resposta desada',savedS:'Gràcies. La pots canviar quan vulguis fins al 30 d’abril.',until:'La pots canviar fins al 30 d’abril',need:'Respon Sí o No a cada acte.',sendBad:'No s’ha pogut desar. Torna-ho a provar.',closed:'El termini per respondre va acabar el 30 d’abril. Escriu-nos si necessites canviar res.',
 light:'En confirmar, deses la teva llum a la taula',
-mapT:'La finca',mapL:'Toca un punt per veure què hi passa i a quina hora.',layers:['Actes','Llançadora'],north:'Nord',see:'Veure al recorregut',labels:['Capella','Club','Plaça del Molí','La Sala','Jardí','Piscina','Arribada'],shT:'Venta del Pubill → el mas',shD:'Les llançadores et deixen a la zona d’arribada i et tornen al pàrquing en acabar.',shB:'Com arribar',
+mapT:'La finca',mapL:'Toca un punt per veure què hi passa i a quina hora.',layers:['Actes','Llançadora'],north:'Nord',see:'Veure al recorregut',labels:['Capella','Club','Plaça del Molí','Discoteca','Jardí i piscina','Arribada'],shT:'Venta del Pubill → el mas',shD:'Les llançadores et deixen a la zona d’arribada i et tornen al pàrquing en acabar.',shB:'Com arribar',
 sealed:'Apartat segellat',mesaT:'La taula',mesaL:'Una sola taula de 115 metres sota les moreres. El teu lloc encara no s’ensenya.',revTag:'Es desvela divendres',revD:'2 de juliol · 21:00',revS:'Aquell dia veuràs el teu lloc i com s’encén la taula sencera.',lit:'La teva llum està desada',litS:'Has confirmat que vens. S’encendrà aquell dia.',unlit:'La teva llum encara no està desada',unlitS:'Confirma l’assistència i quedarà desada.',cal:'Afegir avís al calendari',calS:'La taula es desvela · Natalia & Marçal',
 revd:'La taula · desvelada',seatT:'El teu lloc, {n}',seat:'El teu lloc',side:'Costat',seatSoon:'El teu lloc apareixerà aquí ben aviat.',tblAlt:'La taula a les fosques, amb tots els llums apagats',
 goT:'Aparca a baix, puja amb llançadora',goTag:'Com arribar',goL:'Al mas no s’hi puja amb cotxe. El punt de trobada és el pàrquing del restaurant Venta del Pubill.',
 go:[['Per confirmar','Autobús des de Reus','Només per a qui viu a Reus. Arriba a temps per pujar al mas abans de les 16:30.'],['Punt de trobada','Pàrquing Venta del Pubill','Deixa-hi el cotxe: és des d’on tornaràs a casa. Llançadores contínues fins al mas.'],['16:30','Tothom a Mas de les Moreres','La cerimònia comença a les 16:45.'],['En acabar','La tornada','Quan s’acabi la festa: llançadora al pàrquing i autobús a Reus.']],
 goB:'Anar al pàrquing Venta del Pubill',goN:'Horaris d’autobús per confirmar',
 stayTag:'Allotjament',stayT:'On dormir',stayL:'Una selecció a prop del mas. Són pobles petits: reserva aviat.',cats:['Alt standing','Hotels i habitacions','Cases senceres per a grups','Càmping i bungalous'],pers:'pers.',
-vCh:[['La finca des de l\u2019aire','Mas de les Moreres','Vinyes, moreres i la Serra de Montsant, tal com seran al juliol.'],['Les vinyes','D\u2019aquí surt el vi','El vi del sopar és el de la finca.'],['Camí de les Moreres','Aquí soparem','Una sola taula de 115 metres sota les moreres.'],['Serra de Montsant','I al fons, el Montsant','Continua baixant: el dia, parada a parada.']],liveTag:'En directe',hello:'Hola, {n}. Això és el que està passant.',nowL:'Ara',nextL:'Després',soon:'Comença a les 16:30',back:'La tornada',backV:'Llançadora a Venta del Pubill',mapB:'Obrir el mapa',langName:'CA'},
+vCh:['Dissabte 3 de juliol · 16:30','Mas de les Moreres','Arribem a la finca.'],liveTag:'En directe',hello:'Hola, {n}. Això és el que està passant.',nowL:'Ara',nextL:'Després',soon:'Comença a les 16:30',back:'La tornada',backV:'Llançadora a Venta del Pubill',mapB:'Obrir el mapa',langName:'CA'},
 en:{personal:'Personal invitation',nowAt:'Now at the estate',ph:{night:'Night',dawn:'Dawn',morning:'Morning',midday:'Midday',afternoon:'Afternoon',dusk:'Dusk'},
 date:'Saturday 3 July 2027',left:'{n} days to go',left1:'1 day to go',today:'It’s today',thanks:'Thank you for coming',vineNow:'The vines now',
 vine:{poda:'Winter pruning',lloro:'Sap rising',brote:'Budbreak',flor:'Flowering',cuajado:'Fruit set',boda:'Wedding day',envero:'Veraison',vendimia:'Harvest',hoja:'Leaf fall'},
-confirm:'RSVP',change:'See or change my answer',fly:'Scroll to fly over the estate',codeP:'Enter your invitation code',codeH:'You received it by WhatsApp',enter:'Enter',codeBad:'We can’t find that code. Check it and try again.',netBad:'We couldn’t connect. Please try again.',loading:'Opening your invitation…',
+confirm:'RSVP',change:'See or change my answer',fly:'Scroll to travel to 3 July',tlTag:'Travelling to 3 July 2027',clubD:'A screen to follow the ceremony. At night, an indoor bar and chill-out.',codeP:'Enter your invitation code',codeH:'You received it by WhatsApp',enter:'Enter',codeBad:'We can’t find that code. Check it and try again.',netBad:'We couldn’t connect. Please try again.',loading:'Opening your invitation…',
 nav:['Cover','The day','RSVP','The estate','The table','Getting there','Where to stay'],
 stop:'Stop {i} of 06',time:'Time',keep:'Keep scrolling',
 stops:[['Arrival','Mas de les Moreres','Park at Venta del Pubill and ride the shuttle up. We’ll be waiting at 16:30.','Access','Shuttle'],
@@ -339,21 +349,21 @@ stops:[['Arrival','Mas de les Moreres','Park at Venta del Pubill and ride the sh
 ['Aperitif','Pool & garden','Two or three hours of aperitif by the pool and in the garden.','Duration','2–3 h'],
 ['Dinner','The Mulberry Path','One single 115-metre table under the mulberry trees, among the vines.','Wine','From the estate'],
 ['Dance & concert','Plaça del Molí','First dance and a concert in the square.','Duration','1–2 h'],
-['Party','La Sala','Dancing in La Sala until sunrise. The square and the Club stay open as a chill-out.','Until','Sunrise']],
+['Party','Discoteca','Dancing in the Discoteca until sunrise. The square and the Club stay open as a chill-out.','Until','Sunrise']],
 rsvpT:'{n}, <em>are you coming?</em>',rsvpL:'You only see the events you’re invited to. Answer each one with a tap.',yes:'Yes',no:'No',
 ev:{tiro:['Friday 2 July · 16:00','Clay shooting','Venue to be confirmed'],pre:['Friday 2 July · 21:00','Pre-wedding dinner','Íntim · to be confirmed'],boda:['Saturday 3 July · 16:30','The wedding','Mas de les Moreres'],post:['Sunday 4 July · 13:00','Day-after fideuà','Pool · Mas de les Moreres']},
 plus:'Your plus-one',plusOn:'I’m bringing a plus-one',plusPh:'First and last name',plusMenu:'Your plus-one’s allergies or menu',menu:'Menu & allergies',menus:['No restrictions','Vegetarian','Gluten-free','Lactose-free','Other'],otherPh:'Tell us what you need',
 bus:'I’m taking the bus from Reus',busS:'Only for guests who live in Reus',lod:'I need accommodation',lodS:'So we know how many of you are looking for a place to stay',
 msg:'Message for Natalia & Marçal',msgPh:'Write us something, if you like',send:'Send answer',update:'Update answer',sending:'Sending…',saved:'Answer saved',savedS:'Thank you. You can change it any time until 30 April.',until:'You can change it until 30 April',need:'Answer Yes or No to each event.',sendBad:'We couldn’t save it. Please try again.',closed:'The deadline to answer was 30 April. Write to us if you need to change anything.',
 light:'When you confirm, your light is saved at the table',
-mapT:'The estate',mapL:'Tap a point to see what happens there, and when.',layers:['Events','Shuttle'],north:'North',see:'See it on the tour',labels:['Chapel','Club','Plaça del Molí','La Sala','Garden','Pool','Arrival'],shT:'Venta del Pubill → the mas',shD:'Shuttles drop you at the arrival area and take you back to the car park at the end.',shB:'Getting there',
+mapT:'The estate',mapL:'Tap a point to see what happens there, and when.',layers:['Events','Shuttle'],north:'North',see:'See it on the tour',labels:['Chapel','Club','Plaça del Molí','Discoteca','Garden & pool','Arrival'],shT:'Venta del Pubill → the mas',shD:'Shuttles drop you at the arrival area and take you back to the car park at the end.',shB:'Getting there',
 sealed:'Sealed section',mesaT:'The table',mesaL:'One single 115-metre table under the mulberry trees. Your seat isn’t shown yet.',revTag:'Revealed on Friday',revD:'2 July · 21:00',revS:'That day you’ll see your seat and watch the whole table light up.',lit:'Your light is saved',litS:'You’ve confirmed you’re coming. It will light up that day.',unlit:'Your light isn’t saved yet',unlitS:'Confirm you’re coming and it will be.',cal:'Add a calendar reminder',calS:'The table is revealed · Natalia & Marçal',
 revd:'The table · revealed',seatT:'Your seat, {n}',seat:'Your seat',side:'Side',seatSoon:'Your seat will appear here shortly.',tblAlt:'The table in the dark, with every light off',
 goT:'Park below, ride the shuttle up',goTag:'Getting there',goL:'You can’t drive up to the mas. The meeting point is the car park of the Venta del Pubill restaurant.',
 go:[['To be confirmed','Bus from Reus','Only for guests who live in Reus. It arrives in time to get up to the mas before 16:30.'],['Meeting point','Venta del Pubill car park','Leave your car here: it’s where you’ll head home from. Shuttles run continuously up to the mas.'],['16:30','Everyone at Mas de les Moreres','The ceremony starts at 16:45.'],['At the end','The way back','When the party ends: shuttle to the car park and bus to Reus.']],
 goB:'Directions to Venta del Pubill car park',goN:'Bus times to be confirmed',
 stayTag:'Where to stay',stayT:'Where to stay',stayL:'A selection near the mas. These are small villages: book early.',cats:['High-end','Hotels & rooms','Whole houses for groups','Camping & bungalows'],pers:'guests',
-vCh:[['The estate from the air','Mas de les Moreres','Vines, mulberry trees and the Serra de Montsant, as they\u2019ll look in July.'],['The vineyards','Where the wine comes from','The wine at dinner is the estate\u2019s own.'],['The Mulberry Path','Where we\u2019ll dine','One single 115-metre table under the mulberry trees.'],['Serra de Montsant','And beyond, the Montsant','Keep scrolling: the day, stop by stop.']],liveTag:'Live',hello:'Hi, {n}. Here’s what’s happening.',nowL:'Now',nextL:'Next',soon:'Starts at 16:30',back:'Your way back',backV:'Shuttle to Venta del Pubill',mapB:'Open the map',langName:'EN'}};
+vCh:['Saturday 3 July · 16:30','Mas de les Moreres','We arrive at the estate.'],liveTag:'Live',hello:'Hi, {n}. Here’s what’s happening.',nowL:'Now',nextL:'Next',soon:'Starts at 16:30',back:'Your way back',backV:'Shuttle to Venta del Pubill',mapB:'Open the map',langName:'EN'}};
 var STAY=[[["Gran Hotel Mas d’en Bruno","Torroja del Priorat"],["Terra Dominicata","Escaladei"]],
 [["El Palauet del Priorat","Cornudella"],["La Vileta","Cornudella"],["Hotel Siuranella","Siurana"],["Can Font","Siurana"],["Balcó del Priorat","La Morera de Montsant"],["Les Velles Escoles","Les Irles"],["El Xalet de Prades","Prades"],["Hotel Estrelles de Prades","Prades"]],
 [["Molí dels Aubins","Cornudella",13],["Mas del Salin","Cornudella",9],["Pla del Castell","Albarca",9],["Casa la Falconera","La Morera",9],["La Marquesiana","Alforja",22],["Ca l’Arcadi","Alforja",17],["Mas Lucena","Alforja",14],["Mas Fullat","Alforja",12],["Ca la Cuca","Alforja",10],["Ca l’Oliveta","Riudecols",16],["Prades Vila Bella","Prades",26],["Casa Roja","Prades",8],["Cal Crispí","Prades"],["Apartaments Cal Trumfo","Prades"]],
@@ -499,28 +509,44 @@ function photo(ms,vn){var s=PHOTOS[SEASON[vn]]||PHOTOS.winter,set=(window.innerW
  if(al<=-10){a=b='night';t=0}else if(al<-2){a='night';b=tw;t=(al+10)/8}else if(al<8){a=tw;b='day';t=(al+2)/10}else{a=b='day';t=0}
  phLayer($('#phA'),set[a],1);phLayer($('#phB'),set[b],t.toFixed(2))}
 
-/* ---------- La finca desde el aire: el scroll mueve el dron (fotogramas del montaje v6, en /vuelo) ---------- */
-var FR={n:144,img:[],set:'',gen:0,next:0,busy:false,more:false,cur:0,tgt:0,ch:-1,raf:0,last:null,lang:''},VCUT=[0,.155,.52,.685];
-function frChunk(){if(FR.busy||FR.next>5)return;var k=FR.set,c=FR.next,gen=FR.gen,ord=[0,3,1,4,2,5];FR.busy=true;
- fetch('vuelo/'+k+c+'.bin').then(function(r){if(!r.ok)throw 0;return r.arrayBuffer()}).then(function(buf){if(gen!==FR.gen)return;
-  var dv=new DataView(buf),n=dv.getUint32(0,true),off=4+4*n;
-  for(var j=0;j<n;j++){var len=dv.getUint32(4+4*j,true),im=new Image();im.onload=function(){FR.last=null;vDraw()};im.src=URL.createObjectURL(new Blob([new Uint8Array(buf,off,len)],{type:'image/webp'}));FR.img[ord[c]+6*j]=im;off+=len}
-  FR.busy=false;FR.next=c+1;if(FR.more)frChunk()}).catch(function(){if(gen!==FR.gen)return;FR.busy=false;if(c===0)$('#vuelo').hidden=true})}
+/* ---------- Llegada a la finca: el scroll mueve el dron (fotogramas en /vuelo, transición hacia el día) ---------- */
+var FR={n:1,img:[],set:'',gen:0,more:false,cur:0,tgt:0,raf:0,last:null,lang:''};
+function frLoad(){var k=FR.set,gen=FR.gen;
+ fetch('vuelo/'+k+'.bin').then(function(r){if(!r.ok)throw 0;return r.arrayBuffer()}).then(function(buf){if(gen!==FR.gen)return;
+  var dv=new DataView(buf),n=dv.getUint32(0,true),off=4+4*n;FR.n=n;
+  for(var j=0;j<n;j++){var len=dv.getUint32(4+4*j,true),im=new Image();im.onload=function(){FR.last=null;vDraw()};im.src=URL.createObjectURL(new Blob([new Uint8Array(buf,off,len)],{type:'image/webp'}));FR.img[j]=im;off+=len}
+  vTick()}).catch(function(){if(gen===FR.gen)$('#vuelo').hidden=true})}
 function vDraw(){var cv=$('#vc');if(!cv||!cv.width)return;var i=Math.round(FR.cur),im=null;
  for(var d=0;d<FR.n&&!im;d++){var a=FR.img[i-d],b=FR.img[i+d];if(a&&a.complete&&a.naturalWidth)im=a;else if(b&&b.complete&&b.naturalWidth)im=b}
  if(!im||im===FR.last)return;FR.last=im;var W=cv.width,H=cv.height,s=Math.max(W/im.naturalWidth,H/im.naturalHeight),w=im.naturalWidth*s,h=im.naturalHeight*s;
  cv.getContext('2d').drawImage(im,(W-w)/2,(H-h)/2,w,h)}
-function vCap(ch){var x=L().vCh[ch];$('#vtx').innerHTML='<span class="mono acc">0'+(ch+1)+' / 04 · '+esc(x[0])+'</span><h2>'+esc(x[1])+'</h2><p>'+esc(x[2])+'</p><div class="vpb"><i id="vbar"></i></div>'}
-function vAnim(){FR.raf=0;var d=FR.tgt-FR.cur;FR.cur=Math.abs(d)<.4?FR.tgt:FR.cur+d*.22;vDraw();if(FR.cur!==FR.tgt)FR.raf=requestAnimationFrame(vAnim)}
+function vAnim(){FR.raf=0;var d=FR.tgt-FR.cur;FR.cur=Math.abs(d)<.3?FR.tgt:FR.cur+d*.22;vDraw();if(FR.cur!==FR.tgt)FR.raf=requestAnimationFrame(vAnim)}
 function vTick(){var s=$('#vuelo');if(!s||s.hidden)return;var r=s.getBoundingClientRect(),tot=r.height-window.innerHeight;if(tot<=0)return;
- var p=clamp(-r.top/tot,0,1),ch=0;FR.tgt=p*(FR.n-1);for(var k=0;k<4;k++)if(p>=VCUT[k])ch=k;
- if(ch!==FR.ch||FR.lang!==lang){FR.ch=ch;FR.lang=lang;vCap(ch)}$('#vbar').style.width=(p*100).toFixed(1)+'%';
- if(!FR.more&&window.scrollY>30){FR.more=true;frChunk()}
+ var p=clamp(-r.top/tot,0,1);FR.tgt=p*(FR.n-1);
+ if(FR.lang!==lang){FR.lang=lang;var x=L().vCh;$('#vtx').innerHTML='<span class="mono acc">'+esc(x[0])+'</span><h2>'+esc(x[1])+'</h2><p>'+esc(x[2])+'</p>'}
+ if(!FR.more&&window.scrollY>30){FR.more=true;frLoad()}
  if(!FR.raf)FR.raf=requestAnimationFrame(vAnim)}
 function vuelo(){var cv=$('#vc'),k=window.innerWidth<window.innerHeight?'p':'w',dpr=Math.min(window.devicePixelRatio||1,2);
  cv.width=Math.round(cv.clientWidth*dpr);cv.height=Math.round(cv.clientHeight*dpr);FR.last=null;
- if(FR.set!==k){FR.set=k;FR.gen++;FR.next=0;FR.busy=false;FR.img=[];frChunk()}
- FR.ch=-1;vTick();vDraw()}
+ if(FR.set!==k){FR.set=k;FR.gen++;FR.img=[];FR.n=1;if(FR.more)frLoad()}
+ FR.lang='';vTick();vDraw()}
+
+/* ---------- Viaje de hoy al 3 de julio: al bajar, la misma vista va brotando hasta el verano ---------- */
+var TLD=[Date.UTC(2026,10,1),Date.UTC(2027,2,8),Date.UTC(2027,3,20),Date.UTC(2027,4,24),WED],TLKEY='';
+var TLK={w:[PHOTOS.winter.w.day,'hf_20261112_110742_91466500-2169-4056-a0d8-2e834ab5efe5',PHOTOS.spring.w.day,'hf_20261112_110742_c510dce2-f667-43fe-ad13-bf0ccaaa1183',PHOTOS.summer.w.day],
+ p:[PHOTOS.winter.p.day,'hf_20261112_110742_bab8f1d4-0dee-406f-a097-5eb084e3ea66',PHOTOS.spring.p.day,'hf_20261112_110741_88bbde9e-5dc7-4c6a-ae1b-c4efc5874d11',PHOTOS.summer.p.day]};
+function hTick(){var h=$('#hero'),tl=$('#tl'),C=$('#phC'),D=$('#phD'),n0=now();
+ if(!guest||n0>=WED){tl.style.opacity=0;return}
+ var r=h.getBoundingClientRect(),vh=window.innerHeight,a=vh*.2,tot=r.height-vh-a-vh*.4,p=tot>0?clamp((-r.top-a)/tot,0,1):0;
+ if(p<=0){C.dataset.o=0;C.style.opacity=0;D.dataset.o=0;D.style.opacity=0;$('#hscrim').style.opacity=1;tl.style.opacity=0;return}
+ var v=n0+p*(WED-n0),i=0;while(i<TLD.length-2&&v>=TLD[i+1])i++;
+ var t=clamp((v-TLD[i])/(TLD[i+1]-TLD[i]),0,1);t=clamp((t-.2)/.6,0,1);t=t*t*(3-2*t);
+ var set=TLK[window.innerWidth<window.innerHeight?'p':'w'],f=Math.min(p/.05,1),x=L(),d=Math.max(0,Math.ceil((WED-v)/864e5));
+ phLayer(C,set[i],f.toFixed(2));phLayer(D,set[i+1],(f*t).toFixed(2));
+ $('#hscrim').style.opacity=(1-.5*f).toFixed(2);tl.style.opacity=p>.03?1:0;
+ var key=d+lang;if(key!==TLKEY){TLKEY=key;var ds=new Intl.DateTimeFormat(lang==='en'?'en-GB':lang,{timeZone:'Europe/Madrid',day:'numeric',month:'long'}).format(new Date(p>=1?WED:v));
+  tl.innerHTML='<span class="mono acc">'+esc(x.tlTag)+'</span><b>'+esc(ds)+'</b><span class="mono">'+esc(x.vine[vine(p>=1?WED:v)]+' · '+(d<=0?x.today:d===1?x.left1:fmt(x.left,{n:d})))+'</span><div class="vpb"><i id="tlbar"></i></div>'}
+ var bar=$('#tlbar');if(bar)bar.style.width=(p*100).toFixed(1)+'%'}
 
 /* ---------- API ---------- */
 function api(body){return fetch(API,{method:'POST',headers:{'Content-Type':'text/plain;charset=utf-8'},body:JSON.stringify(body)}).then(function(r){return r.json()})}
@@ -545,7 +571,7 @@ function hero(){
   txt=mode()==='after'?t.thanks:days<=0?t.today:days===1?t.left1:fmt(t.left,{n:days});
   h='<div>'+live+'<div class="date">'+esc(t.date)+'</div><div class="place">Mas de les Moreres · Cornudella de Montsant</div></div>'+
    '<div class="count"><svg aria-hidden="true" width="48" height="48" viewBox="0 0 48 48" fill="none"><circle cx="24" cy="24" r="20" stroke="#ECE7DA" stroke-opacity=".22" stroke-width="3"/><circle cx="24" cy="24" r="20" stroke="#D4F56A" stroke-width="3" stroke-linecap="round" stroke-dasharray="'+(C*pr).toFixed(1)+' '+C+'" transform="rotate(-90 24 24)"/><path d="M24 31V19M24 23c-4-2-5-5-4-8M24 25c4-2 5-5 4-8" stroke="#ECE7DA" stroke-width="1.6" stroke-linecap="round"/></svg><div><b>'+esc(txt)+'</b><span class="mono dim" style="letter-spacing:.1em">'+esc(t.vineNow+': '+t.vine[vn])+'</span></div></div>'+
-   '<div><a class="btn" href="#rsvp">'+esc(guest.answered?t.change:t.confirm)+'</a><a class="link" href="#vuelo">'+esc(t.fly)+' <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></a></div>';}
+   '<div><a class="btn" href="#rsvp">'+esc(guest.answered?t.change:t.confirm)+'</a><a class="link" href="#hsp">'+esc(t.fly)+' <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></a></div>';}
  b.innerHTML=h;heroSc.update(n,vn);photo(n,vn);
 }
 
@@ -599,14 +625,16 @@ function send(){
 }
 
 /* ---------- Mapa ---------- */
-var PINS=[[54.1,45.6],[21,12.4],[61,26.5],[83.6,68.7],[24.1,28.6],[35.9,24.8]],LABS=[[26.7,11.6],[5.1,23.1],[10.3,32],[30.3,20.2],[55.4,29.3],[74.4,17.2],[32.8,44.8]];
+var PINS=[[54.1,45.6],[21,12.4],[71.3,25.6],[83.6,68.7],[24.1,28.6],[35.9,24.8]],CLUBP=[15.1,29.5],LABS=[[26.7,11.6],[5.1,23.1],[10.3,32],[30.3,20.2],[55.5,28.9],[32.8,44.8]];
 function finca(){
- var t=L(),s=t.stops[selPin],live=mode()==='live'?curStop():-1,h='';
+ var t=L(),s=t.stops[selPin]||['Club','Club',t.clubD],live=mode()==='live'?curStop():-1,h='';
  h+='<div class="col stick"><span class="mono dim">04 · MAS DE LES MORERES</span><h2 class="big">'+esc(t.mapT)+'</h2><p class="lead">'+esc(t.mapL)+'</p><div class="chips" role="group">'+t.layers.map(function(x,i){return'<button type="button" class="chip" data-a="layer" data-k="'+i+'" aria-pressed="'+(layer===i)+'">'+esc(x)+'</button>'}).join('')+'</div></div>';
  h+='<div class="col"><div class="mapw">'+$('#mapsvg').innerHTML+'<span class="mono north"><svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 12H5M11 6l-6 6 6 6"/></svg>'+esc(t.north)+'</span>';
  t.labels.forEach(function(x,i){h+='<span class="mlab" style="left:'+LABS[i][0]+'%;top:'+LABS[i][1]+'%">'+esc(x.toUpperCase())+'</span>'});
  PINS.forEach(function(p,i){h+='<button type="button" class="pin'+(layer===1&&i?' off':'')+(live===i?' nowp':'')+'" data-a="pin" data-k="'+i+'" aria-pressed="'+(layer===0?selPin===i:i===0)+'" aria-label="0'+(i+1)+' '+esc(t.stops[i][0]+', '+t.stops[i][1])+'" style="left:'+p[0]+'%;top:'+p[1]+'%"><b>0'+(i+1)+'</b></button>'});
+ h+='<button type="button" class="pin'+(layer===1?' off':'')+'" data-a="pin" data-k="6" aria-pressed="'+(layer===0&&selPin===6)+'" aria-label="Club" style="left:'+CLUBP[0]+'%;top:'+CLUBP[1]+'%"><b>C</b></button>';
  h+='<div class="mcard" aria-live="polite">'+(layer===1?'<span class="mono acc">01 · '+esc(t.layers[1])+'</span><h3>'+esc(t.shT)+'</h3><p>'+esc(t.shD)+'</p><a class="btn" href="#llegar">'+esc(t.shB)+'</a>':
+  selPin===6?'<span class="mono acc">CLUB</span><h3>Club</h3><p>'+esc(t.clubD)+'</p>':
   '<span class="mono acc">0'+(selPin+1)+' · '+esc(s[0])+' · '+TIMES[selPin]+'</span><h3>'+esc(s[1])+'</h3><p>'+esc(s[2])+'</p><button type="button" class="btn" data-stop="'+selPin+'">'+esc(t.see)+'</button>')+'</div></div></div>';
  $('#finca').innerHTML=h;
 }
@@ -639,7 +667,7 @@ function dormir(){var t=L();
 
 /* ---------- Montaje ---------- */
 function chrome(){var t=L();document.documentElement.lang=lang;$('#langt').textContent=t.langName;$('#langb').setAttribute('aria-label',t.langName);
- var on=!!guest;$('#nav').hidden=$('#dots').hidden=$('#navcta').hidden=!on;
+ var on=!!guest;$('#hero').classList.toggle('solo',!on||now()>=WED);$('#nav').hidden=$('#dots').hidden=$('#navcta').hidden=!on;
  $('#nav').innerHTML=[1,3,5,6,4].map(function(i){return'<a href="#'+SEC[i]+'">'+esc(t.nav[i])+'</a>'}).join('');
  $('#navcta').textContent=t.nav[2];
  $('#dots').innerHTML=SEC.map(function(s,i){return'<a href="#'+s+'" data-s="'+s+'" aria-label="'+esc(t.nav[i])+'"><span>0'+(i+1)+' '+esc(t.nav[i].toUpperCase())+'</span><i></i></a>'}).join('')}
@@ -651,11 +679,11 @@ function load(c,manual){code=c;heroState='loading';codeErr='';hero();
 
 var ticking=false;
 function onScroll(){if(ticking)return;ticking=true;requestAnimationFrame(function(){ticking=false;
- $('#top').classList.toggle('solid',window.scrollY>40);
+ $('#top').classList.toggle('solid',window.scrollY>40);hTick();
  if(!guest)return;vTick();flyTick();var mid=window.innerHeight*.45,cur=SEC[0];SEC.forEach(function(s){var el=document.getElementById(s);if(el&&el.getBoundingClientRect().top<=mid)cur=s});
  $$('#dots a').forEach(function(a){a.classList.toggle('on',a.dataset.s===cur)})})}
 window.addEventListener('scroll',onScroll,{passive:true});
-var rz;window.addEventListener('resize',function(){clearTimeout(rz);rz=setTimeout(function(){heroSc.build();heroSc.update(now(),vine(now()));photo(now(),vine(now()));if(guest){vuelo();flySc.build();flyTick()}},150)});
+var rz;window.addEventListener('resize',function(){clearTimeout(rz);rz=setTimeout(function(){heroSc.build();heroSc.update(now(),vine(now()));photo(now(),vine(now()));hTick();if(guest){vuelo();flySc.build();flyTick()}},150)});
 
 document.addEventListener('click',function(ev){
  var st=ev.target.closest('[data-stop]');if(st){goStop(+st.dataset.stop);return}

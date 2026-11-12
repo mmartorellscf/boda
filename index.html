@@ -52,6 +52,8 @@ h1,h2,h3,p{margin:0}
 /* portada */
 #hero{position:relative;min-height:100vh;min-height:100svh;overflow:hidden;display:flex}
 .sky{position:absolute;inset:0;width:100%;height:100%;display:block}
+.ph{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 45%;opacity:0;transition:opacity 1.4s ease}
+@media (min-aspect-ratio:1/1){.ph{object-position:62% 50%}}
 .scrim{position:absolute;inset:0;pointer-events:none;background:linear-gradient(180deg,rgba(11,15,12,.5) 0,rgba(11,15,12,0) 30%,rgba(11,15,12,0) 52%,rgba(11,15,12,.82) 76%,rgba(11,15,12,.97) 100%)}
 .hero-in{position:relative;z-index:2;width:100%;padding:86px 22px 26px;display:flex;flex-direction:column;justify-content:space-between;gap:34px}
 .hero-in h1{font-family:var(--serif);font-style:italic;font-weight:400;font-size:clamp(72px,21vw,96px);line-height:.9;letter-spacing:-.01em;margin-top:14px}
@@ -213,6 +215,7 @@ footer .serif{font-size:44px;font-style:italic}
 
 <section id="hero">
   <svg class="sky" id="heroSky" aria-hidden="true" preserveAspectRatio="none"></svg>
+  <img class="ph" id="phA" alt="" decoding="async"><img class="ph" id="phB" alt="" decoding="async">
   <div class="scrim"></div>
   <div class="hero-in">
     <div>
@@ -466,6 +469,19 @@ function Scene(svg,fly){
 }
 var heroSc=Scene($('#heroSky'),false),flySc=Scene($('#flySky'),true);
 
+/* ---------- Portada con fotos reales de la finca (misma vista, cambia la luz y la estación) ---------- */
+var CDN='https://d8j0ntlcm91z4.cloudfront.net/user_3Ly3hsluRPEjivn3YLUlIIHMCMS/';
+var PHOTOS={winter:{
+ p:{dawn:'hf_20261112_084443_df93a454-5263-4239-b10a-3a7650900a56',day:'hf_20261112_084231_77e7e255-e45e-4544-b7b2-66764a634440',dusk:'hf_20261112_084442_94a32752-29f4-4ddb-962a-10bd07297860',night:'hf_20261112_084443_608e3874-5b59-4ca2-ac3e-50658c128fe7'},
+ w:{dawn:'hf_20261112_084833_a33e38cf-c9b8-4835-90d9-4cdb8268940c',day:'hf_20261112_084745_f642c91d-c14a-455f-8987-01b19a385de6',dusk:'hf_20261112_084833_1ca56362-990f-4e56-8b39-03aadad96301',night:'hf_20261112_084833_9375a246-328d-40ab-ae6e-18fdbef054c3'}}};
+var SEASON={poda:'winter',lloro:'winter',hoja:'winter',brote:'spring',flor:'spring',cuajado:'summer',boda:'summer',envero:'summer',vendimia:'summer'};
+function phLayer(img,f,o){if(img.dataset.f!==f){img.dataset.f=f;img.dataset.ok='';img.style.opacity=0;img.onload=function(){img.dataset.ok='1';img.style.opacity=img.dataset.o};img.onerror=function(){img.dataset.ok=''};img.src=CDN+f+'_min.webp'}
+ img.dataset.o=o;if(img.dataset.ok)img.style.opacity=o}
+function photo(ms,vn){var s=PHOTOS[SEASON[vn]]||PHOTOS.winter,set=(window.innerWidth<window.innerHeight?s.p:s.w)||s.p||s.w;if(!set)return;
+ var al=sun(ms).alt,tw=madrid(ms).h<12?'dawn':'dusk',a,b,t;
+ if(al<=-10){a=b='night';t=0}else if(al<-2){a='night';b=tw;t=(al+10)/8}else if(al<8){a=tw;b='day';t=(al+2)/10}else{a=b='day';t=0}
+ phLayer($('#phA'),set[a],1);phLayer($('#phB'),set[b],t.toFixed(2))}
+
 /* ---------- API ---------- */
 function api(body){return fetch(API,{method:'POST',headers:{'Content-Type':'text/plain;charset=utf-8'},body:JSON.stringify(body)}).then(function(r){return r.json()})}
 function toast(m){var t=$('#toast');t.textContent=m;t.classList.add('on');clearTimeout(toast.t);toast.t=setTimeout(function(){t.classList.remove('on')},3200)}
@@ -490,7 +506,7 @@ function hero(){
   h='<div>'+live+'<div class="date">'+esc(t.date)+'</div><div class="place">Mas de les Moreres · Cornudella de Montsant</div></div>'+
    '<div class="count"><svg aria-hidden="true" width="48" height="48" viewBox="0 0 48 48" fill="none"><circle cx="24" cy="24" r="20" stroke="#ECE7DA" stroke-opacity=".22" stroke-width="3"/><circle cx="24" cy="24" r="20" stroke="#D4F56A" stroke-width="3" stroke-linecap="round" stroke-dasharray="'+(C*pr).toFixed(1)+' '+C+'" transform="rotate(-90 24 24)"/><path d="M24 31V19M24 23c-4-2-5-5-4-8M24 25c4-2 5-5 4-8" stroke="#ECE7DA" stroke-width="1.6" stroke-linecap="round"/></svg><div><b>'+esc(txt)+'</b><span class="mono dim" style="letter-spacing:.1em">'+esc(t.vineNow+': '+t.vine[vn])+'</span></div></div>'+
    '<div><a class="btn" href="#rsvp">'+esc(guest.answered?t.change:t.confirm)+'</a><a class="link" href="#dia">'+esc(t.fly)+' <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></a></div>';}
- b.innerHTML=h;heroSc.update(n,vn);
+ b.innerHTML=h;heroSc.update(n,vn);photo(n,vn);
 }
 
 /* ---------- Vuelo ---------- */
@@ -599,7 +615,7 @@ function onScroll(){if(ticking)return;ticking=true;requestAnimationFrame(functio
  if(!guest)return;flyTick();var mid=window.innerHeight*.45,cur=SEC[0];SEC.forEach(function(s){var el=document.getElementById(s);if(el&&el.getBoundingClientRect().top<=mid)cur=s});
  $$('#dots a').forEach(function(a){a.classList.toggle('on',a.dataset.s===cur)})})}
 window.addEventListener('scroll',onScroll,{passive:true});
-var rz;window.addEventListener('resize',function(){clearTimeout(rz);rz=setTimeout(function(){heroSc.build();heroSc.update(now(),vine(now()));if(guest){flySc.build();flyTick()}},150)});
+var rz;window.addEventListener('resize',function(){clearTimeout(rz);rz=setTimeout(function(){heroSc.build();heroSc.update(now(),vine(now()));photo(now(),vine(now()));if(guest){flySc.build();flyTick()}},150)});
 
 document.addEventListener('click',function(ev){
  var st=ev.target.closest('[data-stop]');if(st){goStop(+st.dataset.stop);return}

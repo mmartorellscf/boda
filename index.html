@@ -79,6 +79,15 @@ h1,h2,h3,p{margin:0}
 .codef .btn{width:auto;padding:0 26px;flex:none}
 .err{color:#FFB199;font-size:14px;min-height:20px}
 
+/* la finca desde el aire (vídeo) */
+#vuelo{position:relative;height:170vh}
+.vst{position:sticky;top:0;height:100vh;height:100svh;overflow:hidden;background:#0B0F0C}
+.vst video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
+.vst .scrim{background:linear-gradient(180deg,rgba(11,15,12,.5) 0,rgba(11,15,12,0) 26%,rgba(11,15,12,0) 56%,rgba(11,15,12,.88) 100%)}
+.vtx{position:absolute;z-index:2;left:22px;right:22px;bottom:34px;display:flex;flex-direction:column;gap:10px;max-width:560px}
+.vtx h2{font-family:var(--serif);font-style:italic;font-weight:400;font-size:56px;line-height:.95;letter-spacing:-.01em}
+.vtx p{font-size:15px;color:var(--soft)}
+@media (min-width:900px){.vtx{left:64px;bottom:56px}.vtx h2{font-size:96px}.vtx p{font-size:17px}}
 /* el vuelo */
 #dia{position:relative;height:620vh}
 .stage{position:sticky;top:0;height:100vh;height:100svh;overflow:hidden}
@@ -227,6 +236,7 @@ footer .serif{font-size:44px;font-style:italic}
 </section>
 
 <main id="app" hidden>
+  <section id="vuelo"><div class="vst"><video id="vv" muted loop playsinline preload="none" aria-hidden="true"></video><div class="scrim"></div><div class="vtx" id="vtx"></div></div></section>
   <section id="dia" aria-label="El dia">
     <div class="stage">
       <svg class="sky" id="flySky" aria-hidden="true" preserveAspectRatio="none"></svg>
@@ -290,7 +300,7 @@ goT:'Aparca abajo, sube en lanzadera',goTag:'Cómo llegar',goL:'Al mas no se sub
 go:[['Por confirmar','Autobús desde Reus','Solo para quienes viven en Reus. Llega a tiempo para subir al mas antes de las 16:30.'],['Punto de encuentro','Parking Venta del Pubill','Deja aquí el coche: es desde donde volverás a casa. Lanzaderas continuas hasta el mas.'],['16:30','Todos en Mas de les Moreres','La ceremonia empieza a las 16:45.'],['Al acabar','La vuelta','Cuando termine la fiesta: lanzadera al parking y autobús a Reus.']],
 goB:'Ir al parking Venta del Pubill',goN:'Horarios de autobús por confirmar',
 stayTag:'Alojamiento',stayT:'Dónde dormir',stayL:'Una selección cerca del mas. Son pueblos pequeños: reserva pronto.',cats:['Alto standing','Hoteles y habitaciones','Casas enteras para grupos','Camping y bungalows'],pers:'pers.',
-liveTag:'En directo',hello:'Hola, {n}. Esto es lo que está pasando.',nowL:'Ahora',nextL:'Después',soon:'Empieza a las 16:30',back:'Tu vuelta',backV:'Lanzadera a Venta del Pubill',mapB:'Abrir el mapa',langName:'ES'},
+vTag:'La finca desde el aire',vL:'Viñas, moreras y la Serra de Montsant, tal como estarán en julio.',liveTag:'En directo',hello:'Hola, {n}. Esto es lo que está pasando.',nowL:'Ahora',nextL:'Después',soon:'Empieza a las 16:30',back:'Tu vuelta',backV:'Lanzadera a Venta del Pubill',mapB:'Abrir el mapa',langName:'ES'},
 ca:{personal:'Invitació personal',nowAt:'Ara a la finca',ph:{night:'Nit',dawn:'Alba',morning:'Matí',midday:'Migdia',afternoon:'Tarda',dusk:'Capvespre'},
 date:'Dissabte 3 de juliol de 2027',left:'Falten {n} dies',left1:'Falta 1 dia',today:'És avui',thanks:'Gràcies per venir',vineNow:'La vinya ara',
 vine:{poda:'Poda d’hivern',lloro:'Plor',brote:'Brotada',flor:'Floració',cuajado:'Quallat',boda:'Dia de casament',envero:'Verol',vendimia:'Verema',hoja:'Caiguda de la fulla'},
@@ -316,7 +326,7 @@ goT:'Aparca a baix, puja amb llançadora',goTag:'Com arribar',goL:'Al mas no s�
 go:[['Per confirmar','Autobús des de Reus','Només per a qui viu a Reus. Arriba a temps per pujar al mas abans de les 16:30.'],['Punt de trobada','Pàrquing Venta del Pubill','Deixa-hi el cotxe: és des d’on tornaràs a casa. Llançadores contínues fins al mas.'],['16:30','Tothom a Mas de les Moreres','La cerimònia comença a les 16:45.'],['En acabar','La tornada','Quan s’acabi la festa: llançadora al pàrquing i autobús a Reus.']],
 goB:'Anar al pàrquing Venta del Pubill',goN:'Horaris d’autobús per confirmar',
 stayTag:'Allotjament',stayT:'On dormir',stayL:'Una selecció a prop del mas. Són pobles petits: reserva aviat.',cats:['Alt standing','Hotels i habitacions','Cases senceres per a grups','Càmping i bungalous'],pers:'pers.',
-liveTag:'En directe',hello:'Hola, {n}. Això és el que està passant.',nowL:'Ara',nextL:'Després',soon:'Comença a les 16:30',back:'La tornada',backV:'Llançadora a Venta del Pubill',mapB:'Obrir el mapa',langName:'CA'},
+vTag:'La finca des de l\u2019aire',vL:'Vinyes, moreres i la Serra de Montsant, tal com seran al juliol.',liveTag:'En directe',hello:'Hola, {n}. Això és el que està passant.',nowL:'Ara',nextL:'Després',soon:'Comença a les 16:30',back:'La tornada',backV:'Llançadora a Venta del Pubill',mapB:'Obrir el mapa',langName:'CA'},
 en:{personal:'Personal invitation',nowAt:'Now at the estate',ph:{night:'Night',dawn:'Dawn',morning:'Morning',midday:'Midday',afternoon:'Afternoon',dusk:'Dusk'},
 date:'Saturday 3 July 2027',left:'{n} days to go',left1:'1 day to go',today:'It’s today',thanks:'Thank you for coming',vineNow:'The vines now',
 vine:{poda:'Winter pruning',lloro:'Sap rising',brote:'Budbreak',flor:'Flowering',cuajado:'Fruit set',boda:'Wedding day',envero:'Veraison',vendimia:'Harvest',hoja:'Leaf fall'},
@@ -342,7 +352,7 @@ goT:'Park below, ride the shuttle up',goTag:'Getting there',goL:'You can’t dri
 go:[['To be confirmed','Bus from Reus','Only for guests who live in Reus. It arrives in time to get up to the mas before 16:30.'],['Meeting point','Venta del Pubill car park','Leave your car here: it’s where you’ll head home from. Shuttles run continuously up to the mas.'],['16:30','Everyone at Mas de les Moreres','The ceremony starts at 16:45.'],['At the end','The way back','When the party ends: shuttle to the car park and bus to Reus.']],
 goB:'Directions to Venta del Pubill car park',goN:'Bus times to be confirmed',
 stayTag:'Where to stay',stayT:'Where to stay',stayL:'A selection near the mas. These are small villages: book early.',cats:['High-end','Hotels & rooms','Whole houses for groups','Camping & bungalows'],pers:'guests',
-liveTag:'Live',hello:'Hi, {n}. Here’s what’s happening.',nowL:'Now',nextL:'Next',soon:'Starts at 16:30',back:'Your way back',backV:'Shuttle to Venta del Pubill',mapB:'Open the map',langName:'EN'}};
+vTag:'The estate from the air',vL:'Vines, mulberry trees and the Serra de Montsant, as they\u2019ll look in July.',liveTag:'Live',hello:'Hi, {n}. Here’s what’s happening.',nowL:'Now',nextL:'Next',soon:'Starts at 16:30',back:'Your way back',backV:'Shuttle to Venta del Pubill',mapB:'Open the map',langName:'EN'}};
 var STAY=[[["Gran Hotel Mas d’en Bruno","Torroja del Priorat"],["Terra Dominicata","Escaladei"]],
 [["El Palauet del Priorat","Cornudella"],["La Vileta","Cornudella"],["Hotel Siuranella","Siurana"],["Can Font","Siurana"],["Balcó del Priorat","La Morera de Montsant"],["Les Velles Escoles","Les Irles"],["El Xalet de Prades","Prades"],["Hotel Estrelles de Prades","Prades"]],
 [["Molí dels Aubins","Cornudella",13],["Mas del Salin","Cornudella",9],["Pla del Castell","Albarca",9],["Casa la Falconera","La Morera",9],["La Marquesiana","Alforja",22],["Ca l’Arcadi","Alforja",17],["Mas Lucena","Alforja",14],["Mas Fullat","Alforja",12],["Ca la Cuca","Alforja",10],["Ca l’Oliveta","Riudecols",16],["Prades Vila Bella","Prades",26],["Casa Roja","Prades",8],["Cal Crispí","Prades"],["Apartaments Cal Trumfo","Prades"]],
@@ -482,6 +492,16 @@ function photo(ms,vn){var s=PHOTOS[SEASON[vn]]||PHOTOS.winter,set=(window.innerW
  if(al<=-10){a=b='night';t=0}else if(al<-2){a='night';b=tw;t=(al+10)/8}else if(al<8){a=tw;b='day';t=(al+2)/10}else{a=b='day';t=0}
  phLayer($('#phA'),set[a],1);phLayer($('#phB'),set[b],t.toFixed(2))}
 
+/* ---------- Vídeo de la finca (montaje v6, horizontal y vertical) ---------- */
+var VID='https://d2ol7oe51mr4n9.cloudfront.net/user_3Ly3hsluRPEjivn3YLUlIIHMCMS/';
+var VIDEO={w:['3957d60b-c1e9-4453-8293-7337a789c94e.mp4','a13f1eca-8790-4631-83e2-8d2d49272a70.jpg'],p:['12a2ace9-6a83-4167-a27c-c093e6505a6e.mp4','b6dc3a72-5603-4b5f-8073-9c80113f2d99.jpg']};
+var vIO=null,vStill=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+function vuelo(){var t=L(),v=$('#vv'),k=window.innerWidth<window.innerHeight?'p':'w';
+ $('#vtx').innerHTML='<span class="mono acc">'+esc(t.vTag)+'</span><h2>Mas de les Moreres</h2><p>'+esc(t.vL)+'</p>';
+ if(v.dataset.k!==k){v.dataset.k=k;v.poster=VID+VIDEO[k][1];v.src=VID+VIDEO[k][0];if(vStill)v.controls=true}
+ if(!vIO&&'IntersectionObserver' in window){v.addEventListener('error',function(){$('#vuelo').hidden=true});
+  vIO=new IntersectionObserver(function(en){if(vStill)return;if(en[0].isIntersecting){var pr=v.play();if(pr&&pr.catch)pr.catch(function(){})}else v.pause()},{threshold:.2});vIO.observe($('#vuelo'))}}
+
 /* ---------- API ---------- */
 function api(body){return fetch(API,{method:'POST',headers:{'Content-Type':'text/plain;charset=utf-8'},body:JSON.stringify(body)}).then(function(r){return r.json()})}
 function toast(m){var t=$('#toast');t.textContent=m;t.classList.add('on');clearTimeout(toast.t);toast.t=setTimeout(function(){t.classList.remove('on')},3200)}
@@ -505,7 +525,7 @@ function hero(){
   txt=mode()==='after'?t.thanks:days<=0?t.today:days===1?t.left1:fmt(t.left,{n:days});
   h='<div>'+live+'<div class="date">'+esc(t.date)+'</div><div class="place">Mas de les Moreres · Cornudella de Montsant</div></div>'+
    '<div class="count"><svg aria-hidden="true" width="48" height="48" viewBox="0 0 48 48" fill="none"><circle cx="24" cy="24" r="20" stroke="#ECE7DA" stroke-opacity=".22" stroke-width="3"/><circle cx="24" cy="24" r="20" stroke="#D4F56A" stroke-width="3" stroke-linecap="round" stroke-dasharray="'+(C*pr).toFixed(1)+' '+C+'" transform="rotate(-90 24 24)"/><path d="M24 31V19M24 23c-4-2-5-5-4-8M24 25c4-2 5-5 4-8" stroke="#ECE7DA" stroke-width="1.6" stroke-linecap="round"/></svg><div><b>'+esc(txt)+'</b><span class="mono dim" style="letter-spacing:.1em">'+esc(t.vineNow+': '+t.vine[vn])+'</span></div></div>'+
-   '<div><a class="btn" href="#rsvp">'+esc(guest.answered?t.change:t.confirm)+'</a><a class="link" href="#dia">'+esc(t.fly)+' <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></a></div>';}
+   '<div><a class="btn" href="#rsvp">'+esc(guest.answered?t.change:t.confirm)+'</a><a class="link" href="#vuelo">'+esc(t.fly)+' <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></a></div>';}
  b.innerHTML=h;heroSc.update(n,vn);photo(n,vn);
 }
 
@@ -603,7 +623,7 @@ function chrome(){var t=L();document.documentElement.lang=lang;$('#langt').textC
  $('#nav').innerHTML=[1,3,5,6,4].map(function(i){return'<a href="#'+SEC[i]+'">'+esc(t.nav[i])+'</a>'}).join('');
  $('#navcta').textContent=t.nav[2];
  $('#dots').innerHTML=SEC.map(function(s,i){return'<a href="#'+s+'" data-s="'+s+'" aria-label="'+esc(t.nav[i])+'"><span>0'+(i+1)+' '+esc(t.nav[i].toUpperCase())+'</span><i></i></a>'}).join('')}
-function renderAll(){chrome();hero();if(guest){rsvp();finca();mesaR();llegar();dormir();fIdx=-1;flyTick()}}
+function renderAll(){chrome();hero();if(guest){vuelo();rsvp();finca();mesaR();llegar();dormir();fIdx=-1;flyTick()}}
 function open(){$('#app').hidden=false;initForm();if(mode()==='live'&&curStop()>=0)selPin=curStop();renderAll();flySc.build();flyTick();onScroll()}
 function load(c,manual){code=c;heroState='loading';codeErr='';hero();
  api({a:'guest',k:c}).then(function(r){heroState='code';if(r&&r.ok){guest=r.guest;mesa=r.mesa||null;store.set('nm_k',c);if(!qs.get('l')&&!store.get('nm_l')&&guest.lang)lang=guest.lang;open()}
@@ -615,7 +635,7 @@ function onScroll(){if(ticking)return;ticking=true;requestAnimationFrame(functio
  if(!guest)return;flyTick();var mid=window.innerHeight*.45,cur=SEC[0];SEC.forEach(function(s){var el=document.getElementById(s);if(el&&el.getBoundingClientRect().top<=mid)cur=s});
  $$('#dots a').forEach(function(a){a.classList.toggle('on',a.dataset.s===cur)})})}
 window.addEventListener('scroll',onScroll,{passive:true});
-var rz;window.addEventListener('resize',function(){clearTimeout(rz);rz=setTimeout(function(){heroSc.build();heroSc.update(now(),vine(now()));photo(now(),vine(now()));if(guest){flySc.build();flyTick()}},150)});
+var rz;window.addEventListener('resize',function(){clearTimeout(rz);rz=setTimeout(function(){heroSc.build();heroSc.update(now(),vine(now()));photo(now(),vine(now()));if(guest){vuelo();flySc.build();flyTick()}},150)});
 
 document.addEventListener('click',function(ev){
  var st=ev.target.closest('[data-stop]');if(st){goStop(+st.dataset.stop);return}

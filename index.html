@@ -484,9 +484,15 @@ var heroSc=Scene($('#heroSky'),false),flySc=Scene($('#flySky'),true);
 var CDN='https://d8j0ntlcm91z4.cloudfront.net/user_3Ly3hsluRPEjivn3YLUlIIHMCMS/';
 var PHOTOS={winter:{
  p:{dawn:'hf_20261112_084443_df93a454-5263-4239-b10a-3a7650900a56',day:'hf_20261112_084231_77e7e255-e45e-4544-b7b2-66764a634440',dusk:'hf_20261112_084442_94a32752-29f4-4ddb-962a-10bd07297860',night:'hf_20261112_084443_608e3874-5b59-4ca2-ac3e-50658c128fe7'},
- w:{dawn:'hf_20261112_084833_a33e38cf-c9b8-4835-90d9-4cdb8268940c',day:'hf_20261112_084745_f642c91d-c14a-455f-8987-01b19a385de6',dusk:'hf_20261112_084833_1ca56362-990f-4e56-8b39-03aadad96301',night:'hf_20261112_084833_9375a246-328d-40ab-ae6e-18fdbef054c3'}}};
-var SEASON={poda:'winter',lloro:'winter',hoja:'winter',brote:'spring',flor:'spring',cuajado:'summer',boda:'summer',envero:'summer',vendimia:'summer'};
-function phLayer(img,f,o){if(img.dataset.f!==f){img.dataset.f=f;img.dataset.ok='';img.style.opacity=0;img.onload=function(){img.dataset.ok='1';img.style.opacity=img.dataset.o};img.onerror=function(){img.dataset.ok=''};img.src=CDN+f+'_min.webp'}
+ w:{dawn:'hf_20261112_084833_a33e38cf-c9b8-4835-90d9-4cdb8268940c',day:'hf_20261112_084745_f642c91d-c14a-455f-8987-01b19a385de6',dusk:'hf_20261112_084833_1ca56362-990f-4e56-8b39-03aadad96301',night:'hf_20261112_084833_9375a246-328d-40ab-ae6e-18fdbef054c3'}},
+spring:{
+ p:{dawn:'hf_20261112_093540_21eeb028-d917-4b4f-bdd1-594485dc79d2',day:'hf_20261112_093350_2df67632-2645-4e4e-8026-e293c30fb3c8',dusk:'hf_20261112_093539_6bbb5988-12bb-4bc5-b501-f1c5cadde5d6',night:'hf_20261112_093539_a4d86f6b-d79b-4b21-b0cd-f1115c6de10a'},
+ w:{dawn:'hf_20261112_093540_1c8039f2-75ce-4535-a5bf-981c3460025a',day:'hf_20261112_093351_054d6fa9-7800-4f99-97a7-e58c2e4ec264',dusk:'hf_20261112_093538_f89fa606-5744-4940-9d71-c8a1cbc5af8e',night:'hf_20261112_093539_a103e122-c76b-4843-a118-639ad8583806'}},
+summer:{
+ p:{dawn:'hf_20261112_093352_4399917e-d167-438c-9797-166e05b7874e',day:'https://d2ol7oe51mr4n9.cloudfront.net/user_3Ly3hsluRPEjivn3YLUlIIHMCMS/54b9527c-d395-4cc3-aa33-e91edbf8f5eb.jpg',dusk:'hf_20261112_093352_efd6cb0f-d7b0-4b96-8e61-f090b3f25585',night:'hf_20261112_093351_45b690f6-f564-4b4f-8a11-10f7ec67f959'},
+ w:{dawn:'hf_20261112_093351_356d1379-73f5-48a5-ab0b-94eb1cdace14',day:'hf_20261111_181706_69928e72-a320-4a82-9871-c2aff9432bef',dusk:'hf_20261112_093350_b1f53d46-86fe-446f-ae07-ffc10ec727a1',night:'hf_20261112_093350_c4c9af0b-f7c7-48ff-9ea0-8cf392c82873'}}};
+var SEASON={poda:'winter',lloro:'winter',hoja:'winter',brote:'spring',flor:'summer',cuajado:'summer',boda:'summer',envero:'summer',vendimia:'summer'};
+function phLayer(img,f,o){if(img.dataset.f!==f){img.dataset.f=f;img.dataset.ok='';img.style.opacity=0;img.onload=function(){img.dataset.ok='1';img.style.opacity=img.dataset.o};img.onerror=function(){img.dataset.ok=''};img.src=f.indexOf('http')===0?f:CDN+f+'_min.webp'}
  img.dataset.o=o;if(img.dataset.ok)img.style.opacity=o}
 function photo(ms,vn){var s=PHOTOS[SEASON[vn]]||PHOTOS.winter,set=(window.innerWidth<window.innerHeight?s.p:s.w)||s.p||s.w;if(!set)return;
  var al=sun(ms).alt,tw=madrid(ms).h<12?'dawn':'dusk',a,b,t;

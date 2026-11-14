@@ -1,0 +1,737 @@
+<!doctype html>
+<html lang="ca">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Natalia &amp; Marçal · 3 de juliol de 2027</title>
+<meta name="description" content="Dissabte, 3 de juliol de 2027 · Mas de les Moreres, Cornudella de Montsant (Priorat)">
+<meta name="robots" content="noindex">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Natalia &amp; Marçal">
+<meta property="og:description" content="Dissabte, 3 de juliol de 2027 · Mas de les Moreres, Cornudella de Montsant">
+<meta property="og:image" content="https://lh3.googleusercontent.com/d/1Rs5YnpCArYb64omxe8YgoyfVj4ox_m7s=w1200">
+<meta name="theme-color" content="#0B0F0C">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@300;400;500;600&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0B0F0C;--card:#141A15;--bone:#ECE7DA;--dim:#C9C4B5;--soft:#D8D3C5;--acc:#D4F56A;--ink:#10140A;--line:rgba(236,231,218,.18);--line2:rgba(236,231,218,.35);
+--sans:'Geist','Inter',system-ui,-apple-system,'Segoe UI',sans-serif;--mono:'Geist Mono',ui-monospace,'SF Mono',Menlo,monospace;--serif:'Instrument Serif','Times New Roman',serif}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--bone);font-family:var(--sans);font-size:16px;line-height:1.45;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:var(--bone)}
+button,input,textarea{font-family:inherit}
+button{cursor:pointer}
+:focus-visible{outline:2px solid var(--acc);outline-offset:3px}
+h1,h2,h3,p{margin:0}
+.mono{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase}
+.acc{color:var(--acc)}.dim{color:var(--dim)}
+.serif{font-family:var(--serif);font-weight:400;letter-spacing:-.01em}
+[hidden]{display:none!important}
+
+/* barra superior */
+.top{position:fixed;z-index:30;left:0;right:0;top:0;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:14px 22px;padding-top:max(14px,env(safe-area-inset-top));transition:background .3s}
+.top.solid{background:linear-gradient(180deg,rgba(11,15,12,.92),rgba(11,15,12,0))}
+.brand{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-decoration:none;height:44px;display:flex;align-items:center}
+.nav{display:none;gap:26px;font-size:14px}
+.nav a{text-decoration:none;height:44px;display:flex;align-items:center;gap:6px;opacity:.9}
+.nav a:hover{opacity:1;color:#fff}
+.pill{height:44px;padding:0 14px;border-radius:22px;border:1px solid var(--line2);background:rgba(11,15,12,.35);color:var(--bone);font-family:var(--mono);font-size:12px;letter-spacing:.1em;display:flex;align-items:center;gap:8px;text-decoration:none;backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px)}
+.pill.cta{display:none;background:var(--acc);border-color:var(--acc);color:var(--ink);font-family:var(--sans);font-size:14px;font-weight:600;letter-spacing:0}
+.top-r{display:flex;gap:10px;align-items:center}
+
+/* índice lateral */
+.dots{position:fixed;z-index:25;right:14px;top:50%;transform:translateY(-50%);display:flex;flex-direction:column;align-items:flex-end;gap:4px}
+.dots a{display:flex;align-items:center;justify-content:flex-end;gap:8px;height:22px;min-width:22px;text-decoration:none;font-family:var(--mono);font-size:10px;letter-spacing:.1em}
+.dots a span{opacity:0;transform:translateX(6px);transition:.25s;white-space:nowrap;text-shadow:0 0 8px #0B0F0C,0 0 2px #0B0F0C}
+.dots a i{width:5px;height:5px;border-radius:50%;background:var(--bone);opacity:.55;margin-right:2px;transition:.25s}
+.dots a.on span{opacity:1;transform:none}
+.dots a.on i{width:9px;height:9px;background:var(--acc);opacity:1;margin-right:0}
+
+/* portada */
+#hero{position:relative}
+.hbg{position:sticky;top:0;height:100vh;height:100svh;overflow:hidden}
+.hsp{height:330vh}#hero.solo .hsp{display:none}
+.tl{position:absolute;z-index:2;left:22px;right:22px;bottom:34px;opacity:0;transition:opacity .4s;display:flex;flex-direction:column;gap:8px;pointer-events:none;text-shadow:0 1px 14px rgba(11,15,12,.7)}
+.tl b{font-family:var(--serif);font-style:italic;font-weight:400;font-size:60px;line-height:.95;letter-spacing:-.01em}
+#hscrim{transition:opacity .3s}
+.sky{position:absolute;inset:0;width:100%;height:100%;display:block}
+.ph{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 45%;opacity:0;transition:opacity 1.4s ease}
+@media (min-aspect-ratio:1/1){.ph{object-position:62% 50%;transform:scale(1.1);transform-origin:62% 100%}}
+.scrim{position:absolute;inset:0;pointer-events:none;background:linear-gradient(180deg,rgba(11,15,12,.5) 0,rgba(11,15,12,0) 30%,rgba(11,15,12,0) 52%,rgba(11,15,12,.82) 76%,rgba(11,15,12,.97) 100%)}
+.hero-in{position:relative;z-index:2;width:100%;margin-top:-100vh;margin-top:-100svh;min-height:100vh;min-height:100svh;padding:86px 22px 26px;display:flex;flex-direction:column;justify-content:space-between;gap:34px}
+.hero-in h1{font-family:var(--serif);font-style:italic;font-weight:400;font-size:clamp(72px,21vw,96px);line-height:.9;letter-spacing:-.01em;margin-top:14px}
+.hero-b{display:flex;flex-direction:column;gap:20px;max-width:460px}
+.live{display:flex;align-items:center;gap:8px;margin-bottom:6px}
+.live i,.pulse{width:7px;height:7px;border-radius:50%;background:var(--acc);box-shadow:0 0 0 0 rgba(212,245,106,.6);animation:pulse 2.4s infinite}
+@keyframes pulse{70%{box-shadow:0 0 0 9px rgba(212,245,106,0)}100%{box-shadow:0 0 0 0 rgba(212,245,106,0)}}
+.date{font-size:23px;font-weight:500;letter-spacing:-.01em}
+.place{font-size:15px;color:var(--dim)}
+.count{display:flex;align-items:center;gap:14px;padding:12px 14px;border-radius:16px;border:1px solid var(--line);background:rgba(20,26,21,.72);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
+.count b{font-size:17px;font-weight:500;display:block}
+.btn{height:56px;border-radius:28px;border:0;background:var(--acc);color:var(--ink);font-size:17px;font-weight:600;text-decoration:none;display:flex;align-items:center;justify-content:center;gap:10px;width:100%;transition:transform .15s,filter .15s}
+.btn:hover{filter:brightness(1.06)}.btn:active{transform:scale(.985)}
+.btn[disabled]{opacity:.55;cursor:default}
+.btn.ghost{height:52px;background:transparent;border:1px solid var(--line2);color:var(--bone);font-size:15px;font-weight:500}
+.link{height:44px;font-size:14px;text-decoration:none;display:flex;align-items:center;justify-content:center;gap:8px;background:none;border:0;color:var(--bone);width:100%}
+.link svg{animation:bob 1.8s ease-in-out infinite}
+@keyframes bob{50%{transform:translateY(4px)}}
+.codef{display:flex;flex-direction:column;gap:10px}
+.codef .row{display:flex;gap:8px}
+.field{height:56px;width:100%;padding:0 16px;border-radius:16px;border:1px solid var(--line2);background:rgba(20,26,21,.85);color:var(--bone);font-size:16px}
+.codef .field{font-family:var(--mono);letter-spacing:.3em;text-transform:uppercase;text-align:center;font-size:18px}
+.codef .btn{width:auto;padding:0 26px;flex:none}
+.err{color:#FFB199;font-size:14px;min-height:20px}
+
+/* la finca desde el aire (vídeo) */
+#vuelo{position:relative;height:230vh}
+.vst{position:sticky;top:0;height:100vh;height:100svh;overflow:hidden;background:#0B0F0C}
+.vst canvas{position:absolute;inset:0;width:100%;height:100%;display:block}
+.vpb{height:3px;border-radius:2px;background:rgba(236,231,218,.22);max-width:240px;margin-top:8px}.vpb i{display:block;height:3px;border-radius:2px;background:var(--acc);width:0}
+.vst .scrim{background:linear-gradient(180deg,rgba(11,15,12,.5) 0,rgba(11,15,12,0) 26%,rgba(11,15,12,0) 56%,rgba(11,15,12,.88) 100%)}
+.vtx{position:absolute;z-index:2;left:22px;right:22px;bottom:34px;display:flex;flex-direction:column;gap:10px;max-width:560px}
+.vtx h2{font-family:var(--serif);font-style:italic;font-weight:400;font-size:56px;line-height:.95;letter-spacing:-.01em}
+.vtx p{font-size:15px;color:var(--soft)}
+@media (min-width:900px){.vtx{left:64px;bottom:56px}.vtx h2{font-size:96px}.vtx p{font-size:17px}}
+/* el vuelo */
+#dia{position:relative;height:620vh}
+.stage{position:sticky;top:0;height:100vh;height:100svh;overflow:hidden}
+.stage .scrim{background:linear-gradient(180deg,rgba(11,15,12,.55) 0,rgba(11,15,12,0) 34%,rgba(11,15,12,0) 60%,rgba(11,15,12,.5) 100%)}
+.stops{position:absolute;z-index:3;left:22px;top:78px;list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:3px}
+.stops button{background:none;border:0;color:var(--dim);font-family:var(--mono);font-size:11px;letter-spacing:.1em;display:flex;align-items:center;gap:10px;height:26px;padding:0;text-shadow:0 0 10px rgba(11,15,12,.8)}
+.stops button i{width:5px;height:5px;border-radius:50%;background:currentColor;margin:0 2px;transition:.2s}
+.stops .past button{color:var(--dim);opacity:.75}
+.stops .next button{color:var(--bone)}
+.stops .on button{color:var(--acc);font-weight:500}
+.stops .on i{width:9px;height:9px;margin:0}
+.fcard{position:absolute;z-index:3;left:16px;right:16px;bottom:18px;bottom:max(18px,env(safe-area-inset-bottom));display:flex;flex-direction:column;gap:14px;padding:20px;border-radius:22px;border:1px solid var(--line);background:rgba(14,19,15,.9);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
+.fcard h2{font-family:var(--serif);font-weight:400;font-size:42px;line-height:.98;letter-spacing:-.01em}
+.fcard p{font-size:15px;color:var(--soft)}
+.stats{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.stat{display:flex;flex-direction:column;gap:4px;padding:10px 12px;border-radius:12px;background:rgba(236,231,218,.07)}
+.stat b{font-size:16px;font-weight:500}
+.sunbar{display:flex;align-items:center;gap:10px}
+.sunbar .tr{flex:1;height:3px;border-radius:2px;background:rgba(236,231,218,.2);position:relative}
+.sunbar .fl{height:3px;border-radius:2px;background:var(--acc);width:0}
+.sunbar .kn{position:absolute;top:-5px;width:13px;height:13px;margin-left:-6px;border-radius:50%;background:var(--acc);left:0}
+.fswap{transition:opacity .25s}
+
+/* secciones */
+section.sec{padding:84px 22px 40px;max-width:560px;margin:0 auto;display:flex;flex-direction:column;gap:26px}
+.sec h2.big{font-family:var(--serif);font-weight:400;font-size:44px;line-height:1;letter-spacing:-.01em}
+.sec h2.big em{font-style:italic}
+.sec h2.huge{font-family:var(--serif);font-style:italic;font-weight:400;font-size:72px;line-height:.92;letter-spacing:-.01em}
+.lead{font-size:15px;color:var(--dim)}
+.stack{display:flex;flex-direction:column;gap:10px}
+.crd{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:14px 14px 14px 16px;border-radius:18px;border:1px solid rgba(236,231,218,.16);background:var(--card)}
+.crd .tx{display:flex;flex-direction:column;gap:3px;min-width:0}
+.crd .tt{font-size:19px;font-weight:500;letter-spacing:-.01em}
+.crd .sb{font-size:13px;color:var(--dim)}
+.yn{display:flex;gap:6px;flex:none}
+.yn button{width:54px;height:44px;border-radius:22px;font-size:15px;font-weight:600;background:transparent;color:var(--bone);border:1px solid var(--line2);transition:.15s}
+.yn button[aria-pressed=true].y{background:var(--acc);color:var(--ink);border-color:var(--acc)}
+.yn button[aria-pressed=true].n{background:var(--bone);color:var(--ink);border-color:var(--bone)}
+.lbl{font-family:var(--mono);font-size:11px;letter-spacing:.14em;color:var(--dim);text-transform:uppercase}
+.fld{display:flex;flex-direction:column;gap:8px}
+.inp{height:52px;padding:0 16px;border-radius:14px;border:1px solid rgba(236,231,218,.3);background:var(--card);color:var(--bone);font-size:16px;width:100%}
+textarea.inp{height:auto;padding:14px 16px;line-height:1.4;resize:none}
+.inp::placeholder{color:#A9A496}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{height:44px;padding:0 16px;border-radius:22px;font-size:14px;font-weight:500;background:transparent;color:var(--bone);border:1px solid var(--line2);transition:.15s}
+.chip[aria-pressed=true]{background:var(--bone);color:var(--ink);border-color:var(--bone);font-weight:600}
+.sw{width:56px;height:44px;padding:0;border:0;background:transparent;display:flex;align-items:center;flex:none}
+.sw span{width:56px;height:32px;border-radius:16px;padding:3px;display:flex;border:1px solid rgba(236,231,218,.5);transition:.2s}
+.sw span i{width:24px;height:24px;border-radius:50%;background:var(--bone);transition:.2s}
+.sw[aria-checked=true] span{background:var(--acc);border-color:var(--acc)}
+.sw[aria-checked=true] span i{background:var(--ink);transform:translateX(24px)}
+.note{font-family:var(--mono);font-size:11px;letter-spacing:.1em;color:var(--dim);text-align:center;text-transform:uppercase}
+.ok{display:flex;align-items:center;gap:14px;padding:14px 16px;border-radius:18px;border:1px solid rgba(236,231,218,.16);background:var(--card)}
+.ok b{font-size:16px;font-weight:500;display:block}
+.ok span{font-size:13px;color:var(--dim)}
+
+/* mapa */
+.mapw{position:relative;width:100%;max-width:390px;margin:0 auto;aspect-ratio:100/198.5}
+.mapw>svg{position:absolute;inset:0;width:100%;height:100%;display:block}
+.pin{position:absolute;width:44px;height:44px;margin:-22px 0 0 -22px;padding:0;border:0;background:transparent;display:flex;align-items:center;justify-content:center}
+.pin b{width:28px;height:28px;border-radius:50%;background:var(--bone);color:var(--ink);font-family:var(--mono);font-size:11px;font-weight:500;display:flex;align-items:center;justify-content:center;transition:.2s}
+.pin[aria-pressed=true] b{width:36px;height:36px;background:var(--acc);font-size:12px;box-shadow:0 0 0 6px rgba(14,21,16,.7)}
+.pin.nowp b{animation:pulse 2.4s infinite}
+.pin.off{opacity:.25}
+.mlab{position:absolute;font-family:var(--mono);font-size:11px;letter-spacing:.1em;pointer-events:none;white-space:nowrap}
+.mcard{position:absolute;left:0;bottom:0;width:54%;min-width:196px;padding:16px;border-radius:20px;border:1px solid var(--line);background:var(--card);display:flex;flex-direction:column;gap:10px}
+.mcard h3{font-family:var(--serif);font-weight:400;font-size:30px;line-height:1;letter-spacing:-.01em}
+.mcard p{font-size:14px;line-height:1.4;color:var(--soft)}
+.mcard .btn{height:44px;font-size:14px;margin-top:4px}
+.north{position:absolute;right:0;top:6%;display:flex;align-items:center;gap:6px;color:var(--dim)}
+
+/* mesa */
+.seal{padding:18px 20px;border-radius:22px;border:1px solid var(--line);background:var(--card);display:flex;flex-direction:column;gap:8px}
+.seal b{font-size:30px;font-weight:500;letter-spacing:-.01em}
+.seal span.s{font-size:14px;color:var(--dim)}
+.tbl{width:100%;height:auto;display:block}
+
+/* llegar */
+.steps{list-style:none;margin:0;padding:0;display:flex;flex-direction:column}
+.steps li{position:relative;padding:0 0 26px 30px}
+.steps li:before{content:"";position:absolute;left:5px;top:6px;width:9px;height:9px;border-radius:50%;background:var(--acc)}
+.steps li:after{content:"";position:absolute;left:9px;top:20px;bottom:0;width:1px;background:var(--line2)}
+.steps li:last-child{padding-bottom:0}.steps li:last-child:after{display:none}
+.steps b{display:block;font-size:19px;font-weight:500;letter-spacing:-.01em;margin:4px 0 3px}
+.steps p{font-size:14px;color:var(--dim)}
+
+/* dormir */
+.grp{display:flex;flex-direction:column;gap:8px}
+.grp ul{list-style:none;margin:0;padding:0;border-radius:18px;border:1px solid rgba(236,231,218,.16);background:var(--card);overflow:hidden}
+.grp li+li{border-top:1px solid rgba(236,231,218,.1)}
+.grp a{display:flex;justify-content:space-between;align-items:center;gap:12px;min-height:52px;padding:8px 16px;text-decoration:none}
+.grp a:hover{background:rgba(236,231,218,.05)}
+.grp a b{font-size:16px;font-weight:500}
+.grp a span{font-size:13px;color:var(--dim);text-align:right;flex:none}
+
+footer{padding:60px 22px 80px;text-align:center}
+footer .serif{font-size:44px;font-style:italic}
+
+.toast{position:fixed;z-index:50;left:50%;bottom:24px;transform:translate(-50%,20px);background:var(--bone);color:var(--ink);padding:12px 18px;border-radius:22px;font-size:14px;font-weight:600;opacity:0;pointer-events:none;transition:.3s}
+.toast.on{opacity:1;transform:translate(-50%,0)}
+
+@media (min-width:900px){
+  .top{padding:18px 40px}
+  .nav{display:flex}
+  .pill.cta{display:flex}
+  .dots{right:26px}
+  .hero-in{padding:120px 64px 56px;flex-direction:row;align-items:flex-end;justify-content:space-between}
+  .tl{left:64px;bottom:56px}.tl b{font-size:104px}
+  .hero-in h1{font-size:clamp(120px,12vw,188px)}
+  .hero-b{width:420px;flex:none}
+  .stops{left:64px;top:110px}
+  .fcard{left:auto;right:64px;bottom:56px;width:400px}
+  section.sec{max-width:1120px;padding:120px 64px 60px;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:26px 80px;align-items:start}
+  section.sec .col{display:flex;flex-direction:column;gap:26px}
+  section.sec .col.stick{position:sticky;top:120px}
+  .sec h2.big{font-size:64px}.sec h2.huge{font-size:104px}
+  .lead{font-size:17px;max-width:420px}
+}
+@media (max-width:899px){section.sec .col{display:contents}}
+@media (max-width:899px){.dots{right:7px}.dots a span{display:none}.fcard{gap:10px;padding:16px 18px}.fcard h2{font-size:34px}.fcard .stats,.fcard .kp{display:none}}
+@media (max-width:899px) and (max-height:740px){.stops{flex-direction:row;gap:6px;align-items:center}.stops li:not(.on) button{font-size:0;gap:0}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.live i,.pulse,.link svg,.pin.nowp b{animation:none}}
+</style>
+</head>
+<body>
+<header class="top" id="top">
+  <a class="brand" href="#hero">N&amp;M · 03.07.27</a>
+  <nav class="nav" id="nav" aria-label="Principal" hidden></nav>
+  <div class="top-r">
+    <button type="button" class="pill" id="langb"><svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3.2 3 14.8 0 18M12 3c-3 3.2-3 14.8 0 18"/></svg><span id="langt">CA</span></button>
+    <a class="pill cta" id="navcta" href="#rsvp" hidden></a>
+  </div>
+</header>
+<nav class="dots" id="dots" aria-label="Seccions" hidden></nav>
+
+<section id="hero" class="solo">
+  <div class="hbg">
+    <svg class="sky" id="heroSky" aria-hidden="true" preserveAspectRatio="none"></svg>
+    <img class="ph" id="phA" alt="" decoding="async"><img class="ph" id="phB" alt="" decoding="async"><img class="ph" id="phC" alt="" decoding="async"><img class="ph" id="phD" alt="" decoding="async"><video class="ph" id="phV" muted playsinline preload="none" disablepictureinpicture disableremoteplayback tabindex="-1" aria-hidden="true"></video>
+    <div class="scrim" id="hscrim"></div>
+    <div class="tl" id="tl" aria-hidden="true"></div>
+  </div>
+  <div class="hero-in">
+    <div>
+      <span class="mono acc" id="eyebrow">&nbsp;</span>
+      <h1>Natalia<br>&amp; Marçal</h1>
+    </div>
+    <div class="hero-b" id="heroB"></div>
+  </div>
+  <div class="hsp" id="hsp"></div>
+</section>
+
+<main id="app" hidden>
+  <section id="vuelo"><div class="vst"><canvas id="vc" aria-hidden="true"></canvas><div class="scrim"></div><div class="vtx" id="vtx"></div></div></section>
+  <section id="dia" aria-label="El dia">
+    <div class="stage">
+      <svg class="sky" id="flySky" aria-hidden="true" preserveAspectRatio="none"></svg>
+      <div class="scrim"></div>
+      <ol class="stops" id="stops"></ol>
+      <div class="fcard" id="fcard" aria-live="polite"></div>
+    </div>
+  </section>
+  <section class="sec" id="rsvp"></section>
+  <section class="sec" id="finca"></section>
+  <section class="sec" id="mesa"></section>
+  <section class="sec" id="llegar"></section>
+  <section class="sec" id="dormir"></section>
+  <footer><div class="serif">Natalia &amp; Marçal</div><div class="mono dim" style="margin-top:10px">03.07.27 · MAS DE LES MORERES</div></footer>
+</main>
+<div class="toast" id="toast" role="status"></div>
+<template id="mapsvg"><svg aria-hidden="true" viewBox="0 0 100 198.5"><g transform="translate(0 198.5) rotate(-90)"><polygon points="13.7,82.1 30.4,77.2 46.4,67.2 98.1,62.4 100.1,76.1 25,87.1" fill="#17261A"/><polygon points="20,91.7 115.9,78.3 118,99.5 35,99.8 19.5,96.7 18.1,93.8" fill="#17261A"/><polygon points="166,38 197,31 198.5,60 169,66" fill="#17261A"/><g stroke="#6E8F45" stroke-width="0.7" stroke-dasharray="0.9 1.6" opacity="0.6"><line x1="42" y1="73.5" x2="99" y2="65.5"/><line x1="34" y1="79" x2="99.5" y2="69.5"/><line x1="27" y1="84.3" x2="100" y2="73.5"/><line x1="24" y1="94.6" x2="116" y2="81.6"/><line x1="31" y1="97.6" x2="116.5" y2="85.6"/><line x1="52" y1="98.6" x2="117" y2="89.6"/><line x1="82" y1="98.6" x2="117.5" y2="93.6"/><line x1="168" y1="42" x2="197" y2="35.5"/><line x1="168.5" y1="47" x2="197.5" y2="40.5"/><line x1="169" y1="52" x2="198" y2="45.5"/><line x1="169.5" y1="57" x2="198" y2="50.5"/><line x1="170" y1="62" x2="198.5" y2="55.5"/></g><g fill="none" stroke="#5E5045" stroke-linecap="round" stroke-linejoin="round"><polyline points="0,70.5 8,73 17,73.3 38,63.3 45.5,61 100.5,55.3 118,51.6 120,44.5 127,42 143,42 156,37.5 166,31 182,26 185,17" stroke-width="3.6"/><polyline points="158.5,36.5 160.5,50 162,70.5" stroke-width="3"/><polyline points="101,77.9 160,69.4" stroke-width="3"/></g><polygon points="132.9,56 157.1,49.9 159.1,67.1 134.9,70.7" fill="#1C3320"/><g fill="#24452A"><circle cx="140" cy="60" r="3"/><circle cx="147" cy="57.5" r="3"/><circle cx="153" cy="61" r="3"/><circle cx="144" cy="65.5" r="3"/><circle cx="151.5" cy="66" r="3"/></g><polygon points="100.9,60.7 132.4,56.2 134.5,71 103,75.5" fill="#1D241F" stroke="#ECE7DA" stroke-opacity="0.22" stroke-width="0.4"/><polygon points="116.4,77.8 136.3,75.2 138.7,92.2 118.7,94.9" fill="#2A2A22" stroke="#ECE7DA" stroke-opacity="0.22" stroke-width="0.4"/><polygon points="136.9,75.4 158.8,72.1 160,82.5 153.1,83.6 153.7,89.5 139.1,91.7" fill="#1E2F2A"/><polygon points="146.6,77.7 155.8,76.6 156.5,81.7 147.3,82.8" fill="#2C7E99"/><g fill="#252B25"><polygon points="112,21.5 130.5,16.2 132.3,22.6 113.7,27.9"/><polygon points="116.4,32.1 134,25.4 136.5,31.6 118.9,38.5"/></g><g fill="#3B4238"><polygon points="146.6,20.4 163,17.6 165,27.5 151.5,30.1"/><polygon points="163,17.6 173.5,12.5 178,23.8 165,27.5"/><polygon points="101.2,60.8 122.5,58 123.2,64.3 102.2,67.2"/><polygon points="138.4,80.3 145.1,79.3 146.6,87.7 139.8,88.8"/></g><g fill="#4A5146"><polygon points="130.6,16.2 146.6,11.9 148.5,18.1 132.4,22.6"/><polygon points="137.7,29.3 147.7,24 153.7,34.2 143.8,39.5"/><polygon points="128.4,38.8 139.2,33.7 142.3,39.9 130.9,45.7"/><polygon points="133.4,47.7 154.7,41.5 157.1,49.5 135.7,55.5"/></g><polygon points="134.5,23 147,20.5 148.8,24.5 137.5,29" fill="#6B5B4E"/><polygon points="171.1,19.7 175.8,18.4 177.7,23.4 172.8,25" fill="#D9B38A"/><line x1="23.48" y1="91.28" x2="100.98" y2="79.78" stroke="#3E6B3A" stroke-width="2.6" stroke-linecap="round" stroke-dasharray="0 5.2"/><line x1="22.92" y1="87.52" x2="100.42" y2="76.02" stroke="#3E6B3A" stroke-width="2.6" stroke-linecap="round" stroke-dasharray="0 5.2"/><line x1="23.2" y1="89.4" x2="100.7" y2="77.9" stroke="#D4F56A" stroke-width="1.2" stroke-linecap="round"/></g></svg></template>
+<script>
+(function(){
+'use strict';
+var API='https://script.google.com/macros/s/AKfycbwD9mhaFjAvLLgf7PKnQ_101UblhHOaBmwP2C2nGkJ8RbOlVJq9bzOseOMlY7q1XEh2/exec';
+var $=function(s,r){return (r||document).querySelector(s)}, $$=function(s,r){return [].slice.call((r||document).querySelectorAll(s))};
+var qs=new URLSearchParams(location.search);
+var store={get:function(k){try{return localStorage.getItem(k)}catch(e){return null}},set:function(k,v){try{localStorage.setItem(k,v)}catch(e){}},del:function(k){try{localStorage.removeItem(k)}catch(e){}}};
+var off=0;(function(){var t=qs.get('t');if(t){var d=new Date(t).getTime();if(!isNaN(d))off=d-Date.now()}})();
+var now=function(){return Date.now()+off};
+var esc=function(s){return String(s==null?'':s).replace(/[&<>"']/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]})};
+var clamp=function(v,a,b){return Math.max(a,Math.min(b,v))};
+
+/* ---------- Fechas (hora de Cornudella, CEST = UTC+2 en julio) ---------- */
+var U=function(mo,d,h,m){return Date.UTC(2027,mo,d,h,m||0)};
+var WED=U(6,3,14,30);
+var SCHED=[U(6,3,14,30),U(6,3,14,45),U(6,3,16,0),U(6,3,19,0),U(6,3,21,0),U(6,3,22,30),U(6,4,4,0)];
+var TIMES=['16:30','16:45','18:00','21:00','23:00','00:30'];
+var LIVE0=U(6,3,13,0), REVEAL=U(6,2,19,0), DEADLINE=Date.UTC(2027,3,30,21,59,59), START=Date.UTC(2026,10,1);
+
+/* ---------- Textos ---------- */
+var T={
+es:{personal:'Invitación personal',nowAt:'Ahora en la finca',ph:{night:'Noche',dawn:'Amanecer',morning:'Mañana',midday:'Mediodía',afternoon:'Tarde',dusk:'Atardecer'},
+date:'Sábado 3 de julio de 2027',left:'Faltan {n} días',left1:'Falta 1 día',today:'Es hoy',thanks:'Gracias por venir',vineNow:'La viña ahora',
+vine:{poda:'Poda de invierno',lloro:'Lloro',brote:'Brotación',flor:'Floración',cuajado:'Cuajado',boda:'Día de boda',envero:'Envero',vendimia:'Vendimia',hoja:'Caída de la hoja'},
+confirm:'Confirmar asistencia',change:'Ver o cambiar mi respuesta',fly:'Desliza para viajar al 3 de julio',tlTag:'Viaje al 3 de julio de 2027',clubD:'Pantalla para seguir la ceremonia. Por la noche, bar y chill-out a cubierto.',codeP:'Introduce el código de tu invitación',codeH:'Lo recibiste por WhatsApp',enter:'Entrar',codeBad:'No encontramos ese código. Revísalo e inténtalo de nuevo.',netBad:'No hemos podido conectar. Inténtalo de nuevo.',loading:'Abriendo tu invitación…',
+nav:['Portada','El día','Confirmar','La finca','La mesa','Cómo llegar','Alojamiento'],
+stop:'Parada {i} de 06',time:'Hora',keep:'Sigue deslizando',
+stops:[['Llegada','Mas de les Moreres','Aparca en Venta del Pubill y sube en lanzadera. Te esperamos a las 16:30.','Acceso','Lanzadera'],
+['Ceremonia','La capilla','Ceremonia religiosa en la capilla, en familia. El resto la seguís en pantalla desde la Plaça del Molí y el Club.','Pantalla','Plaça del Molí'],
+['Aperitivo','Piscina y jardín','Dos o tres horas de aperitivo junto a la piscina y en el jardín.','Duración','2–3 h'],
+['Cena','Camino de las Moreras','Una sola mesa de 115 metros bajo las moreras, entre las viñas.','Vino','De la finca'],
+['Baile y concierto','Plaça del Molí','Primer baile y concierto en la plaza.','Duración','1–2 h'],
+['Fiesta','Discoteca','Discoteca hasta que salga el sol. La plaza y el Club quedan como chill-out.','Hasta','El amanecer']],
+rsvpT:'{n}, <em>¿vienes?</em>',rsvpL:'Solo ves los actos a los que te hemos invitado. Responde a cada uno con un toque.',yes:'Sí',no:'No',
+ev:{tiro:['Viernes 2 julio · 16:00','Tiro al plato','Lugar por confirmar'],pre:['Viernes 2 julio · 21:00','Cena preboda','Íntim · por confirmar'],boda:['Sábado 3 julio · 16:30','La boda','Mas de les Moreres'],post:['Domingo 4 julio · 13:00','Fideuà postboda','Piscina · Mas de les Moreres']},
+plus:'Tu acompañante',plusOn:'Vengo con acompañante',plusPh:'Nombre y apellido',plusMenu:'Alergias o menú de tu acompañante',menu:'Menú y alergias',menus:['Sin restricciones','Vegetariano','Sin gluten','Sin lactosa','Otra'],otherPh:'Cuéntanos qué necesitas',
+bus:'Vengo en autobús desde Reus',busS:'Solo para quienes viven en Reus',lod:'Necesito alojamiento',lodS:'Para saber cuántos buscáis dónde dormir',
+msg:'Mensaje para Natalia y Marçal',msgPh:'Si quieres, escríbenos algo',send:'Enviar respuesta',update:'Actualizar respuesta',sending:'Enviando…',saved:'Respuesta guardada',savedS:'Gracias. Puedes cambiarla cuando quieras hasta el 30 de abril.',until:'Puedes cambiarla hasta el 30 de abril',need:'Responde Sí o No a cada acto.',sendBad:'No se ha podido guardar. Inténtalo de nuevo.',closed:'El plazo para responder terminó el 30 de abril. Escríbenos si necesitas cambiar algo.',
+light:'Al confirmar, guardas tu luz en la mesa',
+mapT:'La finca',mapL:'Toca un punto para ver qué pasa allí y a qué hora.',layers:['Actos','Lanzadera'],north:'Norte',see:'Ver en el recorrido',labels:['Capilla','Club','Plaça del Molí','Discoteca','Jardín y piscina','Llegada'],shT:'Venta del Pubill → el mas',shD:'Las lanzaderas te dejan en la zona de llegada y te devuelven al parking al acabar.',shB:'Cómo llegar',
+sealed:'Apartado sellado',mesaT:'La mesa',mesaL:'Una sola mesa de 115 metros bajo las moreras. Tu sitio todavía no se enseña.',revTag:'Se desvela el viernes',revD:'2 de julio · 21:00',revS:'Ese día verás tu sitio y cómo se enciende la mesa entera.',lit:'Tu luz está guardada',litS:'Has confirmado que vienes. Se encenderá ese día.',unlit:'Tu luz aún no está guardada',unlitS:'Confirma tu asistencia y quedará guardada.',cal:'Añadir aviso al calendario',calS:'La mesa se desvela · Natalia & Marçal',
+revd:'La mesa · desvelada',seatT:'Tu sitio, {n}',seat:'Tu puesto',side:'Lado',seatSoon:'Tu sitio aparecerá aquí en breve.',tblAlt:'La mesa a oscuras, con todas las luces apagadas',
+goT:'Aparca abajo, sube en lanzadera',goTag:'Cómo llegar',goL:'Al mas no se sube en coche. El punto de encuentro es el parking del restaurante Venta del Pubill.',
+go:[['Por confirmar','Autobús desde Reus','Solo para quienes viven en Reus. Llega a tiempo para subir al mas antes de las 16:30.'],['Punto de encuentro','Parking Venta del Pubill','Deja aquí el coche: es desde donde volverás a casa. Lanzaderas continuas hasta el mas.'],['16:30','Todos en Mas de les Moreres','La ceremonia empieza a las 16:45.'],['Al acabar','La vuelta','Cuando termine la fiesta: lanzadera al parking y autobús a Reus.']],
+goB:'Ir al parking Venta del Pubill',goN:'Horarios de autobús por confirmar',
+stayTag:'Alojamiento',stayT:'Dónde dormir',stayL:'Una selección cerca del mas. Son pueblos pequeños: reserva pronto.',cats:['Alto standing','Hoteles y habitaciones','Casas enteras para grupos','Camping y bungalows'],pers:'pers.',
+vCh:['Sábado 3 de julio · 16:30','Mas de les Moreres','Llegamos a la finca.'],liveTag:'En directo',hello:'Hola, {n}. Esto es lo que está pasando.',nowL:'Ahora',nextL:'Después',soon:'Empieza a las 16:30',back:'Tu vuelta',backV:'Lanzadera a Venta del Pubill',mapB:'Abrir el mapa',langName:'ES'},
+ca:{personal:'Invitació personal',nowAt:'Ara a la finca',ph:{night:'Nit',dawn:'Alba',morning:'Matí',midday:'Migdia',afternoon:'Tarda',dusk:'Capvespre'},
+date:'Dissabte 3 de juliol de 2027',left:'Falten {n} dies',left1:'Falta 1 dia',today:'És avui',thanks:'Gràcies per venir',vineNow:'La vinya ara',
+vine:{poda:'Poda d’hivern',lloro:'Plor',brote:'Brotada',flor:'Floració',cuajado:'Quallat',boda:'Dia de casament',envero:'Verol',vendimia:'Verema',hoja:'Caiguda de la fulla'},
+confirm:'Confirmar assistència',change:'Veure o canviar la meva resposta',fly:'Llisca per viatjar al 3 de juliol',tlTag:'Viatge al 3 de juliol de 2027',clubD:'Pantalla per seguir la cerimònia. A la nit, bar i chill-out a cobert.',codeP:'Introdueix el codi de la teva invitació',codeH:'El vas rebre per WhatsApp',enter:'Entrar',codeBad:'No trobem aquest codi. Revisa’l i torna-ho a provar.',netBad:'No hem pogut connectar. Torna-ho a provar.',loading:'Obrint la teva invitació…',
+nav:['Portada','El dia','Confirmar','La finca','La taula','Com arribar','Allotjament'],
+stop:'Parada {i} de 06',time:'Hora',keep:'Continua lliscant',
+stops:[['Arribada','Mas de les Moreres','Aparca a la Venta del Pubill i puja amb la llançadora. T’esperem a les 16:30.','Accés','Llançadora'],
+['Cerimònia','La capella','Cerimònia religiosa a la capella, en família. La resta la seguiu en pantalla des de la Plaça del Molí i el Club.','Pantalla','Plaça del Molí'],
+['Aperitiu','Piscina i jardí','Dues o tres hores d’aperitiu al costat de la piscina i al jardí.','Durada','2–3 h'],
+['Sopar','Camí de les Moreres','Una sola taula de 115 metres sota les moreres, entre les vinyes.','Vi','De la finca'],
+['Ball i concert','Plaça del Molí','Primer ball i concert a la plaça.','Durada','1–2 h'],
+['Festa','Discoteca','Discoteca fins que surti el sol. La plaça i el Club queden com a chill-out.','Fins a','La matinada']],
+rsvpT:'{n}, <em>vens?</em>',rsvpL:'Només veus els actes als quals t’hem convidat. Respon a cadascun amb un toc.',yes:'Sí',no:'No',
+ev:{tiro:['Divendres 2 juliol · 16:00','Tir al plat','Lloc per confirmar'],pre:['Divendres 2 juliol · 21:00','Sopar preboda','Íntim · per confirmar'],boda:['Dissabte 3 juliol · 16:30','El casament','Mas de les Moreres'],post:['Diumenge 4 juliol · 13:00','Fideuà postboda','Piscina · Mas de les Moreres']},
+plus:'El teu acompanyant',plusOn:'Vinc amb acompanyant',plusPh:'Nom i cognom',plusMenu:'Al·lèrgies o menú del teu acompanyant',menu:'Menú i al·lèrgies',menus:['Sense restriccions','Vegetarià','Sense gluten','Sense lactosa','Una altra'],otherPh:'Explica’ns què necessites',
+bus:'Vinc amb autobús des de Reus',busS:'Només per a qui viu a Reus',lod:'Necessito allotjament',lodS:'Per saber quants busqueu on dormir',
+msg:'Missatge per a la Natalia i en Marçal',msgPh:'Si vols, escriu-nos alguna cosa',send:'Enviar resposta',update:'Actualitzar resposta',sending:'Enviant…',saved:'Resposta desada',savedS:'Gràcies. La pots canviar quan vulguis fins al 30 d’abril.',until:'La pots canviar fins al 30 d’abril',need:'Respon Sí o No a cada acte.',sendBad:'No s’ha pogut desar. Torna-ho a provar.',closed:'El termini per respondre va acabar el 30 d’abril. Escriu-nos si necessites canviar res.',
+light:'En confirmar, deses la teva llum a la taula',
+mapT:'La finca',mapL:'Toca un punt per veure què hi passa i a quina hora.',layers:['Actes','Llançadora'],north:'Nord',see:'Veure al recorregut',labels:['Capella','Club','Plaça del Molí','Discoteca','Jardí i piscina','Arribada'],shT:'Venta del Pubill → el mas',shD:'Les llançadores et deixen a la zona d’arribada i et tornen al pàrquing en acabar.',shB:'Com arribar',
+sealed:'Apartat segellat',mesaT:'La taula',mesaL:'Una sola taula de 115 metres sota les moreres. El teu lloc encara no s’ensenya.',revTag:'Es desvela divendres',revD:'2 de juliol · 21:00',revS:'Aquell dia veuràs el teu lloc i com s’encén la taula sencera.',lit:'La teva llum està desada',litS:'Has confirmat que vens. S’encendrà aquell dia.',unlit:'La teva llum encara no està desada',unlitS:'Confirma l’assistència i quedarà desada.',cal:'Afegir avís al calendari',calS:'La taula es desvela · Natalia & Marçal',
+revd:'La taula · desvelada',seatT:'El teu lloc, {n}',seat:'El teu lloc',side:'Costat',seatSoon:'El teu lloc apareixerà aquí ben aviat.',tblAlt:'La taula a les fosques, amb tots els llums apagats',
+goT:'Aparca a baix, puja amb llançadora',goTag:'Com arribar',goL:'Al mas no s’hi puja amb cotxe. El punt de trobada és el pàrquing del restaurant Venta del Pubill.',
+go:[['Per confirmar','Autobús des de Reus','Només per a qui viu a Reus. Arriba a temps per pujar al mas abans de les 16:30.'],['Punt de trobada','Pàrquing Venta del Pubill','Deixa-hi el cotxe: és des d’on tornaràs a casa. Llançadores contínues fins al mas.'],['16:30','Tothom a Mas de les Moreres','La cerimònia comença a les 16:45.'],['En acabar','La tornada','Quan s’acabi la festa: llançadora al pàrquing i autobús a Reus.']],
+goB:'Anar al pàrquing Venta del Pubill',goN:'Horaris d’autobús per confirmar',
+stayTag:'Allotjament',stayT:'On dormir',stayL:'Una selecció a prop del mas. Són pobles petits: reserva aviat.',cats:['Alt standing','Hotels i habitacions','Cases senceres per a grups','Càmping i bungalous'],pers:'pers.',
+vCh:['Dissabte 3 de juliol · 16:30','Mas de les Moreres','Arribem a la finca.'],liveTag:'En directe',hello:'Hola, {n}. Això és el que està passant.',nowL:'Ara',nextL:'Després',soon:'Comença a les 16:30',back:'La tornada',backV:'Llançadora a Venta del Pubill',mapB:'Obrir el mapa',langName:'CA'},
+en:{personal:'Personal invitation',nowAt:'Now at the estate',ph:{night:'Night',dawn:'Dawn',morning:'Morning',midday:'Midday',afternoon:'Afternoon',dusk:'Dusk'},
+date:'Saturday 3 July 2027',left:'{n} days to go',left1:'1 day to go',today:'It’s today',thanks:'Thank you for coming',vineNow:'The vines now',
+vine:{poda:'Winter pruning',lloro:'Sap rising',brote:'Budbreak',flor:'Flowering',cuajado:'Fruit set',boda:'Wedding day',envero:'Veraison',vendimia:'Harvest',hoja:'Leaf fall'},
+confirm:'RSVP',change:'See or change my answer',fly:'Scroll to travel to 3 July',tlTag:'Travelling to 3 July 2027',clubD:'A screen to follow the ceremony. At night, an indoor bar and chill-out.',codeP:'Enter your invitation code',codeH:'You received it by WhatsApp',enter:'Enter',codeBad:'We can’t find that code. Check it and try again.',netBad:'We couldn’t connect. Please try again.',loading:'Opening your invitation…',
+nav:['Cover','The day','RSVP','The estate','The table','Getting there','Where to stay'],
+stop:'Stop {i} of 06',time:'Time',keep:'Keep scrolling',
+stops:[['Arrival','Mas de les Moreres','Park at Venta del Pubill and ride the shuttle up. We’ll be waiting at 16:30.','Access','Shuttle'],
+['Ceremony','The chapel','A religious ceremony in the chapel with family. Everyone else follows it on screen from Plaça del Molí and the Club.','Screen','Plaça del Molí'],
+['Aperitif','Pool & garden','Two or three hours of aperitif by the pool and in the garden.','Duration','2–3 h'],
+['Dinner','The Mulberry Path','One single 115-metre table under the mulberry trees, among the vines.','Wine','From the estate'],
+['Dance & concert','Plaça del Molí','First dance and a concert in the square.','Duration','1–2 h'],
+['Party','Discoteca','Dancing in the Discoteca until sunrise. The square and the Club stay open as a chill-out.','Until','Sunrise']],
+rsvpT:'{n}, <em>are you coming?</em>',rsvpL:'You only see the events you’re invited to. Answer each one with a tap.',yes:'Yes',no:'No',
+ev:{tiro:['Friday 2 July · 16:00','Clay shooting','Venue to be confirmed'],pre:['Friday 2 July · 21:00','Pre-wedding dinner','Íntim · to be confirmed'],boda:['Saturday 3 July · 16:30','The wedding','Mas de les Moreres'],post:['Sunday 4 July · 13:00','Day-after fideuà','Pool · Mas de les Moreres']},
+plus:'Your plus-one',plusOn:'I’m bringing a plus-one',plusPh:'First and last name',plusMenu:'Your plus-one’s allergies or menu',menu:'Menu & allergies',menus:['No restrictions','Vegetarian','Gluten-free','Lactose-free','Other'],otherPh:'Tell us what you need',
+bus:'I’m taking the bus from Reus',busS:'Only for guests who live in Reus',lod:'I need accommodation',lodS:'So we know how many of you are looking for a place to stay',
+msg:'Message for Natalia & Marçal',msgPh:'Write us something, if you like',send:'Send answer',update:'Update answer',sending:'Sending…',saved:'Answer saved',savedS:'Thank you. You can change it any time until 30 April.',until:'You can change it until 30 April',need:'Answer Yes or No to each event.',sendBad:'We couldn’t save it. Please try again.',closed:'The deadline to answer was 30 April. Write to us if you need to change anything.',
+light:'When you confirm, your light is saved at the table',
+mapT:'The estate',mapL:'Tap a point to see what happens there, and when.',layers:['Events','Shuttle'],north:'North',see:'See it on the tour',labels:['Chapel','Club','Plaça del Molí','Discoteca','Garden & pool','Arrival'],shT:'Venta del Pubill → the mas',shD:'Shuttles drop you at the arrival area and take you back to the car park at the end.',shB:'Getting there',
+sealed:'Sealed section',mesaT:'The table',mesaL:'One single 115-metre table under the mulberry trees. Your seat isn’t shown yet.',revTag:'Revealed on Friday',revD:'2 July · 21:00',revS:'That day you’ll see your seat and watch the whole table light up.',lit:'Your light is saved',litS:'You’ve confirmed you’re coming. It will light up that day.',unlit:'Your light isn’t saved yet',unlitS:'Confirm you’re coming and it will be.',cal:'Add a calendar reminder',calS:'The table is revealed · Natalia & Marçal',
+revd:'The table · revealed',seatT:'Your seat, {n}',seat:'Your seat',side:'Side',seatSoon:'Your seat will appear here shortly.',tblAlt:'The table in the dark, with every light off',
+goT:'Park below, ride the shuttle up',goTag:'Getting there',goL:'You can’t drive up to the mas. The meeting point is the car park of the Venta del Pubill restaurant.',
+go:[['To be confirmed','Bus from Reus','Only for guests who live in Reus. It arrives in time to get up to the mas before 16:30.'],['Meeting point','Venta del Pubill car park','Leave your car here: it’s where you’ll head home from. Shuttles run continuously up to the mas.'],['16:30','Everyone at Mas de les Moreres','The ceremony starts at 16:45.'],['At the end','The way back','When the party ends: shuttle to the car park and bus to Reus.']],
+goB:'Directions to Venta del Pubill car park',goN:'Bus times to be confirmed',
+stayTag:'Where to stay',stayT:'Where to stay',stayL:'A selection near the mas. These are small villages: book early.',cats:['High-end','Hotels & rooms','Whole houses for groups','Camping & bungalows'],pers:'guests',
+vCh:['Saturday 3 July · 16:30','Mas de les Moreres','We arrive at the estate.'],liveTag:'Live',hello:'Hi, {n}. Here’s what’s happening.',nowL:'Now',nextL:'Next',soon:'Starts at 16:30',back:'Your way back',backV:'Shuttle to Venta del Pubill',mapB:'Open the map',langName:'EN'}};
+var STAY=[[["Gran Hotel Mas d’en Bruno","Torroja del Priorat"],["Terra Dominicata","Escaladei"]],
+[["El Palauet del Priorat","Cornudella"],["La Vileta","Cornudella"],["Hotel Siuranella","Siurana"],["Can Font","Siurana"],["Balcó del Priorat","La Morera de Montsant"],["Les Velles Escoles","Les Irles"],["El Xalet de Prades","Prades"],["Hotel Estrelles de Prades","Prades"]],
+[["Molí dels Aubins","Cornudella",13],["Mas del Salin","Cornudella",9],["Pla del Castell","Albarca",9],["Casa la Falconera","La Morera",9],["La Marquesiana","Alforja",22],["Ca l’Arcadi","Alforja",17],["Mas Lucena","Alforja",14],["Mas Fullat","Alforja",12],["Ca la Cuca","Alforja",10],["Ca l’Oliveta","Riudecols",16],["Prades Vila Bella","Prades",26],["Casa Roja","Prades",8],["Cal Crispí","Prades"],["Apartaments Cal Trumfo","Prades"]],
+[["Càmping i Bungalow Siurana","Siurana"],["Camping Prades Park","Prades"]]];
+var MENU_ES=['Sin restricciones','Vegetariano','Sin gluten','Sin lactosa'];
+var SEC=['hero','dia','rsvp','finca','mesa','llegar','dormir'];
+
+var lang='ca', guest=null, mesa=null, code='', F=null, selPin=3, layer=0, heroState='code', codeErr='';
+function L(){return T[lang]}
+function fmt(s,o){return s.replace(/\{(\w)\}/g,function(_,k){return o[k]})}
+
+/* ---------- Sol y paleta ---------- */
+function sun(ms){var r=Math.PI/180,la=41.262*r,n=ms/864e5+2440587.5-2451545,Ls=(280.46+.9856474*n)%360,g=((357.528+.9856003*n)%360)*r,
+ lam=(Ls+1.915*Math.sin(g)+.02*Math.sin(2*g))*r,ep=(23.439-4e-7*n)*r,ra=Math.atan2(Math.cos(ep)*Math.sin(lam),Math.cos(lam)),de=Math.asin(Math.sin(ep)*Math.sin(lam)),
+ gm=(18.697374558+24.06570982441908*n)%24,ha=(gm*15+.905)*r-ra,alt=Math.asin(Math.sin(la)*Math.sin(de)+Math.cos(la)*Math.cos(de)*Math.cos(ha)),
+ az=Math.atan2(Math.sin(ha),Math.cos(ha)*Math.sin(la)-Math.tan(de)*Math.cos(la));return{alt:alt/r,az:az/r}}
+var KF=[[-18,'#05080F','#0A1020','#131B33','#191B30','#2B2C46','#0E1813','#09110C',1],
+[-7,'#0A1322','#1B2742','#3F3550','#35304C','#5F5062','#1A281F','#0F1912',.75],
+[-1,'#0A1322','#2A3158','#E09A4C','#5B4A5E','#E2B184','#2A3B2C','#132017',.2],
+[5,'#1F3F73','#7F96BC','#F2C98A','#6B6880','#F0C89A','#3C5835','#1F331D',0],
+[18,'#1F5EA6','#6FA5D6','#CBDFEC','#8690A6','#DCCDB6','#56783F','#2E4A26',0],
+[70,'#1B579F','#66A0D4','#C5DCEC','#8A95AB','#E3D6C2','#5C8046','#325029',0]];
+function hx(a,b,t){var o='#';for(var i=1;i<7;i+=2){var x=parseInt(a.substr(i,2),16),y=parseInt(b.substr(i,2),16),v=Math.round(x+(y-x)*t).toString(16);o+=v.length<2?'0'+v:v}return o}
+function pal(alt){var i=0;while(i<KF.length-2&&alt>KF[i+1][0])i++;var a=KF[i],b=KF[i+1],t=clamp((alt-a[0])/(b[0]-a[0]),0,1),o=[];
+ for(var k=1;k<8;k++)o.push(hx(a[k],b[k],t));o.push(a[8]+(b[8]-a[8])*t);return o}
+function madrid(ms){var p={};new Intl.DateTimeFormat('en-GB',{timeZone:'Europe/Madrid',hour12:false,year:'numeric',month:'numeric',day:'numeric',hour:'2-digit',minute:'2-digit'}).formatToParts(new Date(ms)).forEach(function(x){p[x.type]=x.value});
+ return{y:+p.year,m:+p.month,d:+p.day,h:+p.hour%24,hm:(p.hour==='24'?'00':p.hour)+':'+p.minute}}
+function phase(ms){var s=sun(ms),h=madrid(ms).h;if(s.alt<-6)return'night';if(s.alt<6)return h<12?'dawn':'dusk';return h<12?'morning':h<15?'midday':'afternoon'}
+function vine(ms){var d=madrid(ms),k=d.m*100+d.d;if(d.y===2027&&k===703)return'boda';
+ return k>=1101||k<301?'poda':k<401?'lloro':k<516?'brote':k<611?'flor':k<716?'cuajado':k<821?'envero':k<1001?'vendimia':'hoja'}
+var VROW={poda:['#8A6A4A','2 9',3],lloro:['#8A7A4E','2 8',3],brote:['#9DB85A','3 7',3.5],flor:['#8FB04E','3 6',4],cuajado:['#8FB04E','3 6',4],boda:['#8FB04E','3 6',4],envero:['#7FA24C','3 6',4],vendimia:['#A9A04A','3 6',4],hoja:['#C9853E','3 7',3.5]};
+
+/* ---------- Escena ---------- */
+function Scene(svg,fly){
+ var W,H,s,X,Y,FX,e={},sc=[],lt=[];
+ function build(){
+  var r=svg.getBoundingClientRect();W=Math.round(Math.max(320,r.width));H=Math.round(Math.max(480,r.height));s=Math.max(1,Math.min(W/390,H/640));
+  var lift=fly&&W<900?Math.max(200,$('#fcard').offsetHeight||0)-24:0;X=function(x){return +(W/2+(x-195)*s).toFixed(1)};Y=function(y){return +(H-lift-(844-y)*s).toFixed(1)};FX=function(x){return +(x/390*W).toFixed(1)};
+  svg.setAttribute('viewBox','0 0 '+W+' '+H);
+  var P=function(a){return a.map(function(p){return FX(p[0])+' '+Y(p[1])}).join(' L')},id=fly?'f':'h',o='';
+  o+='<defs><linearGradient id="'+id+'g" x1="0" y1="0" x2="0" y2="1"><stop offset="0"/><stop offset=".55"/><stop offset=".86"/><stop offset="1"/></linearGradient></defs>';
+  o+='<rect class="sk" width="'+W+'" height="'+(Y(540))+'" fill="url(#'+id+'g)"/><g class="st">';
+  var sd=7;function rnd(){sd=(sd*16807)%2147483647;return sd/2147483647}
+  for(var i=0;i<70;i++)o+='<circle cx="'+(rnd()*W).toFixed(1)+'" cy="'+(rnd()*Y(440)).toFixed(1)+'" r="'+(.6+rnd()*.9).toFixed(1)+'" fill="#ECE7DA" opacity="'+(.4+rnd()*.5).toFixed(2)+'"/>';
+  o+='</g><circle class="sg" r="'+58*s+'" fill="#FFD79A" opacity=".22"/><circle class="sn" r="'+28*s+'" fill="#FFE2B0"/>';
+  o+='<path class="mt" d="M'+P([[0,478],[28,462],[70,454],[96,440],[150,434],[214,432],[262,436],[300,448],[338,454],[390,464],[390,540],[0,540]])+'Z"/>';
+  o+='<path class="cl" opacity=".85" d="M'+P([[70,456],[96,443],[150,437],[214,435],[262,439],[300,450],[300,458],[262,448],[214,444],[150,446],[96,452]])+'Z"/>';
+  o+='<path class="hl" d="M0 '+Y(518)+' C'+FX(50)+' '+Y(490)+' '+FX(110)+' '+Y(498)+' '+FX(170)+' '+Y(514)+' C'+FX(230)+' '+Y(530)+' '+FX(300)+' '+Y(490)+' '+W+' '+Y(506)+' L'+W+' '+Y(620)+' L0 '+Y(620)+'Z"/>';
+  o+='<path class="fg" d="M0 '+Y(580)+' C'+FX(90)+' '+Y(550)+' '+FX(180)+' '+Y(566)+' '+FX(260)+' '+Y(574)+' C'+FX(310)+' '+Y(579)+' '+FX(350)+' '+Y(572)+' '+W+' '+Y(566)+' L'+W+' '+H+' L0 '+H+'Z"/>';
+  if(!fly){o+='<g class="vr" opacity=".5">';var n=Math.ceil(W/(80*s))+8,c0=-Math.floor(n/2);
+   for(i=0;i<n;i++){var k=c0+i;o+='<line x1="'+X(195+k*80+40)+'" y1="'+H+'" x2="'+X(195+k*8+4)+'" y2="'+Y(578)+'"/>'}o+='</g>'}
+  else{var S=scenes();for(i=0;i<6;i++)o+='<g class="sc" style="transform-origin:'+X(195)+'px '+Y(600)+'px">'+S[i][0]+'<rect x="0" y="'+Y(548)+'" width="'+W+'" height="'+(H-Y(548))+'" fill="#05080F" class="nt"/><g class="lt">'+S[i][1]+'</g></g>'}
+  svg.innerHTML=o;
+  ['sk','st','sg','sn','mt','cl','hl','fg','vr'].forEach(function(c){e[c]=$('.'+c,svg)});e.stops=$$('stop',svg);sc=$$('.sc',svg);lt=$$('.lt',svg);e.nt=$$('.nt',svg);
+ }
+ function scenes(){
+  var v0=584,pt=function(x,v){return X(x)+','+Y(v0+v)},z=function(n){return +(n*s).toFixed(1)},op=function(o){return o?' opacity="'+o+'"':''};
+  var po=function(a,f,o){return'<polygon points="'+a.map(function(p){return pt(p[0],p[1])}).join(' ')+'" fill="'+f+'"'+op(o)+'/>'};
+  var rc=function(x,v,w,h,f,rx,o){return'<rect x="'+X(x)+'" y="'+Y(v0+v)+'" width="'+z(w)+'" height="'+z(h)+'" fill="'+f+'"'+(rx?' rx="'+z(rx)+'"':'')+op(o)+'/>'};
+  var ci=function(x,v,r,f,o){return'<circle cx="'+X(x)+'" cy="'+Y(v0+v)+'" r="'+z(r)+'" fill="'+f+'"'+op(o)+'/>'};
+  var el=function(x,v,rx,ry,f){return'<ellipse cx="'+X(x)+'" cy="'+Y(v0+v)+'" rx="'+z(rx)+'" ry="'+z(ry)+'" fill="'+f+'"/>'};
+  var ln=function(x1,v1,x2,v2,c,w,d,o){return'<line x1="'+X(x1)+'" y1="'+Y(v0+v1)+'" x2="'+X(x2)+'" y2="'+Y(v0+v2)+'" stroke="'+c+'" stroke-width="'+z(w)+'"'+(d?' stroke-dasharray="'+d.split(' ').map(z).join(' ')+'"':'')+op(o)+'/>'};
+  var per=function(x,v,r,f){return ci(x,v,r,f)+rc(x-r*1.1,v+r*.9,r*2.2,r*3.6,f,r)};
+  var A=[],b,l,i,t,x;
+  /* 1 llegada */
+  b='';for(i=-5;i<=5;i++)if(i)b+=ln(195+i*72,270,195+i*6,14,'#7FA24C',3,'3 6',.55);
+  b+=po([[138,270],[252,270],[204,22],[196,22]],'#6A5B4D');
+  b+=el(138,-6,6,24,'#1D3A22')+el(276,-2,6,22,'#1D3A22')+el(288,4,5,18,'#24452A');
+  b+=rc(150,-12,44,34,'#D9B38A')+po([[146,-12],[172,-28],[198,-12]],'#8A5A44')+rc(196,-24,40,46,'#E6C9A0')+po([[192,-24],[216,-42],[240,-24]],'#7A4E3C')+rc(238,-6,30,28,'#CFA57C')+po([[235,-6],[253,-18],[271,-6]],'#8A5A44');
+  var win=[[160,-2],[178,-2],[206,-12],[222,-12],[248,2]];win.forEach(function(w){b+=rc(w[0],w[1],6,8,'#3A2C25')});
+  b+=rc(179,150,32,22,'#ECE7DA',5)+rc(183,154,24,8,'#2A3B4C',2)+ci(186,172,3.2,'#10140A')+ci(204,172,3.2,'#10140A');
+  l='';win.forEach(function(w){l+=rc(w[0],w[1],6,8,'#FFD48A')});l+=ci(183,168,2,'#FFF2C0')+ci(207,168,2,'#FFF2C0');A.push([b,l]);
+  /* 2 ceremonia */
+  b=po([[146,270],[244,270],[205,96],[185,96]],'#6A5B4D');
+  b+=rc(104,50,6,44,'#3A2C25')+rc(283,50,6,44,'#3A2C25')+ci(84,74,40,'#1D3A22')+ci(108,40,34,'#24452A')+ci(308,76,40,'#1D3A22')+ci(284,40,34,'#24452A');
+  b+=rc(184,-50,22,36,'#E6C9A0')+po([[181,-50],[195,-61],[209,-50]],'#8A5A44')+rc(191,-44,8,13,'#3A2C25',4)+rc(194,-76,2,15,'#3A2C25')+rc(190,-72,10,2,'#3A2C25');
+  b+=rc(160,10,70,86,'#E6C9A0')+po([[153,10],[195,-22],[237,10]],'#8A5A44')+ci(195,30,7,'#3A2C25')+rc(184,54,22,42,'#3A2C25',11);
+  for(i=0;i<5;i++){b+=per(166-i*7,116+i*26,3.4+i*.9,'#10140A')+per(224+i*7,116+i*26,3.4+i*.9,'#10140A')}
+  l=rc(186,58,18,38,'#FFD48A',9)+ci(195,30,5,'#FFD48A');A.push([b,l]);
+  /* 3 aperitivo */
+  b=ci(64,14,40,'#24452A')+ci(128,-6,32,'#2C5232')+ci(264,-4,32,'#2C5232')+ci(328,14,40,'#24452A');
+  b+=po([[112,62],[278,62],[332,178],[58,178]],'#D8CDB8')+po([[120,70],[270,70],[318,170],[72,170]],'#2C7E99')+po([[124,78],[266,78],[274,98],[116,98]],'#49A0BC',.5);
+  b+=po([[26,124],[58,106],[90,124]],'#EDE3CF')+rc(57,106,2,64,'#C9C4B5')+po([[300,124],[332,106],[364,124]],'#EDE3CF')+rc(331,106,2,64,'#C9C4B5');
+  [[40,214],[350,214],[96,236],[294,236]].forEach(function(p){b+=rc(p[0]-1,p[1],2,34,'#EDE3CF')+el(p[0],p[1],16,5,'#EDE3CF')});
+  [[24,220],[58,222],[334,222],[368,220],[78,244],[114,246],[276,246],[312,244]].forEach(function(p){b+=per(p[0],p[1],6,'#10140A')});
+  b+='<path d="M'+X(-40)+' '+Y(v0-24)+' Q'+X(195)+' '+Y(v0+46)+' '+X(430)+' '+Y(v0-24)+'" fill="none" stroke="#C9C4B5" stroke-width="'+z(.7)+'" opacity=".5"/>';
+  l=po([[120,70],[270,70],[318,170],[72,170]],'#7FD6EE',.3);for(i=0;i<=14;i++){t=i/14;l+=ci(-40+470*t,-24+140*t*(1-t),2.4,'#FFD48A')}A.push([b,l]);
+  /* 4 cena */
+  var ty=function(y){return(y-344)*.52},cy=[355,366,383,406,442,496],cx=[170,157,139,113,72,11],rx=[19,27,39,56,82,122],ry=[12,17,24,34,49,72],tx=[168,154,135,107.6,64,0],tw=[4,5.5,7.7,10.8,15.6,23],th=[30,55,88,136,210,323],cc=['#24452A','#24452A','#24452A','#1D3A22','#1D3A22','#152C1A'];
+  b='';[[700,178],[600,174],[520,168]].forEach(function(p){b+=ln(-60,ty(p[0]),p[1],2,'#6E8F45',3,'3 6',.55)+ln(450,ty(p[0]),390-p[1],2,'#6E8F45',3,'3 6',.55)});
+  b+=po([[20,270],[370,270],[203,0],[187,0]],'#5E5045')+po([[150,270],[240,270],[198,3],[192,3]],'#EDE3CF');
+  for(i=0;i<6;i++){b+=rc(tx[i],ty(cy[i]),tw[i],th[i]*.52,'#3A2C25')+rc(390-tx[i]-tw[i],ty(cy[i]),tw[i],th[i]*.52,'#3A2C25')}
+  for(i=0;i<6;i++){b+=el(cx[i],ty(cy[i]),rx[i],ry[i]*.62,cc[i])+el(390-cx[i],ty(cy[i]),rx[i],ry[i]*.62,cc[i])}
+  l='';[[800,3],[720,2.6],[650,2.2],[590,1.9],[540,1.6],[498,1.3],[462,1.1],[432,.9],[408,.8],[388,.7]].forEach(function(p){l+=ci(195,ty(p[0]),p[1],'#FFC772')});
+  [[30,398,2.4],[58,388,2.2],[84,379,2],[107,371,1.8],[127,364,1.6],[144,358,1.4],[158,354,1.2],[169,350,1]].forEach(function(p){l+=ci(p[0],ty(p[1])+8,p[2],'#FFD48A')+ci(390-p[0],ty(p[1])+8,p[2],'#FFD48A')});A.push([b,l]);
+  /* 5 baile y concierto */
+  b=po([[-30,270],[420,270],[300,40],[90,40]],'#3A362C');
+  b+=rc(18,-40,92,92,'#2A302A')+po([[12,-40],[64,-62],[116,-40]],'#3B4238')+rc(280,-30,92,82,'#2A302A')+po([[274,-30],[326,-52],[378,-30]],'#3B4238');
+  b+=rc(135,-34,3,42,'#4A5146')+rc(252,-34,3,42,'#4A5146')+rc(135,-36,120,4,'#4A5146')+rc(132,6,126,40,'#161B17',3);
+  [165,195,225].forEach(function(q){b+=per(q,-18,4.5,'#0B0F0C')});
+  [20,90,300,370].forEach(function(q){b+=ln(195,-74,q,-22,'#C9C4B5',.6,null,.4)});
+  for(i=0;i<12;i++)b+=per(66+i*23.5,96+(i%2)*9,6,'#0B0F0C');for(i=0;i<9;i++)b+=per(40+i*39,168+(i%2)*12,10,'#0B0F0C');
+  l=po([[150,-32],[240,-32],[272,46],[118,46]],'#E58FB0',.18)+po([[160,-32],[168,-32],[124,130],[70,130]],'#D4F56A',.13)+po([[222,-32],[230,-32],[320,130],[266,130]],'#8FD8E8',.13);
+  [20,90,300,370].forEach(function(q){for(i=1;i<=5;i++){t=i/5.5;l+=ci(195+(q-195)*t,-74+52*t,2.2,'#FFD48A')}});
+  [[40,-20],[72,-20],[300,-10],[334,-10]].forEach(function(p){l+=rc(p[0],p[1],10,14,'#FFD48A')});A.push([b,l]);
+  /* 6 fiesta */
+  b=el(58,40,10,62,'#152C1A')+el(334,40,10,62,'#152C1A')+rc(85,-30,220,150,'#252B25')+po([[74,-30],[195,-78],[316,-30]],'#3B4238')+rc(158,34,74,86,'#0B0F0C',6);
+  l=po([[164,120],[226,120],[310,270],[80,270]],'#FFB55A',.2)+rc(164,40,62,80,'#FFB55A',4)+ci(180,62,4,'#E58FB0')+ci(206,72,4,'#8FD8E8')+ci(195,52,3,'#D4F56A');
+  l+=rc(110,-4,16,20,'#FFB55A')+rc(264,-4,16,20,'#FFB55A')+per(180,92,5.5,'#0B0F0C')+per(210,88,5.5,'#0B0F0C')+per(122,150,8,'#0B0F0C')+per(150,170,9,'#0B0F0C')+per(262,156,8,'#0B0F0C')+per(236,178,9,'#0B0F0C');A.push([b,l]);
+  return A;
+ }
+ function update(ms,vn){
+  if(!e.sk)return;var su=sun(ms),p=pal(su.alt),light=clamp((su.alt+8)/20,0,1);
+  var mid=hx(p[1],p[2],.5);[p[0],p[1],mid,p[2]].forEach(function(c,i){e.stops[i].setAttribute('stop-color',c)});
+  e.st.setAttribute('opacity',p[7]);e.mt.setAttribute('fill',p[3]);e.cl.setAttribute('fill',p[4]);e.hl.setAttribute('fill',p[5]);e.fg.setAttribute('fill',p[6]);
+  var sx=W*(.5+clamp(su.az/(fly?105:130),-1,1)*.4),sy=Y(454-su.alt*5.5),col=hx('#FFD9A0','#FFF6DC',clamp(su.alt/20,0,1));
+  [e.sg,e.sn].forEach(function(c){c.setAttribute('cx',sx.toFixed(1));c.setAttribute('cy',sy.toFixed(1))});e.sn.setAttribute('fill',col);e.sg.setAttribute('fill',col);e.sn.setAttribute('opacity',su.alt<-6?0:1);e.sg.setAttribute('opacity',su.alt<-6?0:.22);
+  if(e.vr){var v=VROW[vn||'flor'];e.vr.setAttribute('stroke',v[0]);e.vr.setAttribute('stroke-dasharray',v[1].split(' ').map(function(n){return n*s}).join(' '));e.vr.setAttribute('stroke-width',v[2]*s);e.vr.setAttribute('opacity',(.22+.4*light).toFixed(2))}
+  var lo=clamp((.8-light)/.6,0,1);e.nt.forEach(function(n){n.setAttribute('opacity',((1-light)*.5).toFixed(2))});lt.forEach(function(n){n.setAttribute('opacity',lo.toFixed(2))});
+ }
+ function fly_(f){sc.forEach(function(g,j){var d=f-j,o=d<-.15||d>=1?0:d<0?(d+.15)/.15:d>.85?(1-d)/.15:1;g.style.opacity=o.toFixed(3);g.style.display=o?'':'none';
+  if(o)g.style.transform='scale('+(1+.24*Math.max(d,0)+(d<0?d*.5:0)).toFixed(4)+')'})}
+ return{build:build,update:update,fly:fly_};
+}
+var heroSc=Scene($('#heroSky'),false),flySc=Scene($('#flySky'),true);
+
+/* ---------- Portada con fotos reales de la finca (misma vista, cambia la luz y la estación) ---------- */
+var CDN='https://d8j0ntlcm91z4.cloudfront.net/user_3Ly3hsluRPEjivn3YLUlIIHMCMS/';
+var PHOTOS={winter:{
+ p:{dawn:'hf_20261112_084443_df93a454-5263-4239-b10a-3a7650900a56',day:'hf_20261112_084231_77e7e255-e45e-4544-b7b2-66764a634440',dusk:'hf_20261112_084442_94a32752-29f4-4ddb-962a-10bd07297860',night:'hf_20261112_084443_608e3874-5b59-4ca2-ac3e-50658c128fe7'},
+ w:{dawn:'hf_20261112_084833_a33e38cf-c9b8-4835-90d9-4cdb8268940c',day:'hf_20261112_084745_f642c91d-c14a-455f-8987-01b19a385de6',dusk:'hf_20261112_084833_1ca56362-990f-4e56-8b39-03aadad96301',night:'hf_20261112_084833_9375a246-328d-40ab-ae6e-18fdbef054c3'}},
+spring:{
+ p:{dawn:'hf_20261112_093540_21eeb028-d917-4b4f-bdd1-594485dc79d2',day:'hf_20261112_093350_2df67632-2645-4e4e-8026-e293c30fb3c8',dusk:'hf_20261112_093539_6bbb5988-12bb-4bc5-b501-f1c5cadde5d6',night:'hf_20261112_093539_a4d86f6b-d79b-4b21-b0cd-f1115c6de10a'},
+ w:{dawn:'hf_20261112_093540_1c8039f2-75ce-4535-a5bf-981c3460025a',day:'hf_20261112_093351_054d6fa9-7800-4f99-97a7-e58c2e4ec264',dusk:'hf_20261112_093538_f89fa606-5744-4940-9d71-c8a1cbc5af8e',night:'hf_20261112_093539_a103e122-c76b-4843-a118-639ad8583806'}},
+summer:{
+ p:{dawn:'hf_20261112_093352_4399917e-d167-438c-9797-166e05b7874e',day:'https://d2ol7oe51mr4n9.cloudfront.net/user_3Ly3hsluRPEjivn3YLUlIIHMCMS/54b9527c-d395-4cc3-aa33-e91edbf8f5eb.jpg',dusk:'hf_20261112_093352_efd6cb0f-d7b0-4b96-8e61-f090b3f25585',night:'hf_20261112_093351_45b690f6-f564-4b4f-8a11-10f7ec67f959'},
+ w:{dawn:'hf_20261112_093351_356d1379-73f5-48a5-ab0b-94eb1cdace14',day:'hf_20261111_181706_69928e72-a320-4a82-9871-c2aff9432bef',dusk:'hf_20261112_093350_b1f53d46-86fe-446f-ae07-ffc10ec727a1',night:'hf_20261112_093350_c4c9af0b-f7c7-48ff-9ea0-8cf392c82873'}}};
+var SEASON={poda:'winter',lloro:'winter',hoja:'winter',brote:'spring',flor:'summer',cuajado:'summer',boda:'summer',envero:'summer',vendimia:'summer'};
+function phLayer(img,f,o){if(img.dataset.f!==f){img.dataset.f=f;img.dataset.ok='';img.style.opacity=0;img.onload=function(){img.dataset.ok='1';img.style.opacity=img.dataset.o};img.onerror=function(){img.dataset.ok=''};img.src=f.indexOf('http')===0?f:CDN+f+'_min.webp'}
+ img.dataset.o=o;if(img.dataset.ok)img.style.opacity=o}
+function photo(ms,vn){var s=PHOTOS[SEASON[vn]]||PHOTOS.winter,set=(window.innerWidth<window.innerHeight?s.p:s.w)||s.p||s.w;if(!set)return;
+ var al=sun(ms).alt,tw=madrid(ms).h<12?'dawn':'dusk',a,b,t;
+ if(al<=-10){a=b='night';t=0}else if(al<-2){a='night';b=tw;t=(al+10)/8}else if(al<8){a=tw;b='day';t=(al+2)/10}else{a=b='day';t=0}
+ phLayer($('#phA'),set[a],1);phLayer($('#phB'),set[b],t.toFixed(2))}
+
+/* ---------- Llegada a la finca: el scroll mueve el dron (fotogramas en /vuelo, transición hacia el día) ---------- */
+var FR={n:1,img:[],set:'',gen:0,more:false,cur:0,tgt:0,raf:0,last:null,lang:''};
+function frLoad(){var k=FR.set,gen=FR.gen;
+ fetch('../vuelo/'+k+'.bin').then(function(r){if(!r.ok)throw 0;return r.arrayBuffer()}).then(function(buf){if(gen!==FR.gen)return;
+  var dv=new DataView(buf),n=dv.getUint32(0,true),off=4+4*n;FR.n=n;
+  for(var j=0;j<n;j++){var len=dv.getUint32(4+4*j,true),im=new Image();im.onload=function(){FR.last=null;vDraw()};im.src=URL.createObjectURL(new Blob([new Uint8Array(buf,off,len)],{type:'image/webp'}));FR.img[j]=im;off+=len}
+  vTick()}).catch(function(){if(gen===FR.gen)$('#vuelo').hidden=true})}
+function vDraw(){var cv=$('#vc');if(!cv||!cv.width)return;var i=Math.round(FR.cur),im=null;
+ for(var d=0;d<FR.n&&!im;d++){var a=FR.img[i-d],b=FR.img[i+d];if(a&&a.complete&&a.naturalWidth)im=a;else if(b&&b.complete&&b.naturalWidth)im=b}
+ if(!im||im===FR.last)return;FR.last=im;var W=cv.width,H=cv.height,s=Math.max(W/im.naturalWidth,H/im.naturalHeight),w=im.naturalWidth*s,h=im.naturalHeight*s;
+ cv.getContext('2d').drawImage(im,(W-w)/2,(H-h)/2,w,h)}
+function vAnim(){FR.raf=0;var d=FR.tgt-FR.cur;FR.cur=Math.abs(d)<.3?FR.tgt:FR.cur+d*.22;vDraw();if(FR.cur!==FR.tgt)FR.raf=requestAnimationFrame(vAnim)}
+function vTick(){var s=$('#vuelo');if(!s||s.hidden)return;var r=s.getBoundingClientRect(),tot=r.height-window.innerHeight;if(tot<=0)return;
+ var p=clamp(-r.top/tot,0,1);FR.tgt=p*(FR.n-1);
+ if(FR.lang!==lang){FR.lang=lang;var x=L().vCh;$('#vtx').innerHTML='<span class="mono acc">'+esc(x[0])+'</span><h2>'+esc(x[1])+'</h2><p>'+esc(x[2])+'</p>'}
+ if(!FR.more&&window.scrollY>30){FR.more=true;frLoad()}
+ if(!FR.raf)FR.raf=requestAnimationFrame(vAnim)}
+function vuelo(){var cv=$('#vc'),k=window.innerWidth<window.innerHeight?'p':'w',dpr=Math.min(window.devicePixelRatio||1,2);
+ cv.width=Math.round(cv.clientWidth*dpr);cv.height=Math.round(cv.clientHeight*dpr);FR.last=null;
+ if(FR.set!==k){FR.set=k;FR.gen++;FR.img=[];FR.n=1;if(FR.more)frLoad()}
+ FR.lang='';vTick();vDraw()}
+
+/* ---------- Viaje de hoy al 3 de julio: al bajar, la misma vista va brotando hasta el verano ---------- */
+var TLD=[Date.UTC(2026,10,1),Date.UTC(2027,2,8),Date.UTC(2027,3,20),Date.UTC(2027,4,24),WED],TLKEY='';
+var TLK={w:[PHOTOS.winter.w.day,'hf_20261112_110742_91466500-2169-4056-a0d8-2e834ab5efe5',PHOTOS.spring.w.day,'hf_20261112_110742_c510dce2-f667-43fe-ad13-bf0ccaaa1183',PHOTOS.summer.w.day],
+ p:[PHOTOS.winter.p.day,'hf_20261112_110742_bab8f1d4-0dee-406f-a097-5eb084e3ea66',PHOTOS.spring.p.day,'hf_20261112_110741_88bbde9e-5dc7-4c6a-ae1b-c4efc5874d11',PHOTOS.summer.p.day]};
+/* estaciones: video vertical que avanza con el scroll (solo pantallas en vertical; si no carga, siguen las fotos) */
+var SVB='https://d2ol7oe51mr4n9.cloudfront.net/user_3Ly3hsluRPEjivn3YLUlIIHMCMS/',SV={req:0,ok:0,cur:0,tgt:0,set:-1,raf:0,U:[0,.2,.38,.6,1]};
+function svInit(){var e=$('#phV'),c=navigator.connection||{};
+ if(SV.req||!e||window.innerWidth>=window.innerHeight||c.saveData||/2g/.test(c.effectiveType||'')||!e.canPlayType||!e.canPlayType('video/mp4')||(window.matchMedia&&matchMedia('(prefers-reduced-motion:reduce)').matches))return;
+ SV.req=1;
+ var url=SVB+(Math.min(window.innerWidth,window.innerHeight)*(window.devicePixelRatio||1)>=900&&c.effectiveType!=='3g'?'abdf4ef2-fa49-49cd-b5dd-b496b7e1a066':'9d46131f-4f2e-495c-83ce-51f2faaef152')+'.mp4',direct=0;
+ var kick=function(){var q;try{q=e.play()}catch(_){}if(q&&q.then)q.then(function(){e.pause();SV.set=-1;hTick()}).catch(function(){})};
+ var ready=function(){if(SV.ok||e.readyState<2)return;SV.ok=1;SV.set=-1;hTick()};
+ e.muted=true;e.defaultMuted=true;e.playsInline=true;
+ e.addEventListener('loadeddata',ready);e.addEventListener('canplay',ready);
+ e.addEventListener('loadedmetadata',kick);
+ e.addEventListener('error',function(){if(!direct){direct=1;e.src=url;e.load()}});
+ document.addEventListener('touchend',function(){if(!SV.ok&&e.src)kick()},{passive:true});
+ var go=function(u){e.preload='auto';e.src=u;e.load()};
+ fetch(url).then(function(r){if(!r.ok)throw 0;return r.blob()}).then(function(b){go(URL.createObjectURL(b))}).catch(function(){direct=1;go(url)})}
+function svSeek(){SV.raf=0;var e=$('#phV');if(!SV.ok)return;
+ var d=SV.tgt-SV.cur;SV.cur=Math.abs(d)<.02?SV.tgt:SV.cur+d*.2;
+ if(!e.seeking&&SV.set!==SV.cur){SV.set=SV.cur;try{e.currentTime=SV.cur}catch(_){}}
+ if(SV.cur!==SV.tgt||SV.set!==SV.cur)SV.raf=requestAnimationFrame(svSeek)}
+function hTick(){var h=$('#hero'),tl=$('#tl'),C=$('#phC'),D=$('#phD'),V=$('#phV'),n0=now();
+ if(!guest||n0>=WED){tl.style.opacity=0;V.style.opacity=0;return}
+ var r=h.getBoundingClientRect(),vh=window.innerHeight,a=vh*.2,tot=r.height-vh-a-vh*.4,p=tot>0?clamp((-r.top-a)/tot,0,1):0;
+ if(p<=0){C.dataset.o=0;C.style.opacity=0;D.dataset.o=0;D.style.opacity=0;V.style.opacity=0;$('#hscrim').style.opacity=1;tl.style.opacity=0;return}
+ var v=n0+p*(WED-n0),i=0;while(i<TLD.length-2&&v>=TLD[i+1])i++;
+ var t0=clamp((v-TLD[i])/(TLD[i+1]-TLD[i]),0,1),t=clamp((t0-.2)/.6,0,1);t=t*t*(3-2*t);
+ var set=TLK[window.innerWidth<window.innerHeight?'p':'w'],f=Math.min(p/.05,1),x=L(),d=Math.max(0,Math.ceil((WED-v)/864e5));
+ if(SV.ok&&window.innerWidth<window.innerHeight){SV.tgt=(SV.U[i]+(SV.U[i+1]-SV.U[i])*t0)*Math.max(0,(V.duration||16)-.06);if(!SV.raf)SV.raf=requestAnimationFrame(svSeek);
+  V.style.opacity=f.toFixed(2);C.dataset.o=0;C.style.opacity=0;D.dataset.o=0;D.style.opacity=0}
+ else{V.style.opacity=0;phLayer(C,set[i],f.toFixed(2));phLayer(D,set[i+1],(f*t).toFixed(2))}
+ $('#hscrim').style.opacity=(1-.5*f).toFixed(2);tl.style.opacity=p>.03?1:0;
+ var key=d+lang;if(key!==TLKEY){TLKEY=key;var ds=new Intl.DateTimeFormat(lang==='en'?'en-GB':lang,{timeZone:'Europe/Madrid',day:'numeric',month:'long'}).format(new Date(p>=1?WED:v));
+  tl.innerHTML='<span class="mono acc">'+esc(x.tlTag)+'</span><b>'+esc(ds)+'</b><span class="mono">'+esc(x.vine[vine(p>=1?WED:v)]+' · '+(d<=0?x.today:d===1?x.left1:fmt(x.left,{n:d})))+'</span><div class="vpb"><i id="tlbar"></i></div>'}
+ var bar=$('#tlbar');if(bar)bar.style.width=(p*100).toFixed(1)+'%'}
+
+/* ---------- API ---------- */
+function api(body){return fetch(API,{method:'POST',headers:{'Content-Type':'text/plain;charset=utf-8'},body:JSON.stringify(body)}).then(function(r){return r.json()})}
+function toast(m){var t=$('#toast');t.textContent=m;t.classList.add('on');clearTimeout(toast.t);toast.t=setTimeout(function(){t.classList.remove('on')},3200)}
+
+/* ---------- Portada ---------- */
+function mode(){var n=now();return n>=LIVE0&&n<SCHED[6]?'live':n>=SCHED[6]?'after':'before'}
+function curStop(){var n=now(),i=-1;for(var k=0;k<6;k++)if(n>=SCHED[k])i=k;return i}
+function hero(){
+ var t=L(),n=now(),b=$('#heroB'),h='',m=madrid(n),vn=vine(n);
+ $('#eyebrow').innerHTML=guest?esc(t.personal+' · '+guest.firstName):'&nbsp;';
+ var live='<span class="mono live"><i></i>'+esc(t.nowAt+' · '+m.hm+' · '+t.ph[phase(n)])+'</span>';
+ if(heroState==='loading')h='<div>'+live+'<div class="date">'+esc(t.date)+'</div><div class="place">Mas de les Moreres · Cornudella de Montsant</div></div><div class="note" style="text-align:left">'+esc(t.loading)+'</div>';
+ else if(!guest)h='<div>'+live+'<div class="date">'+esc(t.date)+'</div><div class="place">Mas de les Moreres · Cornudella de Montsant</div></div>'+
+  '<form class="codef" id="codef" autocomplete="off"><label class="lbl" for="codei">'+esc(t.codeP)+'</label><div class="row"><input class="field" id="codei" maxlength="12" inputmode="text" autocapitalize="characters" spellcheck="false" aria-describedby="codee"><button class="btn" type="submit">'+esc(t.enter)+'</button></div><div class="err" id="codee" role="alert">'+esc(codeErr||'')+'</div><span class="note" style="text-align:left">'+esc(t.codeH)+'</span></form>';
+ else if(mode()==='live'){var i=curStop(),s=t.stops;
+  h='<div><span class="mono live"><i></i>'+esc(t.liveTag+' · '+m.hm)+'</span><div class="place" style="margin-bottom:10px">'+esc(fmt(t.hello,{n:guest.firstName}))+'</div>'+
+   (i<0?'<div class="serif" style="font-size:54px;line-height:1">'+esc(s[0][0])+'</div><div class="place">'+esc(t.soon)+'</div>':'<span class="mono dim">'+esc(t.nowL)+'</span><div class="serif" style="font-size:54px;line-height:1">'+esc(s[i][0])+'</div><div class="place">'+esc(s[i][1])+'</div>')+'</div>'+
+   '<div class="stats">'+(i<5?'<div class="stat"><span class="mono dim">'+esc(t.nextL)+' · '+TIMES[i+1]+'</span><b>'+esc(s[i+1][0])+'</b></div>':'')+'<div class="stat"><span class="mono dim">'+esc(t.back)+'</span><b>'+esc(t.backV)+'</b></div></div>'+
+   '<a class="btn" href="#finca">'+esc(t.mapB)+'</a>';}
+ else{var days=Math.ceil((WED-n)/864e5),pr=clamp((n-START)/(WED-START),0,1),C=125.66,
+  txt=mode()==='after'?t.thanks:days<=0?t.today:days===1?t.left1:fmt(t.left,{n:days});
+  h='<div>'+live+'<div class="date">'+esc(t.date)+'</div><div class="place">Mas de les Moreres · Cornudella de Montsant</div></div>'+
+   '<div class="count"><svg aria-hidden="true" width="48" height="48" viewBox="0 0 48 48" fill="none"><circle cx="24" cy="24" r="20" stroke="#ECE7DA" stroke-opacity=".22" stroke-width="3"/><circle cx="24" cy="24" r="20" stroke="#D4F56A" stroke-width="3" stroke-linecap="round" stroke-dasharray="'+(C*pr).toFixed(1)+' '+C+'" transform="rotate(-90 24 24)"/><path d="M24 31V19M24 23c-4-2-5-5-4-8M24 25c4-2 5-5 4-8" stroke="#ECE7DA" stroke-width="1.6" stroke-linecap="round"/></svg><div><b>'+esc(txt)+'</b><span class="mono dim" style="letter-spacing:.1em">'+esc(t.vineNow+': '+t.vine[vn])+'</span></div></div>'+
+   '<div><a class="btn" href="#rsvp">'+esc(guest.answered?t.change:t.confirm)+'</a><a class="link" href="#hsp">'+esc(t.fly)+' <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></a></div>';}
+ b.innerHTML=h;heroSc.update(n,vn);photo(n,vn);
+}
+
+/* ---------- Vuelo ---------- */
+var fIdx=-1;
+function flyUI(i,p){
+ var t=L(),s=t.stops[i],c=$('#fcard');
+ if(i!==fIdx||c.dataset.l!==lang){fIdx=i;c.dataset.l=lang;
+  c.innerHTML='<span class="mono acc">'+esc(fmt(t.stop,{i:'0'+(i+1)})+' · '+s[0])+'</span><h2>'+esc(s[1])+'</h2><p>'+esc(s[2])+'</p><div class="stats"><div class="stat"><span class="mono dim">'+esc(t.time)+'</span><b>'+TIMES[i]+'</b></div><div class="stat"><span class="mono dim">'+esc(s[3])+'</span><b>'+esc(s[4])+'</b></div></div>'+
+   '<div class="sunbar"><svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#ECE7DA" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M5 5l2 2M17 17l2 2M19 5l-2 2M7 17l-2 2"/></svg><div class="tr"><div class="fl"></div><div class="kn"></div></div><svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#ECE7DA" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 14.5A8 8 0 1 1 9.5 4a6.5 6.5 0 0 0 10.5 10.5z"/></svg></div>'+
+   (i<5?'<span class="dim kp" style="font-size:13px">'+esc(t.keep+': '+TIMES[i+1]+', '+t.stops[i+1][0].toLowerCase()+'.')+'</span>':'');
+  $('#stops').innerHTML=t.stops.map(function(x,k){return'<li class="'+(k<i?'past':k===i?'on':'next')+'"'+(k===i?' aria-current="step"':'')+'><button type="button" data-stop="'+k+'"><i></i>0'+(k+1)+' '+esc(x[0].toUpperCase())+' · '+TIMES[k]+'</button></li>'}).join('');}
+ var w=(p*100).toFixed(1)+'%';$('.fl',c).style.width=w;$('.kn',c).style.left=w;
+}
+function flyTick(){
+ var d=$('#dia'),r=d.getBoundingClientRect(),vh=window.innerHeight,tot=r.height-vh;if(tot<=0)return;
+ var p=clamp(-r.top/tot,0,1),f=p*6,i=Math.min(5,Math.floor(f)),ms=SCHED[i]+(SCHED[i+1]-SCHED[i])*(f-i);
+ if(i===5)ms=SCHED[5]+(U(6,4,1,0)-SCHED[5])*(f-5);
+ flySc.update(ms);flySc.fly(Math.min(f,5.999));flyUI(i,p);
+}
+function goStop(k){var d=$('#dia'),top=d.getBoundingClientRect().top+window.scrollY,tot=d.offsetHeight-window.innerHeight;window.scrollTo({top:top+tot*(k+.45)/6,behavior:'smooth'})}
+
+/* ---------- Confirmación ---------- */
+function initForm(){var g=guest,parts=(g.menu||'').split(/\s*,\s*/).filter(Boolean),m={},o=[];
+ parts.forEach(function(p){var i=MENU_ES.indexOf(p);if(i>=0)m[i]=true;else o.push(p)});if(!parts.length)m[0]=true;if(o.length)m[4]=true;
+ F={boda:g.answer,pre:g.preAnswer,post:g.postAnswer,tiro:g.tiroAnswer||'',plusOn:!!(g.plus&&g.plus.answer==='yes'),plusName:g.plus?g.plus.name:'',plusMenu:g.plus?g.plus.menu:'',menu:m,other:o.join(', '),bus:g.bus==='yes',lod:g.lodging==='yes',msg:g.message||'',busy:false,err:'',saved:false}}
+function events(){var g=guest,a=[];if(g.tiro)a.push('tiro');if(g.preboda)a.push('pre');a.push('boda');if(g.postboda)a.push('post');return a}
+function rsvp(){
+ var t=L(),g=guest,closed=now()>DEADLINE,dis=closed||F.busy?' disabled':'',h='';
+ h+='<div class="col stick"><span class="mono dim">03 · '+esc(t.nav[2])+'</span><h2 class="big">'+fmt(t.rsvpT,{n:esc(g.firstName)})+'</h2><p class="lead">'+esc(t.rsvpL)+'</p></div><div class="col">';
+ h+='<div class="stack">'+events().map(function(k){var e=t.ev[k],v=F[k];return'<div class="crd"><div class="tx"><span class="mono acc" style="letter-spacing:.12em">'+esc(e[0])+'</span><span class="tt">'+esc(e[1])+'</span><span class="sb">'+esc(e[2])+'</span></div><div class="yn" role="group" aria-label="'+esc(e[1])+'"><button type="button" class="y" data-a="ans" data-k="'+k+'" data-v="yes" aria-pressed="'+(v==='yes')+'"'+dis+'>'+esc(t.yes)+'</button><button type="button" class="n" data-a="ans" data-k="'+k+'" data-v="no" aria-pressed="'+(v==='no')+'"'+dis+'>'+esc(t.no)+'</button></div></div>'}).join('')+'</div>';
+ if(F.boda!=='no'){
+  if(g.plus){h+='<div class="stack"><div class="crd"><div class="tx"><span class="tt" style="font-size:16px">'+esc(t.plusOn)+'</span></div><button type="button" class="sw" role="switch" data-a="sw" data-k="plusOn" aria-checked="'+F.plusOn+'" aria-label="'+esc(t.plusOn)+'"'+dis+'><span><i></i></span></button></div>';
+   if(F.plusOn)h+='<div class="fld"><label class="lbl" for="f_pn">'+esc(t.plus)+'</label><input class="inp" id="f_pn" data-f="plusName" maxlength="80" placeholder="'+esc(t.plusPh)+'" value="'+esc(F.plusName)+'"'+dis+'></div><div class="fld"><label class="lbl" for="f_pm">'+esc(t.plusMenu)+'</label><input class="inp" id="f_pm" data-f="plusMenu" maxlength="300" value="'+esc(F.plusMenu)+'"'+dis+'></div>';
+   h+='</div>';}
+  h+='<div class="fld"><span class="lbl" id="ml">'+esc(t.menu)+'</span><div class="chips" role="group" aria-labelledby="ml">'+t.menus.map(function(m,i){return'<button type="button" class="chip" data-a="menu" data-k="'+i+'" aria-pressed="'+!!F.menu[i]+'"'+dis+'>'+esc(m)+'</button>'}).join('')+'</div>'+(F.menu[4]?'<input class="inp" data-f="other" maxlength="200" aria-label="'+esc(t.otherPh)+'" placeholder="'+esc(t.otherPh)+'" value="'+esc(F.other)+'"'+dis+'>':'')+'</div>';
+  h+='<div class="stack">'+[['bus',t.bus,t.busS],['lod',t.lod,t.lodS]].map(function(x){return'<div class="crd"><div class="tx"><span class="tt" style="font-size:16px">'+esc(x[1])+'</span><span class="sb">'+esc(x[2])+'</span></div><button type="button" class="sw" role="switch" data-a="sw" data-k="'+x[0]+'" aria-checked="'+F[x[0]]+'" aria-label="'+esc(x[1])+'"'+dis+'><span><i></i></span></button></div>'}).join('')+'</div>';}
+ h+='<div class="fld"><label class="lbl" for="f_msg">'+esc(t.msg)+'</label><textarea class="inp" id="f_msg" data-f="msg" rows="3" maxlength="1000" placeholder="'+esc(t.msgPh)+'"'+dis+'>'+esc(F.msg)+'</textarea></div>';
+ if(F.saved)h+='<div class="ok"><svg aria-hidden="true" width="28" height="28" viewBox="0 0 28 28" fill="none"><circle cx="14" cy="14" r="13" stroke="#D4F56A" stroke-width="1.6"/><path d="M8.5 14.5l3.6 3.6 7.4-7.6" stroke="#D4F56A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><div><b>'+esc(t.saved)+'</b><span>'+esc(t.savedS)+'</span></div></div>';
+ h+='<div class="stack" style="align-items:center"><div class="err" role="alert" style="text-align:center">'+esc(F.err)+'</div>'+(closed?'<p class="lead" style="text-align:center">'+esc(t.closed)+'</p>':'<button type="button" class="btn" data-a="send"'+dis+'>'+esc(F.busy?t.sending:g.answered?t.update:t.send)+'</button><span class="note">'+esc(t.until)+'</span>')+
+  '<a class="crd" href="#mesa" style="width:100%;text-decoration:none;font-size:14px;min-height:52px;margin-top:8px"><span style="display:flex;align-items:center;gap:10px"><svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg>'+esc(t.light)+'</span><svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></a></div></div>';
+ $('#rsvp').innerHTML=h;
+}
+function send(){
+ var t=L(),g=guest,ev=events();for(var i=0;i<ev.length;i++)if(!F[ev[i]]){F.err=t.need;rsvp();return}
+ var m=[];MENU_ES.forEach(function(x,i){if(F.menu[i])m.push(x)});if(F.menu[4]&&F.other.trim())m.push(F.other.trim());
+ var ex=function(v){return v==='yes'?(g.plus?(F.plusOn?'plus':'solo'):'yes'):v};
+ var d={attending:F.boda,menu:m.join(', '),bus:F.bus?'yes':'no',lodging:F.lod?'yes':'no',message:F.msg,plusAttending:F.plusOn?'yes':'no',plusName:F.plusName,plusMenu:F.plusMenu,preboda:ex(F.pre),postboda:ex(F.post),tiro:F.tiro,lang:lang};
+ F.busy=true;F.err='';rsvp();
+ api({a:'rsvp',k:code,d:d}).then(function(r){if(!r||!r.ok)throw 0;guest=r.guest;mesa=r.mesa||mesa;initForm();F.saved=true;rsvp();hero();mesaR();toast(t.saved)}).catch(function(){F.busy=false;F.err=t.sendBad;rsvp()});
+}
+
+/* ---------- Mapa ---------- */
+var PINS=[[54.1,45.6],[21,12.4],[71.3,25.6],[83.6,68.7],[24.1,28.6],[35.9,24.8]],CLUBP=[15.1,29.5],LABS=[[26.7,11.6],[5.1,23.1],[10.3,32],[30.3,20.2],[55.5,28.9],[32.8,44.8]];
+function finca(){
+ var t=L(),s=t.stops[selPin]||['Club','Club',t.clubD],live=mode()==='live'?curStop():-1,h='';
+ h+='<div class="col stick"><span class="mono dim">04 · MAS DE LES MORERES</span><h2 class="big">'+esc(t.mapT)+'</h2><p class="lead">'+esc(t.mapL)+'</p><div class="chips" role="group">'+t.layers.map(function(x,i){return'<button type="button" class="chip" data-a="layer" data-k="'+i+'" aria-pressed="'+(layer===i)+'">'+esc(x)+'</button>'}).join('')+'</div></div>';
+ h+='<div class="col"><div class="mapw">'+$('#mapsvg').innerHTML+'<span class="mono north"><svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 12H5M11 6l-6 6 6 6"/></svg>'+esc(t.north)+'</span>';
+ t.labels.forEach(function(x,i){h+='<span class="mlab" style="left:'+LABS[i][0]+'%;top:'+LABS[i][1]+'%">'+esc(x.toUpperCase())+'</span>'});
+ PINS.forEach(function(p,i){h+='<button type="button" class="pin'+(layer===1&&i?' off':'')+(live===i?' nowp':'')+'" data-a="pin" data-k="'+i+'" aria-pressed="'+(layer===0?selPin===i:i===0)+'" aria-label="0'+(i+1)+' '+esc(t.stops[i][0]+', '+t.stops[i][1])+'" style="left:'+p[0]+'%;top:'+p[1]+'%"><b>0'+(i+1)+'</b></button>'});
+ h+='<button type="button" class="pin'+(layer===1?' off':'')+'" data-a="pin" data-k="6" aria-pressed="'+(layer===0&&selPin===6)+'" aria-label="Club" style="left:'+CLUBP[0]+'%;top:'+CLUBP[1]+'%"><b>C</b></button>';
+ h+='<div class="mcard" aria-live="polite">'+(layer===1?'<span class="mono acc">01 · '+esc(t.layers[1])+'</span><h3>'+esc(t.shT)+'</h3><p>'+esc(t.shD)+'</p><a class="btn" href="#llegar">'+esc(t.shB)+'</a>':
+  selPin===6?'<span class="mono acc">CLUB</span><h3>Club</h3><p>'+esc(t.clubD)+'</p>':
+  '<span class="mono acc">0'+(selPin+1)+' · '+esc(s[0])+' · '+TIMES[selPin]+'</span><h3>'+esc(s[1])+'</h3><p>'+esc(s[2])+'</p><button type="button" class="btn" data-stop="'+selPin+'">'+esc(t.see)+'</button>')+'</div></div></div>';
+ $('#finca').innerHTML=h;
+}
+
+/* ---------- Mesa ---------- */
+function tableSvg(alt){var o='<svg class="tbl" role="img" aria-label="'+esc(alt)+'" viewBox="0 0 346 230"><g fill="#111A13">';
+ [14,72,130,216,274,332].forEach(function(x){o+='<circle cx="'+x+'" cy="38" r="20"/><circle cx="'+x+'" cy="192" r="20"/>'});
+ return o+'</g><rect x="-20" y="104" width="386" height="22" fill="#EDE3CF" opacity=".14"/><line x1="8" y1="84" x2="338" y2="84" stroke="#ECE7DA" stroke-opacity=".28" stroke-width="9" stroke-linecap="round" stroke-dasharray="0 22"/><line x1="8" y1="146" x2="338" y2="146" stroke="#ECE7DA" stroke-opacity=".28" stroke-width="9" stroke-linecap="round" stroke-dasharray="0 22"/><circle cx="173" cy="115" r="34" fill="#0A0E0B" stroke="#ECE7DA" stroke-opacity=".4"/><g fill="none" stroke="#ECE7DA" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="161" y="112" width="24" height="18" rx="3"/><path d="M165 112v-5a8 8 0 0 1 16 0v5M173 119v4"/></g></svg>'}
+function mesaR(){
+ var t=L(),g=guest,h='',chk='<svg aria-hidden="true" width="28" height="28" viewBox="0 0 28 28" fill="none"><circle cx="14" cy="14" r="13" stroke="#D4F56A" stroke-width="1.6"/><path d="M8.5 14.5l3.6 3.6 7.4-7.6" stroke="#D4F56A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+ if(mesa&&mesa.revealed){
+  h='<div class="col stick"><span class="mono acc">05 · '+esc(t.revd)+'</span><h2 class="huge">'+esc(fmt(t.seatT,{n:g.firstName}))+'</h2></div><div class="col">'+
+   (mesa.seat?'<div class="stats"><div class="stat"><span class="mono dim">'+esc(t.seat)+'</span><b style="font-size:30px">'+esc(mesa.seat)+'</b></div>'+(mesa.side?'<div class="stat"><span class="mono dim">'+esc(t.side)+'</span><b style="font-size:30px">'+esc(mesa.side)+'</b></div>':'')+'</div>':'<div class="seal"><span class="s">'+esc(t.seatSoon)+'</span></div>')+'</div>';
+ }else{
+  h='<div class="col stick"><span class="mono dim">05 · '+esc(t.sealed)+'</span><h2 class="huge">'+esc(t.mesaT)+'</h2><p class="lead">'+esc(t.mesaL)+'</p></div><div class="col">'+tableSvg(t.tblAlt)+
+   '<div class="seal"><span class="mono acc" style="letter-spacing:.16em">'+esc(t.revTag)+'</span><b>'+esc(t.revD)+'</b><span class="s">'+esc(t.revS)+'</span></div>'+
+   '<div class="ok">'+(g.answer==='yes'?chk:'<svg aria-hidden="true" width="28" height="28" viewBox="0 0 28 28" fill="none"><circle cx="14" cy="14" r="13" stroke="#ECE7DA" stroke-opacity=".4" stroke-width="1.6" stroke-dasharray="3 4"/></svg>')+'<div><b>'+esc(g.answer==='yes'?t.lit:t.unlit)+'</b><span>'+esc(g.answer==='yes'?t.litS:t.unlitS)+'</span></div></div>'+
+   '<button type="button" class="btn ghost" data-a="cal"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="6" width="16" height="14" rx="2"/><path d="M4 10h16M9 4v4M15 4v4"/></svg>'+esc(t.cal)+'</button></div>';}
+ $('#mesa').innerHTML=h;
+}
+function ics(){var t=L(),s='BEGIN:VCALENDAR\r\nVERSION:2.0\r\nPRODID:-//NM//Boda//ES\r\nBEGIN:VEVENT\r\nUID:mesa-20270702@nm\r\nDTSTAMP:20270101T000000Z\r\nDTSTART:20270702T190000Z\r\nDTEND:20270702T193000Z\r\nSUMMARY:'+t.calS+'\r\nURL:'+location.origin+'/\r\nEND:VEVENT\r\nEND:VCALENDAR\r\n';
+ var a=document.createElement('a');a.href=URL.createObjectURL(new Blob([s],{type:'text/calendar'}));a.download='mesa-natalia-marcal.ics';document.body.appendChild(a);a.click();a.remove()}
+
+/* ---------- Llegar y dormir ---------- */
+function llegar(){var t=L();
+ $('#llegar').innerHTML='<div class="col stick"><span class="mono dim">06 · '+esc(t.goTag)+'</span><h2 class="big">'+esc(t.goT)+'</h2><p class="lead">'+esc(t.goL)+'</p></div><div class="col"><ol class="steps">'+t.go.map(function(x){return'<li><span class="mono acc" style="letter-spacing:.12em">'+esc(x[0])+'</span><b>'+esc(x[1])+'</b><p>'+esc(x[2])+'</p></li>'}).join('')+'</ol>'+
+  '<a class="btn" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query='+encodeURIComponent('Restaurant Venta del Pubill, Cornudella de Montsant')+'"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s7-6.2 7-12a7 7 0 0 0-14 0c0 5.8 7 12 7 12z"/><circle cx="12" cy="9" r="2.5"/></svg>'+esc(t.goB)+'</a><span class="note">'+esc(t.goN)+'</span></div>'}
+function dormir(){var t=L();
+ $('#dormir').innerHTML='<div class="col stick"><span class="mono dim">07 · '+esc(t.stayTag)+'</span><h2 class="big">'+esc(t.stayT)+'</h2><p class="lead">'+esc(t.stayL)+'</p></div><div class="col">'+STAY.map(function(c,i){return'<div class="grp"><h3 class="lbl">'+esc(t.cats[i])+'</h3><ul>'+c.map(function(x){return'<li><a target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query='+encodeURIComponent(x[0]+', '+x[1])+'"><b>'+esc(x[0])+'</b><span>'+esc(x[1]+(x[2]?' · '+x[2]+' '+t.pers:''))+'</span></a></li>'}).join('')+'</ul></div>'}).join('')+'</div>'}
+
+/* ---------- Montaje ---------- */
+function chrome(){var t=L();document.documentElement.lang=lang;$('#langt').textContent=t.langName;$('#langb').setAttribute('aria-label',t.langName);
+ var on=!!guest;$('#hero').classList.toggle('solo',!on||now()>=WED);$('#nav').hidden=$('#dots').hidden=$('#navcta').hidden=!on;
+ $('#nav').innerHTML=[1,3,5,6,4].map(function(i){return'<a href="#'+SEC[i]+'">'+esc(t.nav[i])+'</a>'}).join('');
+ $('#navcta').textContent=t.nav[2];
+ $('#dots').innerHTML=SEC.map(function(s,i){return'<a href="#'+s+'" data-s="'+s+'" aria-label="'+esc(t.nav[i])+'"><span>0'+(i+1)+' '+esc(t.nav[i].toUpperCase())+'</span><i></i></a>'}).join('')}
+function renderAll(){chrome();hero();if(guest){vuelo();rsvp();finca();mesaR();llegar();dormir();fIdx=-1;flyTick()}}
+function open(){$('#app').hidden=false;initForm();if(mode()==='live'&&curStop()>=0)selPin=curStop();renderAll();flySc.build();flyTick();onScroll();setTimeout(svInit,600)}
+function load(c,manual){code=c;heroState='loading';codeErr='';hero();
+ api({a:'guest',k:c}).then(function(r){heroState='code';if(r&&r.ok){guest=r.guest;mesa=r.mesa||null;store.set('nm_k',c);if(!qs.get('l')&&!store.get('nm_l')&&guest.lang)lang=guest.lang;open()}
+  else{code='';store.del('nm_k');codeErr=manual||qs.get('k')?L().codeBad:'';hero()}}).catch(function(){heroState='code';code='';codeErr=L().netBad;hero()})}
+
+var ticking=false;
+function onScroll(){if(ticking)return;ticking=true;requestAnimationFrame(function(){ticking=false;
+ $('#top').classList.toggle('solid',window.scrollY>40);hTick();
+ if(!guest)return;vTick();flyTick();var mid=window.innerHeight*.45,cur=SEC[0];SEC.forEach(function(s){var el=document.getElementById(s);if(el&&el.getBoundingClientRect().top<=mid)cur=s});
+ $$('#dots a').forEach(function(a){a.classList.toggle('on',a.dataset.s===cur)})})}
+window.addEventListener('scroll',onScroll,{passive:true});
+var rz;window.addEventListener('resize',function(){clearTimeout(rz);rz=setTimeout(function(){heroSc.build();heroSc.update(now(),vine(now()));photo(now(),vine(now()));hTick();if(guest){svInit();vuelo();flySc.build();flyTick()}},150)});
+
+document.addEventListener('click',function(ev){
+ var st=ev.target.closest('[data-stop]');if(st){goStop(+st.dataset.stop);return}
+ var b=ev.target.closest('[data-a]');if(!b)return;var a=b.dataset.a,k=b.dataset.k;
+ if(a==='ans'){F[k]=b.dataset.v;F.err='';F.saved=false;rsvp()}
+ else if(a==='sw'){F[k]=!F[k];F.saved=false;rsvp()}
+ else if(a==='menu'){k=+k;if(k===0)F.menu={0:!F.menu[0]};else{F.menu[0]=false;F.menu[k]=!F.menu[k]}F.saved=false;rsvp()}
+ else if(a==='send')send();
+ else if(a==='layer'){layer=+k;finca()}
+ else if(a==='pin'){layer=0;selPin=+k;finca()}
+ else if(a==='cal')ics();
+});
+document.addEventListener('input',function(ev){var f=ev.target.dataset&&ev.target.dataset.f;if(f&&F)F[f]=ev.target.value});
+document.addEventListener('submit',function(ev){if(ev.target.id==='codef'){ev.preventDefault();var c=$('#codei').value.toUpperCase().replace(/[^A-Z0-9]/g,'');if(c)load(c,true)}});
+$('#langb').addEventListener('click',function(){var o=['ca','es','en'];lang=o[(o.indexOf(lang)+1)%3];store.set('nm_l',lang);renderAll()});
+
+/* ---------- Arranque ---------- */
+(function(){var l=(qs.get('l')||'').toLowerCase().slice(0,2),ok=function(x){return /^(ca|es|en)$/.test(x)};
+ lang=ok(l)?l:ok(store.get('nm_l'))?store.get('nm_l'):ok((navigator.language||'').slice(0,2))?navigator.language.slice(0,2):'ca';
+ heroSc.build();chrome();hero();
+ var k=(qs.get('k')||'').toUpperCase().replace(/[^A-Z0-9]/g,'').slice(0,12);
+ if(k){try{var u=new URL(location.href);u.searchParams.delete('k');history.replaceState(null,'',u.pathname+u.search+u.hash)}catch(e){}}
+ k=k||store.get('nm_k')||'';if(k)load(k,false);
+ setInterval(function(){if(document.activeElement&&document.activeElement.id==='codei')return;hero();if(guest&&mode()==='live')finca()},60000);
+})();
+})();
+
+</script>
+</body>
+</html>

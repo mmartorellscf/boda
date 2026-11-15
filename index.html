@@ -244,6 +244,8 @@ footer div{font-family:var(--tit);font-style:italic;font-size:30px}
  .art{align-self:stretch;min-height:280px;max-height:45vw;overflow:hidden}
  .art img{inset:auto;top:0;left:50%;height:100%;width:auto;max-width:none;transform:translateX(-50%);-webkit-mask-image:linear-gradient(90deg,transparent,#000 4%,#000 96%,transparent),linear-gradient(transparent,#000 4%,#000 96%,transparent);-webkit-mask-composite:source-in;mask-image:linear-gradient(90deg,transparent,#000 4%,#000 96%,transparent),linear-gradient(transparent,#000 4%,#000 96%,transparent);mask-composite:intersect}
  .chip{left:50%;bottom:0;transform:translateX(-50%);white-space:nowrap}
+ .art.pan img{inset:0;width:100%;height:100%;transform:none;object-fit:cover;object-position:50% 52%;-webkit-mask-image:linear-gradient(transparent,#000 5%,#000 94%,transparent);-webkit-mask-composite:source-over;mask-image:linear-gradient(transparent,#000 5%,#000 94%,transparent);mask-composite:add}
+ .art.pan .chip{left:var(--gut);bottom:18px;transform:none}
  .codef{width:340px}
  .mapw,.zl{max-width:460px}
  .info{flex-direction:row;flex-wrap:wrap;align-items:center;justify-content:center;gap:14px 40px;text-align:left}
@@ -397,9 +399,10 @@ function phase(ms){var s=sun(ms),h=madrid(ms).h;if(s.alt<-6)return'night';if(s.a
 function vine(ms){var d=madrid(ms),k=d.m*100+d.d;if(d.y===2027&&k===703)return'boda';
  return k>=1101||k<301?'poda':k<401?'lloro':k<516?'brote':k<611?'flor':k<716?'cuajado':k<821?'envero':k<1001?'vendimia':'hoja'}
 /* Portada: una imagen por estación (invierno 1 nov–31 mar, primavera 1 abr–15 may, verano 16 may–31 oct) y por luz (altura real del sol en el Mas). */
-var CV='';
-function cover(n){var d=madrid(n),k=d.m*100+d.d,se=k>=1101||k<401?'inv':k<516?'pri':'ver',ph=phase(n),li=ph==='night'?'nit':ph==='dawn'?'alb':ph==='dusk'?'cap':'dia',src='img/c-'+se+'-'+li+'.webp';
- if(src===CV)return;var a=$('#arti'),b=$('#arti2');if(!CV){CV=src;a.src=src;return}
+var CV='',PAN='inv-alb inv-cap inv-dia inv-nit pri-alb pri-cap pri-dia pri-nit ver-alb ver-cap ver-dia ver-nit'; /* panorámicas disponibles para pantallas anchas; las demás usan la imagen normal, centrada */
+function cover(n){var d=madrid(n),k=d.m*100+d.d,se=k>=1101||k<401?'inv':k<516?'pri':'ver',ph=phase(n),li=ph==='night'?'nit':ph==='dawn'?'alb':ph==='dusk'?'cap':'dia',key=se+'-'+li,
+  pan=!!(window.matchMedia&&matchMedia('(min-width:760px)').matches)&&(' '+PAN+' ').indexOf(' '+key+' ')>=0,src='img/'+(pan?'w':'c')+'-'+key+'.webp';
+ if(src===CV)return;var a=$('#arti'),b=$('#arti2'),A=$('#art');if(!CV||A.classList.contains('pan')!==pan){CV=src;A.classList.toggle('pan',pan);b.classList.remove('on');a.src=src;return}
  CV=src;var im=new Image();im.onload=function(){if(CV!==src)return;b.src=src;b.classList.add('on');setTimeout(function(){a.src=src;setTimeout(function(){b.classList.remove('on')},500)},1700)};im.src=src}
 
 function api(body){if(window.__api)return window.__api(body);return fetch(API,{method:'POST',headers:{'Content-Type':'text/plain;charset=utf-8'},body:JSON.stringify(body)}).then(function(r){return r.json()})}

@@ -113,7 +113,6 @@ section{position:relative;padding:84px var(--gut) 40px;max-width:760px;margin:0 
 
 /* La finca */
 .vins{display:grid;grid-template-columns:1fr 1fr;gap:22px 14px}
-.vin:first-child{grid-column:1/-1}
 .vin{display:flex;flex-direction:column;gap:6px;padding:0;border:0;background:none;text-align:left;font-size:inherit}
 .pic{position:relative;aspect-ratio:4/3;border-radius:10px;border:1px solid var(--line);overflow:hidden;background:var(--cru)}
 .pic .paint{position:absolute;inset:0}
@@ -295,7 +294,13 @@ function gift(){var g=guest||{},v=String(g.iban||'').replace(/\s+/g,'').toUpperC
 var $=function(s,r){return (r||document).querySelector(s)}, $$=function(s,r){return [].slice.call((r||document).querySelectorAll(s))};
 var qs=new URLSearchParams(location.search);
 var store={get:function(k){try{return localStorage.getItem(k)}catch(e){return null}},set:function(k,v){try{localStorage.setItem(k,v)}catch(e){}},del:function(k){try{localStorage.removeItem(k)}catch(e){}}};
-var off=0;(function(){var t=qs.get('t');if(t){var d=new Date(t).getTime();if(!isNaN(d))off=d-Date.now()}})();
+/* Vista previa de otra fecha: ?t=2027-07-03T21:15 o ?t=3/7/2027 21:15 (día/mes/año), siempre en hora del Mas; sin hora, las 12:00. */
+var off=0;(function(){var t=(qs.get('t')||'').trim();if(!t)return;var d=NaN,m,p=null,H='(?:[T\\s_,]+(\\d{1,2})(?:[:.h](\\d{2}))?)?';
+ if((m=new RegExp('^(\\d{4})[-/.](\\d{1,2})[-/.](\\d{1,2})'+H,'i').exec(t)))p=[+m[1],+m[2],+m[3],m[4],m[5]];
+ else if((m=new RegExp('^(\\d{1,2})[-/.](\\d{1,2})[-/.](\\d{4})'+H,'i').exec(t)))p=[+m[3],+m[2],+m[1],m[4],m[5]];
+ if(p){var h=p[3]==null?12:+p[3],g=Date.UTC(p[0],p[1]-1,p[2],h,+(p[4]||0));d=g-36e5;for(var o=1;o<3;o++)if(madrid(g-o*36e5).h===h%24)d=g-o*36e5}
+ else d=new Date(t).getTime();
+ if(!isNaN(d))off=d-Date.now()})();
 var now=function(){return Date.now()+off};
 var esc=function(s){return String(s==null?'':s).replace(/[&<>"']/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]})};
 var clamp=function(v,a,b){return Math.max(a,Math.min(b,v))};
@@ -314,7 +319,7 @@ vine:{poda:'poda d’hivern',lloro:'plor',brote:'brotada',flor:'floració',cuaja
 confirm:'Confirmar assistència',change:'Veure o canviar la resposta',down:'Baixa i passeja pel Mas',cta:'Confirmar',
 codeP:'El codi de la teva invitació',codeH:'El vas rebre per WhatsApp',enter:'Entrar',codeBad:'No trobem aquest codi. Revisa’l i torna-ho a provar.',netBad:'No hem pogut connectar. Torna-ho a provar.',loading:'Obrint la teva invitació…',
 nav:['El Mas','El dia','Confirmar','Detall','Mapa','Com arribar','On dormir'],
-fincaL:'Un mas entre vinyes, amb la serra de Montsant al fons.',flipH:'Toca un dibuix i veuràs la foto.',fin:['Des de l’aire','Les vinyes','La capella','El camí de les Moreres','La plaça del Molí','El celler','Els ceps'],
+fincaL:'Un mas entre vinyes, amb la serra de Montsant al fons.',flipH:'Toca un dibuix i veuràs la foto.',fin:['Les vinyes','La capella','El camí de les Moreres','La plaça del Molí','El celler','Els ceps'],
 dayT:'El dia',stops:[['Arribada','Mas de les Moreres'],['Cerimònia','A la capella'],['Aperitiu i sopar','Zona del jardí, la piscina i la pista de tennis'],['Ball i festa','Zona de la plaça del Molí, el Club i la Discoteca']],
 live:['Arribada','Cerimònia','Aperitiu','Sopar','Ball i festa'],sur:'Com serà cada moment, és sorpresa.',
 rsvpT:'{n}, <em>vens?</em>',rsvpL:'Només veus els actes als quals t’hem convidat. Respon a cadascun amb un toc.',yes:'Sí',no:'No',
@@ -336,7 +341,7 @@ vine:{poda:'poda de invierno',lloro:'lloro',brote:'brotación',flor:'floración'
 confirm:'Confirmar asistencia',change:'Ver o cambiar mi respuesta',down:'Baja y pasea por el Mas',cta:'Confirmar',
 codeP:'El código de tu invitación',codeH:'Lo recibiste por WhatsApp',enter:'Entrar',codeBad:'No encontramos ese código. Revísalo e inténtalo de nuevo.',netBad:'No hemos podido conectar. Inténtalo de nuevo.',loading:'Abriendo tu invitación…',
 nav:['El Mas','El día','Confirmar','Detalle','Mapa','Cómo llegar','Dónde dormir'],
-fincaL:'Un mas entre viñas, con la sierra de Montsant al fondo.',flipH:'Toca un dibujo y verás la foto.',fin:['Desde el aire','Las viñas','La capilla','El camino de las Moreras','La plaça del Molí','La bodega','Las cepas'],
+fincaL:'Un mas entre viñas, con la sierra de Montsant al fondo.',flipH:'Toca un dibujo y verás la foto.',fin:['Las viñas','La capilla','El camino de las Moreras','La plaça del Molí','La bodega','Las cepas'],
 dayT:'El día',stops:[['Llegada','Mas de les Moreres'],['Ceremonia','En la capilla'],['Aperitivo y cena','Zona del jardín, la piscina y la pista de tenis'],['Baile y fiesta','Zona de la plaça del Molí, el Club y la Discoteca']],
 live:['Llegada','Ceremonia','Aperitivo','Cena','Baile y fiesta'],sur:'Cómo será cada momento es sorpresa.',
 rsvpT:'{n}, <em>¿vienes?</em>',rsvpL:'Solo ves los actos a los que te hemos invitado. Responde a cada uno con un toque.',yes:'Sí',no:'No',
@@ -358,7 +363,7 @@ vine:{poda:'winter pruning',lloro:'sap rising',brote:'budbreak',flor:'flowering'
 confirm:'RSVP',change:'See or change my answer',down:'Scroll down and wander the Mas',cta:'RSVP',
 codeP:'Your invitation code',codeH:'You received it by WhatsApp',enter:'Enter',codeBad:'We can’t find that code. Check it and try again.',netBad:'We couldn’t connect. Please try again.',loading:'Opening your invitation…',
 nav:['The Mas','The day','RSVP','A little something','Map','Getting there','Where to stay'],
-fincaL:'A farmhouse among vineyards, with the Montsant range behind.',flipH:'Tap a drawing to see the photo.',fin:['From the air','The vineyards','The chapel','The Mulberry Path','Plaça del Molí','The winery','The vines'],
+fincaL:'A farmhouse among vineyards, with the Montsant range behind.',flipH:'Tap a drawing to see the photo.',fin:['The vineyards','The chapel','The Mulberry Path','Plaça del Molí','The winery','The vines'],
 dayT:'The day',stops:[['Arrival','Mas de les Moreres'],['Ceremony','In the chapel'],['Aperitif and dinner','Garden, pool and tennis court area'],['Dancing and party','Plaça del Molí, Club and Discoteca area']],
 live:['Arrival','Ceremony','Aperitif','Dinner','Dancing and party'],sur:'What each moment will look like is a surprise.',
 rsvpT:'{n}, <em>are you coming?</em>',rsvpL:'You only see the events you’re invited to. Answer each one with a tap.',yes:'Yes',no:'No',
@@ -379,7 +384,7 @@ var STAY=[[["Gran Hotel Mas d’en Bruno","Torroja del Priorat"],["Terra Dominic
 [["Molí dels Aubins","Cornudella",13],["Mas del Salin","Cornudella",9],["Pla del Castell","Albarca",9],["Casa la Falconera","La Morera",9],["La Marquesiana","Alforja",22],["Ca l’Arcadi","Alforja",17],["Mas Lucena","Alforja",14],["Mas Fullat","Alforja",12],["Ca la Cuca","Alforja",10],["Ca l’Oliveta","Riudecols",16],["Prades Vila Bella","Prades",26],["Casa Roja","Prades",8],["Cal Crispí","Prades"],["Apartaments Cal Trumfo","Prades"]],
 [["Càmping i Bungalow Siurana","Siurana"],["Camping Prades Park","Prades"]]];
 /* Viñetas de la finca: dr = recorte de la acuarela (tamaño y posición), mo = motivo mientras no hay dibujo, img = dibujo propio, photo = foto real para el giro. */
-var FIN=['mas','vinyes','capella','moreres','moli','celler','raim'], ZT=['','z-capella','z-jardi','z-moli'], VST={poda:0,lloro:0,brote:1,flor:1,cuajado:2,boda:2,envero:2,vendimia:3,hoja:3};
+var FIN=['vinyes','capella','moreres','moli','celler','raim'], ZT=['','z-capella','z-jardi','z-moli'], VST={poda:0,lloro:0,brote:1,flor:1,cuajado:2,boda:2,envero:2,vendimia:3,hoja:3};
 var MENU_ES=['Sin restricciones','Vegetariano','Sin gluten','Sin lactosa'];
 var SEC=['finca','dia','rsvp','regalo','mapa','llegar','dormir'];
 function secs(){return SEC.filter(function(x){return x!=='regalo'||gift().iban})}
@@ -435,7 +440,7 @@ function hero(){
 /* ---------- La finca ---------- */
 function head(id,title,lead){var t=L();return'<div class="hd"><span class="lab acc rv">0'+(secs().indexOf(id)+1)+' · '+esc(t.nav[SEC.indexOf(id)])+'</span><h2 class="tt rv" style="--i:1">'+title+'</h2>'+(lead?'<p class="lead rv" style="--i:2">'+esc(lead)+'</p>':'')+'</div>'}
 function finca(){var t=L(),vn=vine(now()),vs=VST[vn],ic='<span class="fl"><svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="6" width="18" height="14" rx="2"/><circle cx="12" cy="13" r="3.5"/><path d="M8 6l1.5-2h5L16 6"/></svg></span>';
- $('#finca').innerHTML=head('finca',esc(t.nav[0]),t.fincaL)+'<p class="note rv" style="--i:2;margin:-12px 0 18px">'+esc(t.flipH)+'</p><div class="vins">'+FIN.map(function(f,i){var ph=i>0,tag=ph?'button type="button" data-a="flip"':'div';
+ $('#finca').innerHTML=head('finca',esc(t.nav[0]),t.fincaL)+'<p class="note rv" style="--i:2;margin:-12px 0 18px">'+esc(t.flipH)+'</p><div class="vins">'+FIN.map(function(f,i){var ph=true,tag=ph?'button type="button" data-a="flip"':'div';
   return'<'+tag+' class="vin rv" style="--i:'+Math.min(i+2,6)+'"><div class="pic"><div class="paint wait"><img class="dw" src="img/f-'+f+'.webp" alt="" loading="lazy"></div>'+(ph?'<img class="ph" data-src="img/p-'+f+'.webp" alt="">'+ic:'')+'</div><b>'+esc(t.fin[i])+'</b></'+tag.split(' ')[0]+'>'}).join('')+'</div>'+
   '<div class="cal rv" style="--i:3"><div class="calr">'+[0,1,2,3].map(function(k){return'<img'+(k===vs?' class="on"':'')+' src="img/v'+k+'.webp" alt="" loading="lazy">'}).join('')+'</div><span class="note">'+esc(t.vineNow)+': <b>'+esc(t.vine[vn])+'</b></span></div>'}
 

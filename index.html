@@ -64,8 +64,9 @@ section{position:relative;padding:84px var(--gut) 40px;max-width:760px;margin:0 
 .names b{font-weight:400;color:var(--ort)}
 .art{position:relative;flex:1 1 auto;min-height:320px;margin:0 calc(var(--gut) * -1);will-change:transform}
 #artp{position:absolute;inset:0}
-.art img{position:absolute;inset:0;display:block;width:100%;height:100%;object-fit:cover;object-position:50% 50%;-webkit-mask-image:linear-gradient(transparent,#000 9%,#000 90%,transparent);mask-image:linear-gradient(transparent,#000 9%,#000 90%,transparent)}
-.tint{position:absolute;inset:0;mix-blend-mode:multiply;opacity:0;transition:opacity 1.6s;background:radial-gradient(ellipse 66% 58% at 50% 52%,var(--tc,#F2954F) 30%,transparent 78%)}
+.art img{position:absolute;inset:0;display:block;width:100%;height:100%;object-fit:cover;object-position:54% 50%;-webkit-mask-image:linear-gradient(transparent,#000 9%,#000 90%,transparent);mask-image:linear-gradient(transparent,#000 9%,#000 90%,transparent)}
+#arti2{opacity:0;transition:opacity 1.6s}
+#arti2.on{opacity:1}
 .chip{position:absolute;left:var(--gut);bottom:7%;padding:6px 12px;border-radius:14px;background:rgba(250,246,237,.92);color:var(--ort);opacity:0;transition:opacity .8s 1.6s}
 .chip.on{opacity:1}
 .info{display:flex;flex-direction:column;gap:14px}
@@ -116,7 +117,6 @@ section{position:relative;padding:84px var(--gut) 40px;max-width:760px;margin:0 
 .vin{display:flex;flex-direction:column;gap:6px;padding:0;border:0;background:none;text-align:left;font-size:inherit}
 .pic{position:relative;aspect-ratio:4/3;border-radius:10px;border:1px solid var(--line);overflow:hidden;background:var(--cru)}
 .pic .paint{position:absolute;inset:0}
-.pic .dr{position:absolute;inset:0;background:url(img/acuarela.webp) no-repeat}
 .pic .mo{position:absolute;inset:0;background:var(--pap);display:flex;align-items:center;justify-content:center}
 .pic .mo img{width:46%;height:auto}
 .pic .ph{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .6s}
@@ -237,15 +237,16 @@ footer div{font-family:var(--tit);font-style:italic;font-size:30px}
 @media(min-width:760px){
  :root{--gut:40px}
  section{padding-top:110px}
- #hero{padding-top:96px}
+ #hero{padding-top:78px;max-width:none}
+ .names{font-size:clamp(54px,6.4vw,84px)}
  .names br{display:none}
  #hero{text-align:center;align-items:center}
- .art{flex:none;min-height:0;margin:0;width:min(640px,100%)}#artp{position:static}
- .art img{position:static;height:auto;aspect-ratio:1400/934;-webkit-mask-image:linear-gradient(90deg,transparent,#000 7%,#000 93%,transparent);mask-image:linear-gradient(90deg,transparent,#000 7%,#000 93%,transparent)}
- .chip{left:50%;transform:translateX(-50%);white-space:nowrap}
- .cta,.vine{justify-content:center}.codef{align-items:center;text-align:center}.codef .row{width:min(420px,100%)}
+ .art{align-self:stretch;min-height:280px;max-height:45vw;overflow:hidden}
+ .art img{inset:auto;top:0;left:50%;height:100%;width:auto;max-width:none;transform:translateX(-50%);-webkit-mask-image:linear-gradient(90deg,transparent,#000 4%,#000 96%,transparent),linear-gradient(transparent,#000 4%,#000 96%,transparent);-webkit-mask-composite:source-in;mask-image:linear-gradient(90deg,transparent,#000 4%,#000 96%,transparent),linear-gradient(transparent,#000 4%,#000 96%,transparent);mask-composite:intersect}
+ .chip{left:50%;bottom:0;transform:translateX(-50%);white-space:nowrap}
+ .codef{width:340px}
  .mapw,.zl{max-width:460px}
- .info{align-items:center}
+ .info{flex-direction:row;flex-wrap:wrap;align-items:center;justify-content:center;gap:14px 40px;text-align:left}
  #rail{right:22px}
 }
 @media(prefers-reduced-motion:reduce){
@@ -267,7 +268,7 @@ footer div{font-family:var(--tit);font-style:italic;font-size:30px}
       <div class="lab acc eyebrow" id="eyebrow">&nbsp;</div>
       <h1 class="names">Natalia <b>&amp;</b><br> Marçal</h1>
     </div>
-    <div class="art" id="art"><div class="paint wait" id="artp"><picture><source media="(min-width:760px)" srcset="img/acuarela.webp"><img src="img/portada.webp" alt="" id="arti"></picture><div class="tint" id="tint"></div></div><span class="lab chip" id="chip"></span></div>
+    <div class="art" id="art"><div class="paint wait" id="artp"><img alt="" id="arti"><img alt="" id="arti2" aria-hidden="true"></div><span class="lab chip" id="chip"></span></div>
     <div class="info" id="heroB"></div>
   </section>
   <div id="app" hidden>
@@ -395,7 +396,11 @@ function madrid(ms){var p={};new Intl.DateTimeFormat('en-GB',{timeZone:'Europe/M
 function phase(ms){var s=sun(ms),h=madrid(ms).h;if(s.alt<-6)return'night';if(s.alt<6)return h<12?'dawn':'dusk';return h<12?'morning':h<15?'midday':'afternoon'}
 function vine(ms){var d=madrid(ms),k=d.m*100+d.d;if(d.y===2027&&k===703)return'boda';
  return k>=1101||k<301?'poda':k<401?'lloro':k<516?'brote':k<611?'flor':k<716?'cuajado':k<821?'envero':k<1001?'vendimia':'hoja'}
-var TINT={night:['#3A4763',.7],dawn:['#F2C9A0',.5],morning:['#F2954F',0],midday:['#F2954F',0],afternoon:['#F2954F',.16],dusk:['#D6A3A6',.75]};
+/* Portada: una imagen por estación (invierno 1 nov–31 mar, primavera 1 abr–15 may, verano 16 may–31 oct) y por luz (altura real del sol en el Mas). */
+var CV='';
+function cover(n){var d=madrid(n),k=d.m*100+d.d,se=k>=1101||k<401?'inv':k<516?'pri':'ver',ph=phase(n),li=ph==='night'?'nit':ph==='dawn'?'alb':ph==='dusk'?'cap':'dia',src='img/c-'+se+'-'+li+'.webp';
+ if(src===CV)return;var a=$('#arti'),b=$('#arti2');if(!CV){CV=src;a.src=src;return}
+ CV=src;var im=new Image();im.onload=function(){if(CV!==src)return;b.src=src;b.classList.add('on');setTimeout(function(){a.src=src;setTimeout(function(){b.classList.remove('on')},500)},1700)};im.src=src}
 
 function api(body){if(window.__api)return window.__api(body);return fetch(API,{method:'POST',headers:{'Content-Type':'text/plain;charset=utf-8'},body:JSON.stringify(body)}).then(function(r){return r.json()})}
 function toast(m){var t=$('#toast');t.textContent=m;t.classList.add('on');clearTimeout(toast.t);toast.t=setTimeout(function(){t.classList.remove('on')},3200)}
@@ -405,9 +410,9 @@ function go(id){var el=document.getElementById(id);if(el)el.scrollIntoView({beha
 function mode(){var n=now();return n>=LIVE0&&n<END?'live':n>=END?'after':'before'}
 function curStop(){var n=now(),i=-1;for(var k=0;k<5;k++)if(n>=SCHED[k])i=k;return i}
 function hero(){
- var t=L(),n=now(),h='',m=madrid(n),vn=vine(n),ph=phase(n),tn=TINT[ph];
+ var t=L(),n=now(),h='',m=madrid(n),vn=vine(n),ph=phase(n);
  $('#eyebrow').innerHTML=guest?esc(t.personal+' · '+guest.firstName):'&nbsp;';
- $('#arti').alt=t.artAlt;$('#tint').style.setProperty('--tc',tn[0]);$('#tint').style.opacity=tn[1];
+ $('#arti').alt=t.artAlt;cover(n);
  $('#chip').textContent=t.nowAt+' · '+m.hm+' · '+t.ph[ph];
  var days=Math.ceil((WED-n)/864e5),txt=mode()==='after'?t.thanks:days<=0?t.today:days===1?t.left1:fmt(t.left,{n:days});
  var base='<div><div class="date">'+esc(t.date)+'</div><div class="place">Mas de les Moreres · Cornudella de Montsant</div></div>',
@@ -526,7 +531,7 @@ function onScroll(){if(ticking)return;ticking=true;requestAnimationFrame(functio
  var d=$('#dia .day');if(d){var H=d.lastElementChild.offsetTop+16;$('svg',d).style.height=H+'px';var r=d.getBoundingClientRect(),dp=clamp((vh*.72-r.top)/Math.max(1,H),0,1);d.style.setProperty('--dp',dp.toFixed(3));$$('.stp',d).forEach(function(s){if(s.offsetTop<=dp*H+6)s.classList.add('on')})}
  })}
 window.addEventListener('scroll',onScroll,{passive:true});
-window.addEventListener('resize',onScroll);
+window.addEventListener('resize',function(){cover(now());onScroll()});
 
 document.addEventListener('click',function(ev){
  var b=ev.target.closest('[data-a]');if(!b)return;var a=b.dataset.a,k=b.dataset.k;

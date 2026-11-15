@@ -556,7 +556,7 @@ $('#langb').addEventListener('click',function(){var o=['ca','es','en'];lang=o[(o
 
 /* ---------- Arranque ---------- */
 (function(){var l=(qs.get('l')||'').toLowerCase().slice(0,2),ok=function(x){return /^(ca|es|en)$/.test(x)};
- lang=ok(l)?l:ok(store.get('nm_l'))?store.get('nm_l'):ok((navigator.language||'').slice(0,2))?navigator.language.slice(0,2):'ca';
+ lang=ok(l)?l:ok(store.get('nm_l'))?store.get('nm_l'):'ca';
  chrome();hero();
  var img=$('#arti'),paint=function(){var p=$('#artp');p.classList.remove('wait');p.classList.add('go');$('#chip').classList.add('on')};
  if(img.complete)paint();else{img.addEventListener('load',paint);img.addEventListener('error',paint)}

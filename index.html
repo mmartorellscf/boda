@@ -151,6 +151,8 @@ section{position:relative;padding:84px var(--gut) 40px;max-width:760px;margin:0 
 .stp.now b::after{content:'';display:inline-block;width:10px;height:10px;margin-left:10px;border-radius:50%;background:var(--gr);animation:pulse 1.6s infinite}
 @keyframes pulse{50%{opacity:.3}}
 .sur{margin-top:28px;font-style:italic;font-size:21px}
+.dress{margin-top:30px;padding:14px 18px;border:1px solid var(--line);border-radius:14px;background:rgba(255,255,255,.35);display:flex;flex-direction:column;gap:4px;max-width:460px}
+.dress b{font-weight:500;font-size:23px;line-height:1.15}
 
 /* Confirmar */
 .stack{display:flex;flex-direction:column;gap:10px;margin-bottom:22px}
@@ -343,7 +345,7 @@ codeP:'El codi de la teva invitació',codeH:'El vas rebre per WhatsApp',enter:'E
 nav:['El lloc','El dia','Confirmar','Detall','Mapa','Com arribar','On dormir'],
 fincaL:'Un mas entre vinyes, amb la serra de Montsant al fons.',flipH:'Toca un dibuix i veuràs la foto.',fin:['Des de l’aire','Les vinyes','La capella','El camí de les Moreres','La plaça del Molí','El celler','La sala de criança'],
 dayT:'El dia',stops:[['Arribada','Mas de les Moreres'],['Cerimònia','A la capella'],['Aperitiu i sopar','Zona del jardí, la piscina i la pista de tennis'],['Ball i festa','Zona de la plaça del Molí, el Club i la Discoteca']],
-live:['Arribada','Cerimònia','Aperitiu','Sopar','Ball i festa'],sur:'Com serà cada moment, és sorpresa.',
+live:['Arribada','Cerimònia','Aperitiu','Sopar','Ball i festa'],sur:'Com serà cada moment, és sorpresa.',dressL:'Etiqueta',dress:'Formal: vestit i corbata.',
 rsvpT:'{n}, <em>vens?</em>',rsvpL:'Ens farà molta il·lusió que hi siguis. Respon a cada acte amb un toc.',yes:'Sí',no:'No',
 ev:{tiro:['Divendres 2 juliol · 16:00','Tir al plat','Lloc per confirmar'],pre:['Divendres 2 juliol · 20:00','Benvinguda','Íntim · per confirmar'],boda:['Dissabte 3 juliol · 16:30','El casament','Mas de les Moreres'],post:['Diumenge 4 juliol · 13:00','Postboda','Piscina · Mas de les Moreres']},
 plus:'El teu acompanyant',plusOn:'Vinc amb acompanyant',plusPh:'Nom i cognom',plusMenu:'Al·lèrgies o menú del teu acompanyant',menu:'Menú i al·lèrgies',menus:['Sense restriccions','Vegetarià','Sense gluten','Sense lactosa','Una altra'],otherPh:'Explica’ns què necessites',
@@ -365,7 +367,7 @@ codeP:'El código de tu invitación',codeH:'Lo recibiste por WhatsApp',enter:'En
 nav:['El lugar','El día','Confirmar','Detalle','Mapa','Cómo llegar','Dónde dormir'],
 fincaL:'Un mas entre viñas, con la sierra de Montsant al fondo.',flipH:'Toca un dibujo y verás la foto.',fin:['Desde el aire','Las viñas','La capilla','El camino de las Moreras','La plaça del Molí','La bodega','La sala de crianza'],
 dayT:'El día',stops:[['Llegada','Mas de les Moreres'],['Ceremonia','En la capilla'],['Aperitivo y cena','Zona del jardín, la piscina y la pista de tenis'],['Baile y fiesta','Zona de la plaça del Molí, el Club y la Discoteca']],
-live:['Llegada','Ceremonia','Aperitivo','Cena','Baile y fiesta'],sur:'Cómo será cada momento es sorpresa.',
+live:['Llegada','Ceremonia','Aperitivo','Cena','Baile y fiesta'],sur:'Cómo será cada momento es sorpresa.',dressL:'Etiqueta',dress:'Formal: traje y corbata.',
 rsvpT:'{n}, <em>¿vienes?</em>',rsvpL:'Nos hará mucha ilusión que estés. Responde a cada acto con un toque.',yes:'Sí',no:'No',
 ev:{tiro:['Viernes 2 julio · 16:00','Tiro al plato','Lugar por confirmar'],pre:['Viernes 2 julio · 20:00','Bienvenida','Íntim · por confirmar'],boda:['Sábado 3 julio · 16:30','La boda','Mas de les Moreres'],post:['Domingo 4 julio · 13:00','Postboda','Piscina · Mas de les Moreres']},
 plus:'Tu acompañante',plusOn:'Vengo con acompañante',plusPh:'Nombre y apellido',plusMenu:'Alergias o menú de tu acompañante',menu:'Menú y alergias',menus:['Sin restricciones','Vegetariano','Sin gluten','Sin lactosa','Otra'],otherPh:'Cuéntanos qué necesitas',
@@ -387,7 +389,7 @@ codeP:'Your invitation code',codeH:'You received it by WhatsApp',enter:'Enter',c
 nav:['The place','The day','RSVP','A little something','Map','Getting there','Where to stay'],
 fincaL:'A farmhouse among vineyards, with the Montsant range behind.',flipH:'Tap a drawing to see the photo.',fin:['From the air','The vineyards','The chapel','The Mulberry Path','Plaça del Molí','The winery','The barrel room'],
 dayT:'The day',stops:[['Arrival','Mas de les Moreres'],['Ceremony','In the chapel'],['Aperitif and dinner','Garden, pool and tennis court area'],['Dancing and party','Plaça del Molí, Club and Discoteca area']],
-live:['Arrival','Ceremony','Aperitif','Dinner','Dancing and party'],sur:'What each moment will look like is a surprise.',
+live:['Arrival','Ceremony','Aperitif','Dinner','Dancing and party'],sur:'What each moment will look like is a surprise.',dressL:'Dress code',dress:'Formal: suit and tie.',
 rsvpT:'{n}, <em>are you coming?</em>',rsvpL:'We’d love to have you with us. Answer each event with a tap.',yes:'Yes',no:'No',
 ev:{tiro:['Friday 2 July · 16:00','Clay shooting','Venue to be confirmed'],pre:['Friday 2 July · 20:00','Welcome','Íntim · to be confirmed'],boda:['Saturday 3 July · 16:30','The wedding','Mas de les Moreres'],post:['Sunday 4 July · 13:00','Day-after lunch','Pool · Mas de les Moreres']},
 plus:'Your plus-one',plusOn:'I’m bringing a plus-one',plusPh:'First and last name',plusMenu:'Your plus-one’s allergies or menu',menu:'Menu & allergies',menus:['No restrictions','Vegetarian','Gluten-free','Lactose-free','Other'],otherPh:'Tell us what you need',
@@ -469,7 +471,7 @@ function finca(){var t=L(),vn=vine(now()),vs=VST[vn],ic='<span class="fl"><svg a
 /* ---------- El día ---------- */
 function dia(){var t=L(),live=mode()==='live'?curStop():-1,tm=['16:30','16:45','18:00 · 21:00','23:00'];
  $('#dia').innerHTML=head('dia',esc(t.dayT),t.date)+'<div class="day"><svg aria-hidden="true" viewBox="0 0 24 400" preserveAspectRatio="none"><path class="bg" pathLength="1" d="M12 0C18 50 6 100 12 150S18 250 12 300S8 370 12 400"/><path class="fg" pathLength="1" d="M12 0C18 50 6 100 12 150S18 250 12 300S8 370 12 400"/></svg>'+
-  t.stops.map(function(s,i){return'<div class="stp'+(live>=0&&STOP_OF[live]===i?' now':'')+'"><div class="tx"><span class="h">'+tm[i]+'</span><b>'+esc(s[0])+'</b><span>'+esc(s[1])+'</span></div>'+(ZT[i]?'<img class="zt" src="img/'+ZT[i]+'.webp" alt="" loading="lazy">':'')+'</div>'}).join('')+'</div><p class="sur rv" style="--i:3">'+esc(t.sur)+'</p><img class="orn rv" style="--i:4" src="img/sanefa.webp" alt="" width="1400" height="136" loading="lazy">'}
+  t.stops.map(function(s,i){return'<div class="stp'+(live>=0&&STOP_OF[live]===i?' now':'')+'"><div class="tx"><span class="h">'+tm[i]+'</span><b>'+esc(s[0])+'</b><span>'+esc(s[1])+'</span></div>'+(ZT[i]?'<img class="zt" src="img/'+ZT[i]+'.webp" alt="" loading="lazy">':'')+'</div>'}).join('')+'</div><div class="dress rv" style="--i:3"><span class="lab acc">'+esc(t.dressL)+'</span><b>'+esc(t.dress)+'</b></div><p class="sur rv" style="--i:3">'+esc(t.sur)+'</p><img class="orn rv" style="--i:4" src="img/sanefa.webp" alt="" width="1400" height="136" loading="lazy">'}
 
 /* ---------- Confirmación ---------- */
 function initForm(){var g=guest,parts=(g.menu||'').split(/\s*,\s*/).filter(Boolean),m={},o=[];

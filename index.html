@@ -107,6 +107,8 @@ section{position:relative;padding:84px var(--gut) 40px;max-width:760px;margin:0 
 /* Apartados */
 #app section{padding-right:calc(var(--gut) + var(--rail) - 10px)}
 .hd{display:flex;flex-direction:column;gap:8px;margin-bottom:26px}
+#hola{padding-top:52px;padding-bottom:0;display:flex;flex-direction:column;gap:10px}
+#hola+section{padding-top:64px}
 .rv{opacity:0;transform:translateY(18px);transition:opacity .7s,transform .7s cubic-bezier(.2,.7,.2,1);transition-delay:calc(var(--i,0) * 90ms)}
 .in .rv{opacity:1;transform:none}
 .orn{display:block;width:100%;height:auto;margin-top:30px}
@@ -292,6 +294,7 @@ footer div{font-family:var(--tit);font-style:italic;font-size:30px}
     <div class="info" id="heroB"></div>
   </section>
   <div id="app" hidden>
+    <section id="hola"></section>
     <section id="finca"></section>
     <section id="dia"></section>
     <section id="rsvp"></section>
@@ -332,7 +335,7 @@ var SCHED=[U(6,3,14,30),U(6,3,14,45),U(6,3,16,0),U(6,3,19,0),U(6,3,21,0)], TIMES
 
 /* ---------- Textos ---------- */
 var T={
-ca:{langName:'CA',personal:'Invitació personal',nowAt:'Ara al Mas',ph:{night:'nit',dawn:'alba',morning:'matí',midday:'migdia',afternoon:'tarda',dusk:'capvespre'},
+ca:{langName:'CA',personal:'Invitació personal',hey:'Hola, {n}',heyS:'Aquesta és la teva invitació al nostre casament.',nowAt:'Ara al Mas',ph:{night:'nit',dawn:'alba',morning:'matí',midday:'migdia',afternoon:'tarda',dusk:'capvespre'},
 date:'Dissabte 3 de juliol de 2027',left:'Falten {n} dies.',left1:'Falta 1 dia.',today:'És avui.',thanks:'Gràcies per venir.',vineNow:'La vinya avui',
 vine:{poda:'poda d’hivern',lloro:'plor',brote:'brotada',flor:'floració',cuajado:'quallat',boda:'dia de casament',envero:'verol',vendimia:'verema',hoja:'caiguda de la fulla'},
 confirm:'Confirmar assistència',change:'Veure o canviar la resposta',down:'Baixa i passeja pel Mas',cta:'Confirmar',
@@ -342,7 +345,7 @@ fincaL:'Un mas entre vinyes, amb la serra de Montsant al fons.',flipH:'Toca un d
 dayT:'El dia',stops:[['Arribada','Mas de les Moreres'],['Cerimònia','A la capella'],['Aperitiu i sopar','Zona del jardí, la piscina i la pista de tennis'],['Ball i festa','Zona de la plaça del Molí, el Club i la Discoteca']],
 live:['Arribada','Cerimònia','Aperitiu','Sopar','Ball i festa'],sur:'Com serà cada moment, és sorpresa.',
 rsvpT:'{n}, <em>vens?</em>',rsvpL:'Ens farà molta il·lusió que hi siguis. Respon a cada acte amb un toc.',yes:'Sí',no:'No',
-ev:{tiro:['Divendres 2 juliol · 16:00','Tir al plat','Lloc per confirmar'],pre:['Divendres 2 juliol · 21:00','Sopar preboda','Íntim · per confirmar'],boda:['Dissabte 3 juliol · 16:30','El casament','Mas de les Moreres'],post:['Diumenge 4 juliol · 13:00','Fideuà postboda','Piscina · Mas de les Moreres']},
+ev:{tiro:['Divendres 2 juliol · 16:00','Tir al plat','Lloc per confirmar'],pre:['Divendres 2 juliol · 20:00','Benvinguda','Íntim · per confirmar'],boda:['Dissabte 3 juliol · 16:30','El casament','Mas de les Moreres'],post:['Diumenge 4 juliol · 13:00','Postboda','Piscina · Mas de les Moreres']},
 plus:'El teu acompanyant',plusOn:'Vinc amb acompanyant',plusPh:'Nom i cognom',plusMenu:'Al·lèrgies o menú del teu acompanyant',menu:'Menú i al·lèrgies',menus:['Sense restriccions','Vegetarià','Sense gluten','Sense lactosa','Una altra'],otherPh:'Explica’ns què necessites',
 bus:'Vinc amb autobús des de Reus',busS:'Només per a qui viu a Reus',lod:'Necessito allotjament',lodS:'Per saber quants busqueu on dormir',
 msg:'Missatge per a la Natalia i en Marçal',msgPh:'Si vols, escriu-nos alguna cosa',send:'Enviar resposta',update:'Actualitzar resposta',sending:'Enviant…',saved:'Resposta desada',savedS:'Gràcies. La pots canviar quan vulguis fins al 30 d’abril.',until:'La pots canviar fins al 30 d’abril',need:'Respon Sí o No a cada acte.',sendBad:'No s’ha pogut desar. Torna-ho a provar.',closed:'El termini per respondre va acabar el 30 d’abril. Escriu-nos si necessites canviar res.',
@@ -354,7 +357,7 @@ go:[['Per confirmar','Autobús des de Reus','Només per a qui viu a Reus. Arriba
 goB:'Anar al pàrquing Venta del Pubill',goN:'Horaris d’autobús per confirmar',goEnd:'Quan s’acabi la festa: llançadora fins al pàrquing.',
 stayT:'On dormir',stayL:'Una selecció a prop del mas. Són pobles petits: reserva aviat.',all:'Tots',cats:['Hotels','Cases i apartaments','Càmping i bungalous'],catS:['Hotels','Cases','Càmping'],hi:'Hotels boutique 5 estrelles',lo:'Hotels i hostals',stayH:'Cases senceres i apartaments, per a parelles o per a grups. Mira què hi ha lliure pel cap de setmana.',sBk:'Buscar',pers:'pers.',
 liveTag:'En directe',hello:'Hola, {n}. Això és el que està passant.',nowL:'Ara',nextL:'Després',soon:'Comença a les 16:30',back:'La tornada',backV:'Llançadora a Venta del Pubill',mapB:'Obrir el mapa',artAlt:'Aquarel·la del Mas de les Moreres entre vinyes, amb la serra de Montsant al fons'},
-es:{langName:'ES',personal:'Invitación personal',nowAt:'Ahora en el Mas',ph:{night:'noche',dawn:'amanecer',morning:'mañana',midday:'mediodía',afternoon:'tarde',dusk:'atardecer'},
+es:{langName:'ES',personal:'Invitación personal',hey:'Hola, {n}',heyS:'Esta es tu invitación a nuestra boda.',nowAt:'Ahora en el Mas',ph:{night:'noche',dawn:'amanecer',morning:'mañana',midday:'mediodía',afternoon:'tarde',dusk:'atardecer'},
 date:'Sábado 3 de julio de 2027',left:'Faltan {n} días.',left1:'Falta 1 día.',today:'Es hoy.',thanks:'Gracias por venir.',vineNow:'La viña hoy',
 vine:{poda:'poda de invierno',lloro:'lloro',brote:'brotación',flor:'floración',cuajado:'cuajado',boda:'día de boda',envero:'envero',vendimia:'vendimia',hoja:'caída de la hoja'},
 confirm:'Confirmar asistencia',change:'Ver o cambiar mi respuesta',down:'Baja y pasea por el Mas',cta:'Confirmar',
@@ -364,7 +367,7 @@ fincaL:'Un mas entre viñas, con la sierra de Montsant al fondo.',flipH:'Toca un
 dayT:'El día',stops:[['Llegada','Mas de les Moreres'],['Ceremonia','En la capilla'],['Aperitivo y cena','Zona del jardín, la piscina y la pista de tenis'],['Baile y fiesta','Zona de la plaça del Molí, el Club y la Discoteca']],
 live:['Llegada','Ceremonia','Aperitivo','Cena','Baile y fiesta'],sur:'Cómo será cada momento es sorpresa.',
 rsvpT:'{n}, <em>¿vienes?</em>',rsvpL:'Nos hará mucha ilusión que estés. Responde a cada acto con un toque.',yes:'Sí',no:'No',
-ev:{tiro:['Viernes 2 julio · 16:00','Tiro al plato','Lugar por confirmar'],pre:['Viernes 2 julio · 21:00','Cena preboda','Íntim · por confirmar'],boda:['Sábado 3 julio · 16:30','La boda','Mas de les Moreres'],post:['Domingo 4 julio · 13:00','Fideuà postboda','Piscina · Mas de les Moreres']},
+ev:{tiro:['Viernes 2 julio · 16:00','Tiro al plato','Lugar por confirmar'],pre:['Viernes 2 julio · 20:00','Bienvenida','Íntim · por confirmar'],boda:['Sábado 3 julio · 16:30','La boda','Mas de les Moreres'],post:['Domingo 4 julio · 13:00','Postboda','Piscina · Mas de les Moreres']},
 plus:'Tu acompañante',plusOn:'Vengo con acompañante',plusPh:'Nombre y apellido',plusMenu:'Alergias o menú de tu acompañante',menu:'Menú y alergias',menus:['Sin restricciones','Vegetariano','Sin gluten','Sin lactosa','Otra'],otherPh:'Cuéntanos qué necesitas',
 bus:'Vengo en autobús desde Reus',busS:'Solo para quienes viven en Reus',lod:'Necesito alojamiento',lodS:'Para saber cuántos buscáis dónde dormir',
 msg:'Mensaje para Natalia y Marçal',msgPh:'Si quieres, escríbenos algo',send:'Enviar respuesta',update:'Actualizar respuesta',sending:'Enviando…',saved:'Respuesta guardada',savedS:'Gracias. Puedes cambiarla cuando quieras hasta el 30 de abril.',until:'Puedes cambiarla hasta el 30 de abril',need:'Responde Sí o No a cada acto.',sendBad:'No se ha podido guardar. Inténtalo de nuevo.',closed:'El plazo para responder terminó el 30 de abril. Escríbenos si necesitas cambiar algo.',
@@ -376,7 +379,7 @@ go:[['Por confirmar','Autobús desde Reus','Solo para quienes viven en Reus. Lle
 goB:'Ir al parking Venta del Pubill',goN:'Horarios de autobús por confirmar',goEnd:'Cuando termine la fiesta: lanzadera hasta el parking.',
 stayT:'Dónde dormir',stayL:'Una selección cerca del mas. Son pueblos pequeños: reserva pronto.',all:'Todos',cats:['Hoteles','Casas y apartamentos','Camping y bungalows'],catS:['Hoteles','Casas','Camping'],hi:'Hoteles boutique 5 estrellas',lo:'Hoteles y hostales',stayH:'Casas enteras y apartamentos, para parejas o para grupos. Mira qué hay libre para el fin de semana.',sBk:'Buscar',pers:'pers.',
 liveTag:'En directo',hello:'Hola, {n}. Esto es lo que está pasando.',nowL:'Ahora',nextL:'Después',soon:'Empieza a las 16:30',back:'Tu vuelta',backV:'Lanzadera a Venta del Pubill',mapB:'Abrir el mapa',artAlt:'Acuarela del Mas de les Moreres entre viñas, con la sierra de Montsant al fondo'},
-en:{langName:'EN',personal:'Personal invitation',nowAt:'Now at the Mas',ph:{night:'night',dawn:'dawn',morning:'morning',midday:'midday',afternoon:'afternoon',dusk:'dusk'},
+en:{langName:'EN',personal:'Personal invitation',hey:'Hi, {n}',heyS:'This is your invitation to our wedding.',nowAt:'Now at the Mas',ph:{night:'night',dawn:'dawn',morning:'morning',midday:'midday',afternoon:'afternoon',dusk:'dusk'},
 date:'Saturday 3 July 2027',left:'{n} days to go.',left1:'1 day to go.',today:'It’s today.',thanks:'Thank you for coming.',vineNow:'The vines today',
 vine:{poda:'winter pruning',lloro:'sap rising',brote:'budbreak',flor:'flowering',cuajado:'fruit set',boda:'wedding day',envero:'veraison',vendimia:'harvest',hoja:'leaf fall'},
 confirm:'RSVP',change:'See or change my answer',down:'Scroll down and wander the Mas',cta:'RSVP',
@@ -386,7 +389,7 @@ fincaL:'A farmhouse among vineyards, with the Montsant range behind.',flipH:'Tap
 dayT:'The day',stops:[['Arrival','Mas de les Moreres'],['Ceremony','In the chapel'],['Aperitif and dinner','Garden, pool and tennis court area'],['Dancing and party','Plaça del Molí, Club and Discoteca area']],
 live:['Arrival','Ceremony','Aperitif','Dinner','Dancing and party'],sur:'What each moment will look like is a surprise.',
 rsvpT:'{n}, <em>are you coming?</em>',rsvpL:'We’d love to have you with us. Answer each event with a tap.',yes:'Yes',no:'No',
-ev:{tiro:['Friday 2 July · 16:00','Clay shooting','Venue to be confirmed'],pre:['Friday 2 July · 21:00','Pre-wedding dinner','Íntim · to be confirmed'],boda:['Saturday 3 July · 16:30','The wedding','Mas de les Moreres'],post:['Sunday 4 July · 13:00','Day-after fideuà','Pool · Mas de les Moreres']},
+ev:{tiro:['Friday 2 July · 16:00','Clay shooting','Venue to be confirmed'],pre:['Friday 2 July · 20:00','Welcome','Íntim · to be confirmed'],boda:['Saturday 3 July · 16:30','The wedding','Mas de les Moreres'],post:['Sunday 4 July · 13:00','Day-after lunch','Pool · Mas de les Moreres']},
 plus:'Your plus-one',plusOn:'I’m bringing a plus-one',plusPh:'First and last name',plusMenu:'Your plus-one’s allergies or menu',menu:'Menu & allergies',menus:['No restrictions','Vegetarian','Gluten-free','Lactose-free','Other'],otherPh:'Tell us what you need',
 bus:'I’m taking the bus from Reus',busS:'Only for guests who live in Reus',lod:'I need accommodation',lodS:'So we know how many of you are looking for a place to stay',
 msg:'Message for Natalia & Marçal',msgPh:'Write us something, if you like',send:'Send answer',update:'Update answer',sending:'Sending…',saved:'Answer saved',savedS:'Thank you. You can change it any time until 30 April.',until:'You can change it until 30 April',need:'Answer Yes or No to each event.',sendBad:'We couldn’t save it. Please try again.',closed:'The deadline to answer was 30 April. Write to us if you need to change anything.',
@@ -547,7 +550,8 @@ var io=null;
 function watch(){if(!('IntersectionObserver' in window)){$$('#app section,.paint.wait').forEach(function(e){e.classList.add('in','go');e.classList.remove('wait')});return}
  if(!io)io=new IntersectionObserver(function(es){es.forEach(function(e){if(!e.isIntersecting)return;var el=e.target;if(el.classList.contains('paint')){el.classList.remove('wait');el.classList.add('go')}else el.classList.add('in');io.unobserve(el)})},{threshold:.12});
  $$('#app section:not(.in),#app .paint.wait').forEach(function(e){io.observe(e)})}
-function renderAll(){chrome();hero();if(guest){finca();dia();rsvp();regalo();mapa();llegar();dormir();watch();onScroll()}}
+function hola(){var t=L();$('#hola').innerHTML='<h2 class="tt rv">'+fmt(esc(t.hey),{n:'<em>'+esc(guest.firstName)+'</em>'})+'</h2><p class="lead rv" style="--i:1">'+esc(t.heyS)+'</p>'}
+function renderAll(){chrome();hero();if(guest){hola();finca();dia();rsvp();regalo();mapa();llegar();dormir();watch();onScroll()}}
 function open(){$('#app').hidden=false;initForm();renderAll();var hh='';try{hh=decodeURIComponent(location.hash.slice(1))}catch(e){}if(/^detall/.test(hh))hh='regalo';if(secs().indexOf(hh)>=0)setTimeout(function(){go(hh)},600)}
 function load(c,manual){code=c;heroState='loading';codeErr='';hero();
  api({a:'guest',k:c}).then(function(r){heroState='code';if(r&&r.ok){guest=r.guest;store.set('nm_k',c);if(!qs.get('l')&&!store.get('nm_l')&&guest.lang)lang=guest.lang;open()}
